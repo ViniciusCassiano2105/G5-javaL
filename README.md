@@ -5,7 +5,7 @@ Aqui você encontrará todos os materiais, códigos e documentação desenvolvid
 conceitos de POO utilizando a linguagem Java.
 
 ## ✒️ Autores
-- **Letícia Peixoto** - [leticiapzs]([https://github.com/AlineMG14](https://github.com/leticiapzs))
+- **Letícia Peixoto** - [leticiapzs]([https://github.com/AlineMG14](https://github.com/leticiapzs)
 - **Lorrayne Morais** - [LorrayneMorais](https://github.com/LorrayneMorais)
 - **Luan Souza** - [LuanSouza7](https://github.com/LuanSouza7)
 - **Lucas Cardinot** - [UserCardinot](https://github.com/UserCardinot)
