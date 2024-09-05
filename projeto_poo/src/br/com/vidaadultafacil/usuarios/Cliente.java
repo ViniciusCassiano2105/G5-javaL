@@ -1,19 +1,28 @@
 package br.com.vidaadultafacil.usuarios;
 
-public class Cliente {
-	public static void main(String[] args) {
-		
-	// Nome completo do cliente
-	String nome;
-	
-	// Endereço de email do cliente
-	String email;
-	
-	// Senha do cliente
-	String senha;
-	
-	// Número de telefone do cliente
-	String telefone;
+public class Cliente extends Usuario {
 
+	private String cpf = "";
+
+	public Cliente(String nome, String email, String senha, String telefone, String cpf) {
+		super(nome, email, senha, telefone);
+		this.cpf = cpf;
 	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String toString() {
+        return "Cliente{" +
+                "nome='" + getNome() + '\'' +
+                ", email='" + getEmail() + '\'' +
+                ", telefone='" + telefone + '\'' +
+				", cpf='" + cpf + '\'' +
+                '}';
+    }
 }
