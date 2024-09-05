@@ -2,7 +2,7 @@ package br.com.vidaadultafacil.tela_inicial;
 
 import java.math.BigDecimal;
 
-public class Produtos {
+public class Produto {
 	
 	// Nome do produto
 	String nome;
