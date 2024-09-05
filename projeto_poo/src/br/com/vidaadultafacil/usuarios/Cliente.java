@@ -1,6 +1,8 @@
 package br.com.vidaadultafacil.usuarios;
 
 public class Cliente {
+	public static void main(String[] args) {
+		
 	// Nome completo do cliente
 	String nome;
 	
@@ -13,4 +15,5 @@ public class Cliente {
 	// Número de telefone do cliente
 	String telefone;
 
+	}
 }

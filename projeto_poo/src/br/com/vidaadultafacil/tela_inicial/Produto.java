@@ -3,7 +3,8 @@ package br.com.vidaadultafacil.tela_inicial;
 import java.math.BigDecimal;
 
 public class Produto {
-	
+	public static void main(String[] args) {
+		
 	// Nome do produto
 	String nome;
 	
@@ -18,4 +19,5 @@ public class Produto {
 	
 	// Duração estimada do curso
 	int duracao;
+	}
 }

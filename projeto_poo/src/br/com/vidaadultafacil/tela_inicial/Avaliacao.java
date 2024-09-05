@@ -5,6 +5,7 @@ import br.com.vidaadultafacil.usuarios.Cliente;
 public class Avaliacao {
 
 	public static void main(String[] args) {
+		
 		// Nota atribuída ao produto (ex: de 1.0 a 5.0)
 		double nota;
 		
