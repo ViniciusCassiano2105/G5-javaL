@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 
 public class Pagamento {
 
-	public static void main(String[] args) {
 		
 		// Método de pagamento utilizado (ex: "cartão de crédito", "boleto")
 		String metodoPagamento;
@@ -14,7 +13,30 @@ public class Pagamento {
 		
 		// Quantidade de parcelas do pagamento
 		int parcela;
-
+		
+		
+		public String getMetodoPagamento() {
+			return metodoPagamento;
+		}
+		
+		public BigDecimal getValor() {
+			return valor;
+		}
+		
+		public int getParcela() {
+			return parcela;
+		}
+		
+		public void setMetodoPagamento(String metodoPagamento) {
+			this.metodoPagamento = metodoPagamento;
+		}
+		
+		public void setValor(BigDecimal valor) {
+			this.valor = valor;
+		}
+		
+		public void setParcela(int parcela) {
+			this.parcela = parcela;
+		}
 	}
 
-}
