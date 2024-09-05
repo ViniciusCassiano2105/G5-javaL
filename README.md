@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 # G5-javaL
-=======
+
 # Repositório do Grupo 5 - JavaL 📚
 
 Este repositório foi criado pelo Grupo 5 JavaL - Para organizar e documentar o trabalho em grupo sobre Programação Orientada a Objetos (POO). 
@@ -15,4 +14,4 @@ conceitos de POO utilizando a linguagem Java.
 - **Lucas Sarasa** - [lucasarasa](https://github.com/lucasarasa)
 - **Lucas Schumacker** - [schumacker1](https://github.com/schumacker1)
 - **Luiz Vinicius** - [ViniciusCassiano2105](https://github.com/ViniciusCassiano2105)
->>>>>>> 3ba04d2aa2ddf87b3b995c6f944a140a2b01c162
+
