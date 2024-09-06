@@ -4,49 +4,33 @@ import br.com.vidaadultafacil.usuarios.Cliente;
 
 public class Avaliacao {
 
-		// Nota atribuída ao produto (ex: de 1.0 a 5.0)
-		double nota;
 		
-		// Comentário sobre o produto
-		String comentario;
-		
-		// Produto avaliado
-		Produto produto;
-		
-		// Usuário que fez a avaliação
+		double nota;				
+		String comentario;				
+		Produto produto;				
 		Cliente usuario;
-
+		
+		public Avaliacao() { 
+		}	
+		
+		public Avaliacao(double nota, String comentario, Produto produto, Cliente usuario) {
+			super();
+			this.nota = nota;
+			this.comentario = comentario;
+			this.produto = produto;
+			this.usuario = usuario;
+		}
 		public double getNota() {
 			return nota;
 		}
-
-		public void setNota(double nota) {
-			this.nota = nota;
-		}
-
 		public String getComentario() {
 			return comentario;
 		}
-
-		public void setComentario(String comentario) {
-			this.comentario = comentario;
-		}
-
 		public Produto getProduto() {
 			return produto;
 		}
-
-		public void setProduto(Produto produto) {
-			this.produto = produto;
-		}
-
 		public Cliente getUsuario() {
 			return usuario;
-		}
-
-		public void setUsuario(Cliente usuario) {
-			this.usuario = usuario;
-		}
-		
+		}				
 }
 
