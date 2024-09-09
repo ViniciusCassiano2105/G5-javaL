@@ -16,10 +16,6 @@ public class Cliente extends Usuario {
 		return cpf;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
 	public int getFk_id_usuario() {
 		return fk_id_usuario;
 	}

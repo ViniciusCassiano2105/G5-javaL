@@ -7,18 +7,16 @@ public class Avaliacao extends Produto {
 		private int fk_Produto;
 		
 		double nota;				
-		String comentario;				
-		Produto produto;				
+		String comentario;								
 		Cliente usuario;
 		
 		public Avaliacao() { 
 		}	
 		
-		public Avaliacao(int fk_Produto, double nota, String comentario, Produto produto, Cliente usuario) {
+		public Avaliacao(int fk_Produto, double nota, String comentario, Cliente usuario) {
 			this.fk_Produto = fk_Produto;
 			this.nota = nota;
 			this.comentario = comentario;
-			this.produto = produto;
 			this.usuario = usuario;
 		}
 
@@ -27,9 +25,6 @@ public class Avaliacao extends Produto {
 		}
 		public String getComentario() {
 			return comentario;
-		}
-		public Produto getProduto() {
-			return produto;
 		}
 		public Cliente getUsuario() {
 			return usuario;

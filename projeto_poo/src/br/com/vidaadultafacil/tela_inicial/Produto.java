@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class Produto extends CategoriaProdutos{
 
 	// Chave primária
-	private int id;
+	private int idProduto;
 	private int fk_Categoria;
 	
 	public String nome = "";
@@ -17,8 +17,8 @@ public class Produto extends CategoriaProdutos{
 	public Produto() {
 	}
 
-	public Produto(int id, int fk_Categoria, String nome, String descricaoProd, String autor, BigDecimal preco, int duracao) {
-		this.id = id;
+	public Produto(int idProduto, int fk_Categoria, String nome, String descricaoProd, String autor, BigDecimal preco, int duracao) {
+		this.idProduto = idProduto;
 		this.fk_Categoria = fk_Categoria;
 		this.nome = nome;
 		this.descricaoProd = descricaoProd;
@@ -67,12 +67,12 @@ public class Produto extends CategoriaProdutos{
 		this.duracao = duracao;
 	}
 
-	public int getId() {
-		return id;
+	public int getIdProduto() {
+		return idProduto;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int idProduto) {
+		this.idProduto = idProduto;
 	}
 	
 	public int getFkCategoria() {
