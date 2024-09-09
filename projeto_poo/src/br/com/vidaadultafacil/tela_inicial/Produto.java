@@ -6,12 +6,26 @@ public class Produto extends CategoriaProdutos{
 
 	// Chave primária
 	private int id;
+	private int fk_Categoria;
 	
 	public String nome = "";
 	public String descricaoProd = "";
 	public String autor = "";
 	public BigDecimal preco;
 	public int duracao;
+
+	public Produto() {
+	}
+
+	public Produto(int id, int fk_Categoria, String nome, String descricaoProd, String autor, BigDecimal preco, int duracao) {
+		this.id = id;
+		this.fk_Categoria = fk_Categoria;
+		this.nome = nome;
+		this.descricaoProd = descricaoProd;
+		this.autor = autor;
+		this.preco = preco;
+		this.duracao = duracao;
+	}
 
 	public String getNome() {
 		return nome;
@@ -37,7 +51,7 @@ public class Produto extends CategoriaProdutos{
 		this.nome = nome;
 	}
 
-	public void setDescricaoProd(String descricao) {
+	public void setDescricaoProd(String descricaoProd) {
 		this.descricaoProd = descricaoProd;
 	}
 
@@ -52,13 +66,21 @@ public class Produto extends CategoriaProdutos{
 	public void setDuracao(int duracao) {
 		this.duracao = duracao;
 	}
-	
-	public int getIdProduto() {
+
+	public int getId() {
 		return id;
 	}
 
-	public void setIdProduto(int id) {
+	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public int getFkCategoria() {
+		return fk_Categoria;
+	}
+
+	public void setFkCategoria(int fk_Categoria) {
+		this.fk_Categoria = fk_Categoria;
 	}
 
 	//Método para listar todos os produtos cadastrados

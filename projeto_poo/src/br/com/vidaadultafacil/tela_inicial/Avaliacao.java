@@ -2,9 +2,9 @@ package br.com.vidaadultafacil.tela_inicial;
 
 import br.com.vidaadultafacil.usuarios.Cliente;
 
-public class Avaliacao {
+public class Avaliacao extends Produto {
 		// Chave primária
-		private int id;
+		private int fk_Produto;
 		
 		double nota;				
 		String comentario;				
@@ -14,13 +14,14 @@ public class Avaliacao {
 		public Avaliacao() { 
 		}	
 		
-		public Avaliacao(double nota, String comentario, Produto produto, Cliente usuario) {
-			super();
+		public Avaliacao(int fk_Produto, double nota, String comentario, Produto produto, Cliente usuario) {
+			this.fk_Produto = fk_Produto;
 			this.nota = nota;
 			this.comentario = comentario;
 			this.produto = produto;
 			this.usuario = usuario;
 		}
+
 		public double getNota() {
 			return nota;
 		}
@@ -34,12 +35,12 @@ public class Avaliacao {
 			return usuario;
 		}
 
-		public int getIdAvaliacao() {
-			return id;
+		public int getfk_Produto() {
+			return fk_Produto;
 		}
 
-		public void setIdAvaliacao(int id) {
-			this.id = id;
+		public void setFk_Produto(int fk_Produto) {
+			this.fk_Produto = fk_Produto;
 		}	
 		
 }

@@ -3,12 +3,12 @@ package br.com.vidaadultafacil.usuarios;
 public class Cliente extends Usuario {
 
 	// Chave primária
-	private int id;
+	private int fk_id_usuario;
 	
 	private String cpf = "";
 
-	public Cliente(String nome, String email, String senha, String telefone, String cpf) {
-		super(nome, email, senha, telefone);
+	public Cliente(int fk_id_usuario, String nome, String email, String senha, String telefone, String cpf) {
+		super(fk_id_usuario, nome, email, senha, telefone);
 		this.cpf = cpf;
 	}
 
@@ -20,12 +20,12 @@ public class Cliente extends Usuario {
 		this.cpf = cpf;
 	}
 
-	public int getIdCliente() {
-		return id;
+	public int getFk_id_usuario() {
+		return fk_id_usuario;
 	}
 
-	public void setIdCliente(int id) {
-		this.id = id;
+	public void setFk_id_usuario(int fk_id_usuario) {
+		this.fk_id_usuario = fk_id_usuario;
 	}
 
 	public String toString() {

@@ -2,12 +2,12 @@ package br.com.vidaadultafacil.usuarios;
 
 public class Administrador extends Usuario {
 		// Chave primária
-		private int id;
+		private int fk_id_usuario;
 	
 		boolean isAdmin;
 
-		public Administrador(String nome, String email, String senha, String telefone, boolean isAdmin) {
-			super(nome, email, senha, telefone);
+		public Administrador(int fk_id_usuario, String nome, String email, String senha, String telefone, boolean isAdmin) {
+			super(fk_id_usuario, nome, email, senha, telefone);
 			this.isAdmin = isAdmin;
 		}
 
@@ -19,12 +19,12 @@ public class Administrador extends Usuario {
 			isAdmin = admin;
 		}
 		
-		public int getIdAdm() {
-			return id;
+		public int getFk_id_usuario() {
+			return fk_id_usuario;
 		}
 
-		public void setIdAdm(int id) {
-			this.id = id;
+		public void setFk_id_usuario(int id) {
+			this.fk_id_usuario = fk_id_usuario;
 		}
 
 		public String toString() {

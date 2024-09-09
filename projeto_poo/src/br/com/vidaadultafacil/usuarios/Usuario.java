@@ -9,8 +9,12 @@ public class Usuario {
 	String senha;
 	String telefone;
 
+    public Usuario() {
+    }
+
     // Método Construtor
-    public Usuario(String nome, String email, String senha, String telefone) {
+    public Usuario(int id, String nome, String email, String senha, String telefone) {
+        this.id = id;
         this.nome = nome;
         this.email = email;
         this.senha = senha;
