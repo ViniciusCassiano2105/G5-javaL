@@ -2,7 +2,7 @@ package br.com.vidaadultafacil.tela_inicial;
 
 import java.math.BigDecimal;
 
-public class Produto extends CategoriaProdutos{
+public class Produto{
 
 	// Chave primária
 	private int idProduto;

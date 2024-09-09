@@ -2,19 +2,18 @@ package br.com.vidaadultafacil.usuarios;
 
 public class Usuario {
 	// Chave primária
-	private int id;
+	protected int id;
 	
-	String nome;
-	String email;
-	String senha;
-	String telefone;
+	protected String nome;
+	protected String email;
+	protected String senha;
+	protected String telefone;
 
     public Usuario() {
     }
 
     // Método Construtor
-    public Usuario(int id, String nome, String email, String senha, String telefone) {
-        this.id = id;
+    public Usuario(String nome, String email, String senha, String telefone) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
