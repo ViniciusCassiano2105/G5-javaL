@@ -3,6 +3,9 @@ package br.com.vidaadultafacil.tela_inicial;
 
 public class CategoriaProdutos {
 		
+	// Chave primária
+	private int id;
+	
 	String categoria = "";
 	String descricaoCat = "";
 	public CategoriaProdutos catProd = new CategoriaProdutos();

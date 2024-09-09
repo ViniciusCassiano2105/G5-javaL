@@ -3,7 +3,8 @@ package br.com.vidaadultafacil.tela_inicial;
 import br.com.vidaadultafacil.usuarios.Cliente;
 
 public class Avaliacao {
-
+		// Chave primária
+		private int id;
 		
 		double nota;				
 		String comentario;				

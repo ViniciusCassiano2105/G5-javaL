@@ -4,6 +4,9 @@ import java.util.List;
 
 public class Carrinho {
 
+	// Chave primária
+	private int id;
+			
 	private List<Produto> produtos;
 		
 	public List<Produto> getProdutos() {

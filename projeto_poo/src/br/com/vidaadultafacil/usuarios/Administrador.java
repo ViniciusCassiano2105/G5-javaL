@@ -1,7 +1,9 @@
 package br.com.vidaadultafacil.usuarios;
 
 public class Administrador extends Usuario {
-
+		// Chave primária
+		private int id;
+	
 		boolean isAdmin;
 
 		public Administrador(String nome, String email, String senha, String telefone, boolean isAdmin) {

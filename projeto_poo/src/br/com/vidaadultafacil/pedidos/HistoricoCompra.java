@@ -5,6 +5,9 @@ import br.com.vidaadultafacil.usuarios.Cliente;
 
 public class HistoricoCompra {
 		
+		// Chave primária
+		private int id;
+	
 		// Identificação do pedido
 		String idPedido;
 		

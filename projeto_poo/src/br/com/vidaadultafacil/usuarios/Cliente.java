@@ -2,6 +2,9 @@ package br.com.vidaadultafacil.usuarios;
 
 public class Cliente extends Usuario {
 
+	// Chave primária
+	private int id;
+	
 	private String cpf = "";
 
 	public Cliente(String nome, String email, String senha, String telefone, String cpf) {

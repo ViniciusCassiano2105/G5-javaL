@@ -4,6 +4,9 @@ import br.com.vidaadultafacil.usuarios.Cliente;
 
 public class Suporte {
 
+	// Chave primária
+	private int id;
+	
 	// Usuário que enviou a mensagem de suporte
 	Cliente usuario;
 

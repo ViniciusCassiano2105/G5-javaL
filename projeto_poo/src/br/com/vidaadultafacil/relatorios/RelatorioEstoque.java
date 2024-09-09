@@ -2,6 +2,9 @@ package br.com.vidaadultafacil.relatorios;
 
 public class RelatorioEstoque {
 		
+		// Chave primária
+		private int id;	
+	
 		// Quantidade total de produtos no estoque
 		int quantidadeProdutos;
 		

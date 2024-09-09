@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 
 public class Produto extends CategoriaProdutos{
 
+	// Chave primária
+	private int id;
+	
 	public String nome = "";
 	public String descricaoProd = "";
 	public String autor = "";

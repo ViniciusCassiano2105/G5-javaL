@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 
 public class Pagamento {
 
+		// Chave primária
+		private int id;
 		
 		// Método de pagamento utilizado (ex: "cartão de crédito", "boleto")
 		String metodoPagamento;

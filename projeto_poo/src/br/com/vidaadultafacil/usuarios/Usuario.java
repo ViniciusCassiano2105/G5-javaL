@@ -1,6 +1,9 @@
 package br.com.vidaadultafacil.usuarios;
 
 public class Usuario {
+	// Chave primária
+	private int id;
+	
 	String nome;
 	String email;
 	String senha;
