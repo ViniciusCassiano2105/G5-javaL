@@ -49,7 +49,15 @@ public class Usuario {
         this.telefone = telefone;
     }
 
-    @Override
+    public int getIdUsuario() {
+		return id;
+	}
+
+	public void setIdUsuario(int id) {
+		this.id = id;
+	}
+
+	@Override
     public String toString() {
         return "Usuario{" +
                 ", nome='" + nome + '\'' +

@@ -20,6 +20,14 @@ public class Cliente extends Usuario {
 		this.cpf = cpf;
 	}
 
+	public int getIdCliente() {
+		return id;
+	}
+
+	public void setIdCliente(int id) {
+		this.id = id;
+	}
+
 	public String toString() {
         return "Cliente{" +
                 "nome='" + getNome() + '\'' +

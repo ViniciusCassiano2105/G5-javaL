@@ -25,8 +25,16 @@ public class Suporte {
 		this.mensagem = mensagem;
 	}
 
-	public void setUsuario() {
+	public void setUsuario(Cliente usuario) {
 		this.usuario = usuario;
 	}
 
+	public int getIdSuporte() {
+		return id;
+	}
+
+	public void setIdSuporte(int id) {
+		this.id = id;
+	}
+	
 }

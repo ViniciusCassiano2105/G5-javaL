@@ -33,4 +33,13 @@ public class CategoriaProdutos {
 	public void setCatProd(CategoriaProdutos catProd) {
 		this.catProd = catProd;
 	}
+
+	public int getIdCatProdutos() {
+		return id;
+	}
+
+	public void setIdCatProdutos(int id) {
+		this.id = id;
+	}
+	
 }

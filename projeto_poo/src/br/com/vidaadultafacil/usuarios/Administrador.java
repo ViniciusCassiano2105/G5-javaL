@@ -18,7 +18,15 @@ public class Administrador extends Usuario {
 		public void setAdmin(boolean admin) {
 			isAdmin = admin;
 		}
-	
+		
+		public int getIdAdm() {
+			return id;
+		}
+
+		public void setIdAdm(int id) {
+			this.id = id;
+		}
+
 		public String toString() {
 			return "Admin{" +
 					"nome='" + getNome() + '\'' +

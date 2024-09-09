@@ -12,4 +12,14 @@ public class Carrinho {
 	public List<Produto> getProdutos() {
         return produtos;
 	}
+
+	public int getIdCarrinho() {
+		return id;
+	}
+
+	public void setIdCarrinho(int id) {
+		this.id = id;
+	}
+	
+	
 }

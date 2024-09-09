@@ -40,5 +40,13 @@ public class Pagamento {
 		public void setParcela(int parcela) {
 			this.parcela = parcela;
 		}
+		
+		public int getIdPagamento() {
+			return id;
+		}
+		
+		public void setIdPagamento(int id) {
+			this.id = id;
+		}
 	}
 

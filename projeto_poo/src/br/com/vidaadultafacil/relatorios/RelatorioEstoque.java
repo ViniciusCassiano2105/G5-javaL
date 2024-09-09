@@ -15,4 +15,14 @@ public class RelatorioEstoque {
 		public void setQuantProd(int quantidadeProdutos) {
 			this.quantidadeProdutos = quantidadeProdutos;
 		}
+
+		public int getIdRelEstoque() {
+			return id;
+		}
+
+		public void setIdRelEstoque(int id) {
+			this.id = id;
+		}
+		
+		
 }

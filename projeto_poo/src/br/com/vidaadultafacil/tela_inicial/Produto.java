@@ -52,6 +52,14 @@ public class Produto extends CategoriaProdutos{
 	public void setDuracao(int duracao) {
 		this.duracao = duracao;
 	}
+	
+	public int getIdProduto() {
+		return id;
+	}
+
+	public void setIdProduto(int id) {
+		this.id = id;
+	}
 
 	//Método para listar todos os produtos cadastrados
 	public String toString() {

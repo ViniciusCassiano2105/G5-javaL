@@ -51,6 +51,15 @@ public class HistoricoCompra {
 		public void setStatus(String status) {
 			this.status = status;
 		}
+
+		public int getIdHistCompra() {
+			return id;
+		}
+
+		public void setIdHistCompra(int id) {
+			this.id = id;
+		}
 	
+		
 }
 

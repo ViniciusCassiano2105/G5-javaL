@@ -32,6 +32,15 @@ public class Avaliacao {
 		}
 		public Cliente getUsuario() {
 			return usuario;
-		}				
+		}
+
+		public int getIdAvaliacao() {
+			return id;
+		}
+
+		public void setIdAvaliacao(int id) {
+			this.id = id;
+		}	
+		
 }
 
