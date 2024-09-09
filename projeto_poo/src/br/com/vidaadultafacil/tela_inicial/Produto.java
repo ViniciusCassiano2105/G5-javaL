@@ -6,7 +6,7 @@ public class Produto{
 
 	// Chave primária
 	private int idProduto;
-	private int fk_Categoria;
+	private int fkCategoria;
 	
 	public String nome = "";
 	public String descricaoProd = "";
@@ -17,9 +17,9 @@ public class Produto{
 	public Produto() {
 	}
 
-	public Produto(int idProduto, int fk_Categoria, String nome, String descricaoProd, String autor, BigDecimal preco, int duracao) {
+	public Produto(int idProduto, int fkCategoria, String nome, String descricaoProd, String autor, BigDecimal preco, int duracao) {
 		this.idProduto = idProduto;
-		this.fk_Categoria = fk_Categoria;
+		this.fkCategoria = fkCategoria;
 		this.nome = nome;
 		this.descricaoProd = descricaoProd;
 		this.autor = autor;
@@ -76,11 +76,11 @@ public class Produto{
 	}
 	
 	public int getFkCategoria() {
-		return fk_Categoria;
+		return fkCategoria;
 	}
 
-	public void setFkCategoria(int fk_Categoria) {
-		this.fk_Categoria = fk_Categoria;
+	public void setFkCategoria(int fkCategoria) {
+		this.fkCategoria = fkCategoria;
 	}
 
 	//Método para listar todos os produtos cadastrados

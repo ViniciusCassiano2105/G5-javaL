@@ -4,7 +4,7 @@ package br.com.vidaadultafacil.tela_inicial;
 public class CategoriaProdutos {
 		
 	// Chave primária
-	private int id_Categoria;
+	private int idCategoria;
 	
 	String categoria = "";
 	String descricaoCat = "";
@@ -13,8 +13,8 @@ public class CategoriaProdutos {
 	public CategoriaProdutos() {
 	}
 
-	public CategoriaProdutos(int id_Categoria, String categoria, String descricaoCat) {
-		this.id_Categoria = id_Categoria;
+	public CategoriaProdutos(int idCategoria, String categoria, String descricaoCat) {
+		this.idCategoria = idCategoria;
 		this.categoria = categoria;
 		this.descricaoCat = descricaoCat;
 	}
@@ -44,11 +44,11 @@ public class CategoriaProdutos {
 	}
 
 	public int getIdCategoria() {
-		return id_Categoria;
+		return idCategoria;
 	}
 
-	public void setIdCategoria(int id_Categoria) {
-		this.id_Categoria = id_Categoria;
+	public void setIdCategoria(int idCategoria) {
+		this.idCategoria = idCategoria;
 	}
 	
 }
