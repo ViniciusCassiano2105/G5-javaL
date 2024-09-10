@@ -3,7 +3,7 @@ package br.com.vidaadultafacil.usuarios;
 public class Cliente extends Usuario {
 
 	// Chave primária
-	
+	private int id;
 	private String cpf = "";
 
 	public Cliente(String nome, String email, String senha, String telefone, String cpf) {
@@ -13,6 +13,10 @@ public class Cliente extends Usuario {
 
 	public String getCpf() {
 		return cpf;
+	}
+
+	public int getId() {
+		return id;
 	}
 
 	public String toString() {

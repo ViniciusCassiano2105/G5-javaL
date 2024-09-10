@@ -1,14 +1,14 @@
-//Cliente(int fkidusuario, String nome, String email, String senha, String telefone, String cpf)
-1;Lucas Cardinot;lucascardinot@gmail.com;coxinha123;21901122334;111.111.111-11;
-2;Leticia;leticia@gmail.com;caipirinha123;21912233445;222.222.222-22;
-3;Lucas Sarasa;lucassarasa@gmail.com;churrasquinho123;21923344556;333.333.333-33;
-4;LuizVinicius;LuizVinicius@gmail.com;vinicin123;21989975462;888.888.888-88;
+//Cliente(String nome, String email, String senha, String telefone, String cpf)
+Lucas Cardinot;lucascardinot@gmail.com;coxinha123;21901122334;111.111.111-11;
+Leticia;leticia@gmail.com;caipirinha123;21912233445;222.222.222-22;
+Lucas Sarasa;lucassarasa@gmail.com;churrasquinho123;21923344556;333.333.333-33;
+LuizVinicius;LuizVinicius@gmail.com;vinicin123;21989975462;888.888.888-88;
 
 
-//Administrador(int fkidusuario, String nome, String email, String senha, String telefone, boolean isAdmin)
-5;Lorrayne;lorrayne@gmail.com;gatinho123;21934455667;555.555.555-55;
-6;Luan;luan@gmail.com;cervejinha123;21945566778;666.666.666-66;
-7;Lucas Schumacker;Schumacker@gmail.com;ferrari123;21956677889;777.777.777-77;
+//Administrador(String nome, String email, String senha, String telefone, boolean isAdmin)
+Lorrayne;lorrayne@gmail.com;gatinho123;21934455667;true;
+Luan;luan@gmail.com;cervejinha123;21945566778;true;
+Lucas Schumacker;Schumacker@gmail.com;ferrari123;21956677889;true;
 
 
 //Produto(int idProduto, int fkCategoria, String nome, String descricaoProd, String autor, BigDecimal preco, int duracao)
@@ -24,8 +24,22 @@
 3;4.5;Esse curso abriu meus olhos para áreas da casa que eu nunca tinha notado. A limpeza dessas partes fez uma grande diferença no geral. Recomendo para quem quer um ambiente realmente limpo!;Lucas Sarasa;
 4;4.4;As instruções são simples e diretas. Agora eu posso trocar as lâmpadas sozinha sem precisar pedir ajuda a cada vez. Ótimo curso para quem quer ser mais independente!;LuizVinicius;
 
+
 //CategoriaProdutos(int idCategoria, String categoria, String descricaoCat)
-1;1; Como cuidar do seu melhor amigo: Dicas infalíveis para cuidar melhor do seu pet.
-2;2; Seja seu próprio MasterChef: E-books que irão revolucionar a sua experiência na cozinha;
-3;3; Casa Brilhante: Transforme a limpeza da sua casa.;
-4;4; Assuma a Pereirão que existe dentro de você: Descomplique as manutenções domesticas e ganhe sua liberdade de verdade!;
+1;Cuidando do Seu Pet Sem Matar Ele; Como cuidar do seu melhor amigo: Dicas infalíveis para cuidar melhor do seu pet.
+2;Culinária para Sobreviver; Seja seu próprio MasterChef: E-books que irão revolucionar a sua experiência na cozinha;
+3;Limpando Sua Bagunça; Casa Brilhante: Transforme a limpeza da sua casa.;
+4;Manutenção Básica para a Casa Não Cair; Assuma a Pereirão que existe dentro de você: Descomplique as manutenções domesticas e ganhe sua liberdade de verdade!;
+
+Carrinho(int id, int fkProduto, int fkCliente)
+
+
+CarrinhoProduto(int idCarrinhoProduto, int fkCarrinho, int fkProduto)
+
+
+HistoricoCompra(int id, int fkProduto, int fkcliente, int fkpagamento, String idPedido, Cliente usuario, Produto listadeproduto, String status)
+
+
+Pagamento(int id, int fkProduto, int fkCliente, TiposPagamento metodoPagamento, BigDecimal valor, int parcela)
+
+

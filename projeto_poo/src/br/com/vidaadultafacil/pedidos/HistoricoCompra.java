@@ -1,65 +1,71 @@
 package br.com.vidaadultafacil.pedidos;
 
-import br.com.vidaadultafacil.tela_inicial.Produto;
 import br.com.vidaadultafacil.usuarios.Cliente;
 
 public class HistoricoCompra {
-		
-		// Chave primária
-		private int id;
-	
-		// Identificação do pedido
-		String idPedido;
-		
-		// Usuário que realizou o pedido
-		Cliente usuario;
-		
-		// Lista de produtos comprados
-		Produto listadeproduto;
-		
-		// Status atual do pedido (ex: "em processamento", "entregue")
-		String status;
 
-		public String getIdPedido() {
-			return idPedido;
-		}
+	// Chave primária
+	private int id;	
 
-		public void setIdPedido(String idPedido) {
-			this.idPedido = idPedido;
-		}
+	// Chave Estrangeira
+	private int fkProduto;
+	private int fkCliente;
+	private int fkPagamento;
 
-		public Cliente getUsuario() {
-			return usuario;
-		}
+	// Identificação do pedido
+	int idPedido;
 
-		public void setUsuario(Cliente usuario) {
-			this.usuario = usuario;
-		}
+	// Usuário que realizou o pedido
+	Cliente usuario;
 
-		public Produto getListadeproduto() {
-			return listadeproduto;
-		}
+	public HistoricoCompra(int id, int fkProduto, int fkCliente, int fkPagamento, int idPedido, Cliente usuario) {
+		this.id = id;
+		this.fkProduto = fkProduto;
+		this.fkCliente = fkCliente;
+		this.fkPagamento = fkPagamento;
+		this.idPedido = idPedido;
+		this.usuario = usuario;
+	}
 
-		public void setListadeproduto(Produto listadeproduto) {
-			this.listadeproduto = listadeproduto;
-		}
+	public int getIdPedido() {
+		return idPedido;
+	}
 
-		public String getStatus() {
-			return status;
-		}
+	public void setIdPedido(int idPedido) {
+		this.idPedido = idPedido;
+	}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
+	public Cliente getUsuario() {
+		return usuario;
+	}
 
-		public int getIdHistCompra() {
-			return id;
-		}
+	public void setUsuario(Cliente usuario) {
+		this.usuario = usuario;
+	}
 
-		public void setIdHistCompra(int id) {
-			this.id = id;
-		}
-	
-		
+	public int getIdHistCompra() {
+		return id;
+	}
+
+	public void setIdHistCompra(int id) {
+		this.id = id;
+	}
+
+	public int getFkProduto() {
+		return fkProduto;
+	}
+
+	public int getFkCliente() {
+		return fkCliente;
+	}
+
+	public int getFkPagamento() {
+		return fkPagamento;
+	}
+
+	@Override
+	public String toString() {
+		return "HistoricoCompra [id=" + id + ", fkProduto=" + fkProduto + ", fkcliente=" + fkCliente + ", fkpagamento="
+				+ fkPagamento + ", idPedido=" + idPedido + ", usuario=" + usuario + ", listadeproduto=" +"]";
+	}
 }
-

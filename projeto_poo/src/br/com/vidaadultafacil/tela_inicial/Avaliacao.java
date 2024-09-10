@@ -4,7 +4,8 @@ import br.com.vidaadultafacil.usuarios.Cliente;
 
 public class Avaliacao{
 		// Chave primária
-		private int fk_Produto;
+		private int fkProduto;
+		private int id;
 		
 		double nota;				
 		String comentario;								
@@ -13,8 +14,8 @@ public class Avaliacao{
 		public Avaliacao() { 
 		}	
 		
-		public Avaliacao(int fk_Produto, double nota, String comentario, Cliente usuario) {
-			this.fk_Produto = fk_Produto;
+		public Avaliacao(int fkProduto, double nota, String comentario, Cliente usuario) {
+			this.fkProduto = fkProduto;
 			this.nota = nota;
 			this.comentario = comentario;
 			this.usuario = usuario;
@@ -30,12 +31,22 @@ public class Avaliacao{
 			return usuario;
 		}
 
-		public int getfk_Produto() {
-			return fk_Produto;
+		public int getFkProduto() {
+			return fkProduto;
 		}
 
-		public void setFk_Produto(int fk_Produto) {
-			this.fk_Produto = fk_Produto;
+		public void setFkProduto(int fkProduto) {
+			this.fkProduto = fkProduto;
+		}
+
+		public int getId() {
+			return id;
+		}
+
+		@Override
+		public String toString() {
+			return "Avaliacao [fkProduto=" + fkProduto + ", id=" + id + ", nota=" + nota + ", comentario=" + comentario
+					+ ", usuario=" + usuario + "]";
 		}	
 		
 }

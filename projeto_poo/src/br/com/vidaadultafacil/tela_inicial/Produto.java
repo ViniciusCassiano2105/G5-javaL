@@ -2,12 +2,11 @@ package br.com.vidaadultafacil.tela_inicial;
 
 import java.math.BigDecimal;
 
-public class Produto{
+public class Produto {
 
 	// Chave primária
 	private int idProduto;
-	private int fk_Categoria;
-	
+
 	public String nome = "";
 	public String descricaoProd = "";
 	public String autor = "";
@@ -17,9 +16,8 @@ public class Produto{
 	public Produto() {
 	}
 
-	public Produto(int idProduto, int fk_Categoria, String nome, String descricaoProd, String autor, BigDecimal preco, int duracao) {
+	public Produto(int idProduto, int fkCategoria, String nome, String descricaoProd, String autor, BigDecimal preco, int duracao) {
 		this.idProduto = idProduto;
-		this.fk_Categoria = fk_Categoria;
 		this.nome = nome;
 		this.descricaoProd = descricaoProd;
 		this.autor = autor;
@@ -74,18 +72,14 @@ public class Produto{
 	public void setId(int idProduto) {
 		this.idProduto = idProduto;
 	}
-	
-	public int getFkCategoria() {
-		return fk_Categoria;
-	}
 
-	public void setFkCategoria(int fk_Categoria) {
-		this.fk_Categoria = fk_Categoria;
-	}
 
-	//Método para listar todos os produtos cadastrados
+	@Override
 	public String toString() {
-        return "Produto" + "nome: " + nome + "\n" + "preco: " + preco + "\n" +"Descrição do Produto: " + descricaoProd + "" + "Autor: " + autor + "\n" + "Duração: " + duracao + "\n";
-    }
+		return "Produto [idProduto=" + idProduto + ", fkCategoria=" +  ", nome=" + nome
+				+ ", descricaoProd=" + descricaoProd + ", autor=" + autor + ", preco=" + preco + ", duracao=" + duracao
+				+ "]";
+	}
+	
 
 }

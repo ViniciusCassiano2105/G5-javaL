@@ -4,7 +4,9 @@ package br.com.vidaadultafacil.tela_inicial;
 public class CategoriaProdutos {
 		
 	// Chave primária
-	private int id_Categoria;
+	private int id;
+	
+	private int fkProduto;
 	
 	String categoria = "";
 	String descricaoCat = "";
@@ -13,8 +15,8 @@ public class CategoriaProdutos {
 	public CategoriaProdutos() {
 	}
 
-	public CategoriaProdutos(int id_Categoria, String categoria, String descricaoCat) {
-		this.id_Categoria = id_Categoria;
+	public CategoriaProdutos(int idCategoria, String categoria, String descricaoCat) {
+		this.id = idCategoria;
 		this.categoria = categoria;
 		this.descricaoCat = descricaoCat;
 	}
@@ -44,11 +46,22 @@ public class CategoriaProdutos {
 	}
 
 	public int getIdCategoria() {
-		return id_Categoria;
+		return id;
 	}
 
-	public void setIdCategoria(int id_Categoria) {
-		this.id_Categoria = id_Categoria;
+	public void setIdCategoria(int idCategoria) {
+		this.id = idCategoria;
 	}
+
+	public int getFkProduto() {
+		return fkProduto;
+	}
+	
+	@Override
+	public String toString() {
+		return "CategoriaProdutos [idCategoria=" + id + ", categoria=" + categoria + ", descricaoCat="
+				+ descricaoCat + ", catProd=" + catProd + "]";
+	}
+
 	
 }
