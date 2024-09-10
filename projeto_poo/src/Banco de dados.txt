@@ -31,15 +31,26 @@ Lucas Schumacker;Schumacker@gmail.com;ferrari123;21956677889;true;
 3;Limpando Sua Bagunça; Casa Brilhante: Transforme a limpeza da sua casa.;
 4;Manutenção Básica para a Casa Não Cair; Assuma a Pereirão que existe dentro de você: Descomplique as manutenções domesticas e ganhe sua liberdade de verdade!;
 
-Carrinho(int id, int fkProduto, int fkCliente)
-
+Carrinho(int id, int fkCliente)
+1;1
+2;2
+3;3
+4;4
 
 CarrinhoProduto(int idCarrinhoProduto, int fkCarrinho, int fkProduto)
+1;1;2
+2;2;4
+3;3;1
+4;4;3
 
+HistoricoCompra(int id, int fkProduto, int fkcliente, int fkpagamento, String idPedido)
+1;2;2;1;1
+2;4;4;2;2
+3;1;1;3;3
+4;3;3;4;4
 
-HistoricoCompra(int id, int fkProduto, int fkcliente, int fkpagamento, String idPedido, Cliente usuario, Produto listadeproduto, String status)
-
-
-Pagamento(int id, int fkProduto, int fkCliente, TiposPagamento metodoPagamento, BigDecimal valor, int parcela)
-
-
+Pagamento(int id, int fkProduto, int fkCliente, TiposPagamento, metodoPagamento, BigDecimal valor, int parcela)
+1;1;2;2;26.90;3
+2;4;4;1;23.90;0
+3;1;1;2;29.90;2
+4;3;3;3;21.90;0
