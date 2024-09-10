@@ -13,6 +13,12 @@ public class Suporte {
 	// Mensagem enviada pelo usuário solicitando suporte
 	String mensagem;
 
+	public Suporte(int id, Cliente usuario, String mensagem) {
+		this.id = id;
+		this.usuario = usuario;
+		this.mensagem = mensagem;
+	}
+
 	public String getMensagem() {
 		return mensagem;
 	}
