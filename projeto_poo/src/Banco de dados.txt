@@ -1,22 +1,31 @@
-//Cliente(int fk_id_usuario, String nome, String email, String senha, String telefone, String cpf)
+//Cliente(int fkidusuario, String nome, String email, String senha, String telefone, String cpf)
 1;Lucas Cardinot;lucascardinot@gmail.com;coxinha123;21901122334;111.111.111-11;
 2;Leticia;leticia@gmail.com;caipirinha123;21912233445;222.222.222-22;
 3;Lucas Sarasa;lucassarasa@gmail.com;churrasquinho123;21923344556;333.333.333-33;
 4;LuizVinicius;LuizVinicius@gmail.com;vinicin123;21989975462;888.888.888-88;
 
-//Administrador(int fk_id_usuario, String nome, String email, String senha, String telefone, boolean isAdmin)
+
+//Administrador(int fkidusuario, String nome, String email, String senha, String telefone, boolean isAdmin)
 5;Lorrayne;lorrayne@gmail.com;gatinho123;21934455667;555.555.555-55;
 6;Luan;luan@gmail.com;cervejinha123;21945566778;666.666.666-66;
 7;Lucas Schumacker;Schumacker@gmail.com;ferrari123;21956677889;777.777.777-77;
 
-//Produto(int idProduto, int fk_Categoria, String nome, String descricaoProd, String autor, BigDecimal preco, int duracao)
+
+//Produto(int idProduto, int fkCategoria, String nome, String descricaoProd, String autor, BigDecimal preco, int duracao)
 1;1;Meu Gato Não é um Chef: Por Que Pizza Não é Alimento de Pet;O Sofá Sobreviveu! Técnicas Ninja para Evitar o Apocalipse Canino;Dr. Pet Ponto;29.90;45;
 2;2;Como Não Explodir a Cozinha: Cozinhando Arroz sem Acionar os Bombeiros;Técnicas infalíveis para evitar desastres culinários e manter a casa de pé.;Cozinheira Sem Medo;26.90;35;
 3;3;Isso Tinha que Ser Limpo? Lugares que Você Nunca Soube que Estavam Sujos;Descubra os cantos escondidos onde a sujeira se esconde e surpreenda-se (ou não).;Detetive da Poeira;21.90;30;
 4;4;Lâmpada Queimada? Como Trocar Sem Virar a Piada do Grupo de Amigos;Passo a passo para trocar lâmpadas sem drama e impressionar até quem acha que você só queima o arroz.;Eletricista Descomplicado;23.90;30;
 
-//Avaliacao(int fk_Produto, double nota, String comentario, Cliente usuario)
+
+//Avaliacao(int fkProduto, double nota, String comentario, Cliente usuario)
 1;4.5;Adorei o curso! As dicas são práticas e o autor tem um jeito bem engraçado de explicar. Meu gato agora está mais saudável e eu me sinto mais confiante em cuidar dele!; Lucas Cardinot;
 2;4.8;Finalmente aprendi a cozinhar arroz sem fazer um desastre! As instruções são claras e a parte sobre como evitar o queimado foi um verdadeiro salva-vidas.;Leticia;
 3;4.5;Esse curso abriu meus olhos para áreas da casa que eu nunca tinha notado. A limpeza dessas partes fez uma grande diferença no geral. Recomendo para quem quer um ambiente realmente limpo!;Lucas Sarasa;
 4;4.4;As instruções são simples e diretas. Agora eu posso trocar as lâmpadas sozinha sem precisar pedir ajuda a cada vez. Ótimo curso para quem quer ser mais independente!;LuizVinicius;
+
+//CategoriaProdutos(int idCategoria, String categoria, String descricaoCat)
+1;1; Como cuidar do seu melhor amigo: Dicas infalíveis para cuidar melhor do seu pet.
+2;2; Seja seu próprio MasterChef: E-books que irão revolucionar a sua experiência na cozinha;
+3;3; Casa Brilhante: Transforme a limpeza da sua casa.;
+4;4; Assuma a Pereirão que existe dentro de você: Descomplique as manutenções domesticas e ganhe sua liberdade de verdade!;
