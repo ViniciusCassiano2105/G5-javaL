@@ -25,3 +25,9 @@
 2;4.8;Finalmente aprendi a cozinhar arroz sem fazer um desastre! As instruções são claras e a parte sobre como evitar o queimado foi um verdadeiro salva-vidas.;Leticia;
 3;4.5;Esse curso abriu meus olhos para áreas da casa que eu nunca tinha notado. A limpeza dessas partes fez uma grande diferença no geral. Recomendo para quem quer um ambiente realmente limpo!;Lucas Sarasa;
 4;4.4;As instruções são simples e diretas. Agora eu posso trocar as lâmpadas sozinha sem precisar pedir ajuda a cada vez. Ótimo curso para quem quer ser mais independente!;LuizVinicius;
+
+//CategoriaProdutos(int idCategoria, String categoria, String descricaoCat)
+1;1; Como cuidar do seu melhor amigo: Dicas infalíveis para cuidar melhor do seu pet.
+2;2; Seja seu próprio MasterChef: E-books que irão revolucionar a sua experiência na cozinha;
+3;3; Casa Brilhante: Transforme a limpeza da sua casa.;
+4;4; Assuma a Pereirão que existe dentro de você: Descomplique as manutenções domesticas e ganhe sua liberdade de verdade!;
