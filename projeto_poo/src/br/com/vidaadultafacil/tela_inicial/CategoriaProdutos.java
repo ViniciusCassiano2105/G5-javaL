@@ -50,5 +50,11 @@ public class CategoriaProdutos {
 	public void setIdCategoria(int idCategoria) {
 		this.idCategoria = idCategoria;
 	}
+
+	@Override
+	public String toString() {
+		return "CategoriaProdutos [idCategoria=" + idCategoria + ", categoria=" + categoria + ", descricaoCat="
+				+ descricaoCat + ", catProd=" + catProd + "]";
+	}
 	
 }

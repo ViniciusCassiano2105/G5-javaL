@@ -11,5 +11,10 @@ public class RelatorioVenda {
 	public void setIdRelVenda(int id) {
 		this.id = id;
 	}
+
+	@Override
+	public String toString() {
+		return "RelatorioVenda [id=" + id + "]";
+	}
 	
 }

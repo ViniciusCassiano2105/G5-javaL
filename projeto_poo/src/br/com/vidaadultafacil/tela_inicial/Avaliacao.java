@@ -41,6 +41,12 @@ public class Avaliacao{
 
 		public int getId() {
 			return id;
+		}
+
+		@Override
+		public String toString() {
+			return "Avaliacao [fkProduto=" + fkProduto + ", id=" + id + ", nota=" + nota + ", comentario=" + comentario
+					+ ", usuario=" + usuario + "]";
 		}	
 		
 }

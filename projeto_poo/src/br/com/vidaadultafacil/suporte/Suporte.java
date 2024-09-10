@@ -36,5 +36,10 @@ public class Suporte {
 	public void setIdSuporte(int id) {
 		this.id = id;
 	}
+
+	@Override
+	public String toString() {
+		return "Suporte [id=" + id + ", usuario=" + usuario + ", mensagem=" + mensagem + "]";
+	}
 	
 }

@@ -23,6 +23,10 @@ public class RelatorioEstoque {
 		public void setIdRelEstoque(int id) {
 			this.id = id;
 		}
-		
-		
+
+		@Override
+		public String toString() {
+			return "RelatorioEstoque [id=" + id + ", quantidadeProdutos=" + quantidadeProdutos + "]";
+		}
+				
 }

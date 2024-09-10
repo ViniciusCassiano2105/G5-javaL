@@ -59,7 +59,13 @@ public class HistoricoCompra {
 		public void setIdHistCompra(int id) {
 			this.id = id;
 		}
-	
+
+		@Override
+		public String toString() {
+			return "HistoricoCompra [id=" + id + ", idPedido=" + idPedido + ", usuario=" + usuario + ", listadeproduto="
+					+ listadeproduto + ", status=" + status + "]";
+		}
 		
+	
 }
 

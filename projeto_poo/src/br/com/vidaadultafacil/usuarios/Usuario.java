@@ -3,56 +3,56 @@ package br.com.vidaadultafacil.usuarios;
 public class Usuario {
 	// Chave primária
 	protected int id;
-	
+
 	protected String nome;
 	protected String email;
 	protected String senha;
 	protected String telefone;
 
-    public Usuario() {
-    }
+	public Usuario() {
+	}
 
-    // Método Construtor
-    public Usuario(String nome, String email, String senha, String telefone) {
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
-        this.telefone = telefone;
-    }
+	// Método Construtor
+	public Usuario(String nome, String email, String senha, String telefone) {
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
+		this.telefone = telefone;
+	}
 
-    public String getNome() {
-        return nome;
-    }
+	public String getNome() {
+		return nome;
+	}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public String getSenha() {
-        return senha;
-    }
+	public String getSenha() {
+		return senha;
+	}
 
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 
-    public String getTelefone() {
-        return telefone;
-    }
+	public String getTelefone() {
+		return telefone;
+	}
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 
-    public int getIdUsuario() {
+	public int getIdUsuario() {
 		return id;
 	}
 
@@ -61,12 +61,8 @@ public class Usuario {
 	}
 
 	@Override
-    public String toString() {
-        return "Usuario{" +
-                ", nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", senha='" + senha + '\'' +
-                ", telefone='" + telefone + '\'' +
-                '}';
-    }
+	public String toString() {
+		return "Usuario{" + ", nome='" + nome + '\'' + ", email='" + email + '\'' + ", senha='" + senha + '\''
+				+ ", telefone='" + telefone + '\'' + '}';
+	}
 }

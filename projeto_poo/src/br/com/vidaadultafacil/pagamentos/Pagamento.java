@@ -48,5 +48,13 @@ public class Pagamento {
 		public void setIdPagamento(int id) {
 			this.id = id;
 		}
+
+		@Override
+		public String toString() {
+			return "Pagamento [id=" + id + ", metodoPagamento=" + metodoPagamento + ", valor=" + valor + ", parcela="
+					+ parcela + "]";
+		}
+		
 	}
+
 
