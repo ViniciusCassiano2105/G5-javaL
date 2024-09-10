@@ -6,7 +6,6 @@ public class Produto {
 
 	// Chave primária
 	private int idProduto;
-	private int fkCategoria;
 
 	public String nome = "";
 	public String descricaoProd = "";
@@ -20,7 +19,6 @@ public class Produto {
 	public Produto(int idProduto, int fkCategoria, String nome, String descricaoProd, String autor, BigDecimal preco,
 			int duracao) {
 		this.idProduto = idProduto;
-		this.fkCategoria = fkCategoria;
 		this.nome = nome;
 		this.descricaoProd = descricaoProd;
 		this.autor = autor;
@@ -76,17 +74,10 @@ public class Produto {
 		this.idProduto = idProduto;
 	}
 
-	public int getFkCategoria() {
-		return fkCategoria;
-	}
-
-	public void setFkCategoria(int fkCategoria) {
-		this.fkCategoria = fkCategoria;
-	}
 
 	@Override
 	public String toString() {
-		return "Produto [idProduto=" + idProduto + ", fkCategoria=" + fkCategoria + ", nome=" + nome
+		return "Produto [idProduto=" + idProduto + ", fkCategoria=" +  ", nome=" + nome
 				+ ", descricaoProd=" + descricaoProd + ", autor=" + autor + ", preco=" + preco + ", duracao=" + duracao
 				+ "]";
 	}

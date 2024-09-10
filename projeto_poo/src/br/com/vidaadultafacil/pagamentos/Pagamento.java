@@ -7,6 +7,10 @@ public class Pagamento {
 		// Chave primária
 		private int id;
 		
+		// Chave Estrangeira 
+		private int fkProduto;
+		private int fkcliente;
+		
 		// Método de pagamento utilizado (ex: "cartão de crédito", "boleto")
 		String metodoPagamento;
 		
@@ -49,11 +53,21 @@ public class Pagamento {
 			this.id = id;
 		}
 
+		public int getFkProduto() {
+			return fkProduto;
+		}
+		
+		public int getFkcliente() {
+			return fkcliente;
+		}
+		
 		@Override
 		public String toString() {
 			return "Pagamento [id=" + id + ", metodoPagamento=" + metodoPagamento + ", valor=" + valor + ", parcela="
 					+ parcela + "]";
 		}
+
+
 		
 	}
 
