@@ -10,7 +10,7 @@ public class Carrinho {
 	// Chave Estrangeira 
 	private int FkCliente;
 
-	public Carrinho(int id, int fkProduto, int fkCliente) {
+	public Carrinho(int id, int fkCliente) {
 		this.id = id;
 		this.FkCliente = fkCliente;
 	}

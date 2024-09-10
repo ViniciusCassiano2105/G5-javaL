@@ -18,13 +18,12 @@ public class HistoricoCompra {
 	// Usuário que realizou o pedido
 	Cliente usuario;
 
-	public HistoricoCompra(int id, int fkProduto, int fkCliente, int fkPagamento, int idPedido, Cliente usuario) {
+	public HistoricoCompra(int id, int fkProduto, int fkCliente, int fkPagamento, int idPedido) {
 		this.id = id;
 		this.fkProduto = fkProduto;
 		this.fkCliente = fkCliente;
 		this.fkPagamento = fkPagamento;
 		this.idPedido = idPedido;
-		this.usuario = usuario;
 	}
 
 	public int getIdPedido() {

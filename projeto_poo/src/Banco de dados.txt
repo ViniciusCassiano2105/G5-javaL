@@ -4,12 +4,10 @@ Leticia;leticia@gmail.com;caipirinha123;21912233445;222.222.222-22;
 Lucas Sarasa;lucassarasa@gmail.com;churrasquinho123;21923344556;333.333.333-33;
 LuizVinicius;LuizVinicius@gmail.com;vinicin123;21989975462;888.888.888-88;
 
-
 //Administrador(String nome, String email, String senha, String telefone, boolean isAdmin)
 Lorrayne;lorrayne@gmail.com;gatinho123;21934455667;true;
 Luan;luan@gmail.com;cervejinha123;21945566778;true;
 Lucas Schumacker;Schumacker@gmail.com;ferrari123;21956677889;true;
-
 
 //Produto(int idProduto, int fkCategoria, String nome, String descricaoProd, String autor, BigDecimal preco, int duracao)
 1;1;Meu Gato Não é um Chef: Por Que Pizza Não é Alimento de Pet;O Sofá Sobreviveu! Técnicas Ninja para Evitar o Apocalipse Canino;Dr. Pet Ponto;29.90;45;
@@ -17,13 +15,11 @@ Lucas Schumacker;Schumacker@gmail.com;ferrari123;21956677889;true;
 3;3;Isso Tinha que Ser Limpo? Lugares que Você Nunca Soube que Estavam Sujos;Descubra os cantos escondidos onde a sujeira se esconde e surpreenda-se (ou não).;Detetive da Poeira;21.90;30;
 4;4;Lâmpada Queimada? Como Trocar Sem Virar a Piada do Grupo de Amigos;Passo a passo para trocar lâmpadas sem drama e impressionar até quem acha que você só queima o arroz.;Eletricista Descomplicado;23.90;30;
 
-
 //Avaliacao(int fkProduto, double nota, String comentario, Cliente usuario)
-1;4.5;Adorei o curso! As dicas são práticas e o autor tem um jeito bem engraçado de explicar. Meu gato agora está mais saudável e eu me sinto mais confiante em cuidar dele!; Lucas Cardinot;
-2;4.8;Finalmente aprendi a cozinhar arroz sem fazer um desastre! As instruções são claras e a parte sobre como evitar o queimado foi um verdadeiro salva-vidas.;Leticia;
-3;4.5;Esse curso abriu meus olhos para áreas da casa que eu nunca tinha notado. A limpeza dessas partes fez uma grande diferença no geral. Recomendo para quem quer um ambiente realmente limpo!;Lucas Sarasa;
-4;4.4;As instruções são simples e diretas. Agora eu posso trocar as lâmpadas sozinha sem precisar pedir ajuda a cada vez. Ótimo curso para quem quer ser mais independente!;LuizVinicius;
-
+1;4.5;Adorei o curso! As dicas são práticas e o autor tem um jeito bem engraçado de explicar. Meu gato agora está mais saudável e eu me sinto mais confiante em cuidar dele!;1;
+2;4.8;Finalmente aprendi a cozinhar arroz sem fazer um desastre! As instruções são claras e a parte sobre como evitar o queimado foi um verdadeiro salva-vidas.;2;
+3;4.5;Esse curso abriu meus olhos para áreas da casa que eu nunca tinha notado. A limpeza dessas partes fez uma grande diferença no geral. Recomendo para quem quer um ambiente realmente limpo!;3;
+4;4.4;As instruções são simples e diretas. Agora eu posso trocar as lâmpadas sozinha sem precisar pedir ajuda a cada vez. Ótimo curso para quem quer ser mais independente!;4;
 
 //CategoriaProdutos(int idCategoria, String categoria, String descricaoCat)
 1;Cuidando do Seu Pet Sem Matar Ele; Como cuidar do seu melhor amigo: Dicas infalíveis para cuidar melhor do seu pet.
@@ -31,15 +27,32 @@ Lucas Schumacker;Schumacker@gmail.com;ferrari123;21956677889;true;
 3;Limpando Sua Bagunça; Casa Brilhante: Transforme a limpeza da sua casa.;
 4;Manutenção Básica para a Casa Não Cair; Assuma a Pereirão que existe dentro de você: Descomplique as manutenções domesticas e ganhe sua liberdade de verdade!;
 
-Carrinho(int id, int fkProduto, int fkCliente)
+Suporte(int id, Cliente usuario, String mensagem)
+1;1;Curso muito bom!
+2;2;Curso mais ou menos, não gostei muito!
+3;3;Poderia ser melhor apresentado!
+4;4;Esse curso me fez aprender muito!
 
+Carrinho(int id, int fkCliente)
+1;1
+2;2
+3;3
+4;4
 
 CarrinhoProduto(int idCarrinhoProduto, int fkCarrinho, int fkProduto)
+1;1;2
+2;2;4
+3;3;1
+4;4;3
 
-
-HistoricoCompra(int id, int fkProduto, int fkcliente, int fkpagamento, String idPedido, Cliente usuario, Produto listadeproduto, String status)
-
+HistoricoCompra(int id, int fkProduto, int fkcliente, int fkpagamento, int idPedido)
+1;2;2;1;1
+2;4;4;2;2
+3;1;1;3;3
+4;3;3;4;4
 
 Pagamento(int id, int fkProduto, int fkCliente, TiposPagamento metodoPagamento, BigDecimal valor, int parcela)
-
-
+1;1;2;2;26.90;3
+2;4;4;1;23.90;1
+3;1;1;2;29.90;2
+4;3;3;3;21.90;1
