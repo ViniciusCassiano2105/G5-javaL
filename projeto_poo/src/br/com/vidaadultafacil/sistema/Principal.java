@@ -2,9 +2,9 @@ package br.com.vidaadultafacil.sistema;
 
 import java.io.IOException;
 
+import br.com.vidaadultafacil.io.LeitorArquivo;
 import br.com.vidaadultafacil.usuarios.Administrador;
 import br.com.vidaadultafacil.usuarios.Cliente;
-import io.LeitorArquivo;
 
 public class Principal {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package io;
+package br.com.vidaadultafacil.io;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
