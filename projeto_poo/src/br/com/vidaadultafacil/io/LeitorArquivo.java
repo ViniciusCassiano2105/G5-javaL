@@ -14,15 +14,12 @@ public class LeitorArquivo{
 		public static void leitor(String path) throws IOException {
 			System.out.println("Working Directory = " + System.getProperty("user.dir"));
 			BufferedReader buffRead = new BufferedReader(new FileReader(PATH_BASICO + path + EXTENSAO));
-			String linha = "";
-			while (true) {
-				linha = buffRead.readLine();
-				if (linha != null) {
-					Util.setupLogger().log(Level.INFO, linha);
-				} else {
-					break;
-				}
+			String linha;
+			
+			while (((linha = buffRead.readLine()) != null)) {
+				Util.setupLogger().log(Level.INFO, linha);
 			}
+
 			buffRead.close();
 		}
 	}

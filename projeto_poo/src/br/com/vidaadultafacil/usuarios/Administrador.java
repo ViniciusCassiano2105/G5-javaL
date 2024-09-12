@@ -22,6 +22,10 @@ public class Administrador extends Usuario {
 		return id;
 	}
 
+	public String toDbLine() {
+		return String.format("Administrador;%s;%s\n", this.nome, this.email, this.senha, this.telefone, this.isAdmin);
+	}
+
 	public String toString() {
 		return "Admin{" + "nome='" + getNome() + '\'' + ", email='" + getEmail() + '\'' + ", isAdmin=" + isAdmin + '}';
 	}

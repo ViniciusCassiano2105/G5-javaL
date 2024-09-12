@@ -1,30 +1,45 @@
 package br.com.vidaadultafacil.sistema;
 
+import br.com.vidaadultafacil.usuarios.Cliente;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-
 import java.util.Scanner;
-import java.util.logging.Level;
-
-import br.com.aula_poo.utils.Util;
 
 public class Relatorio {
 	
-	static final String PATH_BASICO = "./projeto_poo/temp/";
-	public static void escritor(String path) throws IOException {
+	static final String PATH_BASICO = "src/temp/";
+	public static void write(String file, Class<?> tClass) {
 
-		Scanner sc = new Scanner(System.in);
-		Util.setupLogger().log(Level.INFO, "Escreva o nome do arquivo: ");
-		String nome = sc.next();
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(PATH_BASICO + file, true))) {
 
-		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + nome + path));
-		String linha = "";
+            Scanner sc = new Scanner(System.in);
 
-		Util.setupLogger().log(Level.INFO, "Escreva algo:");
-		linha = sc.nextLine();
-		buffWrite.append(linha + "\n");
-		buffWrite.close();
-	
+            switch (tClass.getSimpleName()) {
+                case "Cliente":
+                    System.out.println("Digite o nome do usuário: ");
+                    String nome = sc.next();
+                    System.out.println("Digite o email do usuário");
+                    String email = sc.next();
+					System.out.println("Digite a senha do usuário");
+					String senha = sc.next();
+					System.out.println("Digite o telefone do usuário");
+					String telefone = sc.next();
+					System.out.println("Digite o cpf do usuário");
+					String cpf = sc.next();
+                    Cliente cliente = new Cliente(nome, email, senha, telefone, cpf);
+                    cliente.setNome(nome);
+                    cliente.setEmail(email);
+					cliente.setSenha(senha);
+					cliente.setTelefone(telefone);
+					cliente.setCpf(cpf);
+                    writer.write(cliente.toDbLine());
+                    break;
+                case "Admin":
+                    break;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 }
