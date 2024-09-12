@@ -1,15 +1,14 @@
 package br.com.vidaadultafacil.io;
 
+import br.com.aula_poo.utils.Util;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.logging.Level;
 
-import br.com.aula_poo.utils.Util;
-
 public class LeitorArquivo{
 
-		static final String PATH_BASICO = "./temp/";
+		static final String PATH_BASICO = "src/temp/";
 		static final String EXTENSAO = ".txt";
 
 		public static void leitor(String path) throws IOException {
