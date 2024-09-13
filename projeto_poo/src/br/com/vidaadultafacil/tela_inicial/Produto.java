@@ -1,23 +1,26 @@
 package br.com.vidaadultafacil.tela_inicial;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Produto {
 
     // Chave primária
-    private int idProduto;
+    private int id;
 
     public String nome = "";
     public String descricaoProd = "";
     public String autor = "";
     public BigDecimal preco;
     public int duracao;
-
+    private static final Map<Integer, Produto> produtos = new HashMap();
+    
     public Produto() {
     }
 
-    public Produto(int idProduto, int fkCategoria, String nome, String descricaoProd, String autor, BigDecimal preco, int duracao) {
-        this.idProduto = idProduto;
+    public Produto(int id, int fkCategoria, String nome, String descricaoProd, String autor, BigDecimal preco, int duracao) {
+        this.id = id;
         this.nome = nome;
         this.descricaoProd = descricaoProd;
         this.autor = autor;
@@ -25,6 +28,15 @@ public class Produto {
         this.duracao = duracao;
     }
 
+    public Produto(int fkCategoria, String nome, String descricaoProd, String autor, BigDecimal preco, int duracao) {
+        this.id = produtos.size() + 1;
+        this.nome = nome;
+        this.descricaoProd = descricaoProd;
+        this.autor = autor;
+        this.preco = preco;
+        this.duracao = duracao;
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -82,18 +94,21 @@ public class Produto {
         this.duracao = duracao;
     }
 
-    public int getIdProduto() {
-        return idProduto;
+    public int getId() {
+        return id;
     }
 
-    public void setId(int idProduto) {
-        this.idProduto = idProduto;
+    public void setId(int id) {
+        this.id = id;
     }
 
-
+    public static Map<Integer, Produto> getMapProdutos() {
+        return produtos;
+    }
+    
     @Override
     public String toString() {
-        return "Produto [idProduto=" + idProduto + ", fkCategoria=" +  ", nome=" + nome
+        return "Produto [idProduto=" + id + ", fkCategoria=" +  ", nome=" + nome
                 + ", descricaoProd=" + descricaoProd + ", autor=" + autor + ", preco=" + preco + ", duracao=" + duracao
                 + "]";
     }
