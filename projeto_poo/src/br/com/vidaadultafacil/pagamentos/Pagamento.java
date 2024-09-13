@@ -1,6 +1,8 @@
 package br.com.vidaadultafacil.pagamentos;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Pagamento {
 
@@ -20,6 +22,9 @@ public class Pagamento {
     // Quantidade de parcelas do pagamento
     private int parcelas;
 
+    //Map
+    private static final Map<Integer, Pagamento> pagamentos = new HashMap<>();
+
     // Construtor
     public Pagamento(int id, int fkProduto, int fkCliente, TiposPagamento metodoPagamento, BigDecimal valor, int parcelas) {
         this.id = id;
@@ -37,6 +42,24 @@ public class Pagamento {
         }
         this.parcelas = parcelas;
     }
+
+    public Pagamento(int fkProduto, int fkCliente, TiposPagamento metodoPagamento, BigDecimal valor, int parcelas) {
+        this.id = pagamentos.size() + 1;
+        this.fkProduto = fkProduto;
+        this.fkCliente = fkCliente;
+        this.metodoPagamento = metodoPagamento;
+       
+        if (valor.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new IllegalArgumentException("O valor do pagamento deve ser maior que zero.");
+        }
+        this.valor = valor;
+
+        if (parcelas <= 0) {
+            throw new IllegalArgumentException("A quantidade de parcelas deve ser maior que zero.");
+        }
+        this.parcelas = parcelas;
+    }
+
 
     // Get e Set
     public TiposPagamento getMetodoPagamento() {
@@ -91,6 +114,10 @@ public class Pagamento {
 
     public void setFkCliente(int fkCliente) {
         this.fkCliente = fkCliente;
+    }
+
+    public static Map<Integer, Pagamento> getPagamentos() {
+        return pagamentos;
     }
 
     // Sobrescrita

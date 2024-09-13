@@ -1,5 +1,7 @@
 package br.com.vidaadultafacil.pedidos;
 
+import java.util.HashMap;
+import java.util.Map;
 import br.com.vidaadultafacil.usuarios.Cliente;
 
 public class HistoricoCompra {
@@ -17,9 +19,19 @@ public class HistoricoCompra {
 
 	// Usuário que realizou o pedido
 	Cliente usuario;
+	//Map
+	private static final Map<Integer, HistoricoCompra> historicoCompras = new HashMap<>();
 
 	public HistoricoCompra(int id, int fkProduto, int fkCliente, int fkPagamento, int idPedido) {
 		this.id = id;
+		this.fkProduto = fkProduto;
+		this.fkCliente = fkCliente;
+		this.fkPagamento = fkPagamento;
+		this.idPedido = idPedido;
+	}
+
+		public HistoricoCompra(int fkProduto, int fkCliente, int fkPagamento, int idPedido) {
+		this.id = historicoCompras.size() + 1;
 		this.fkProduto = fkProduto;
 		this.fkCliente = fkCliente;
 		this.fkPagamento = fkPagamento;
@@ -60,6 +72,10 @@ public class HistoricoCompra {
 
 	public int getFkPagamento() {
 		return fkPagamento;
+	}
+
+	public static Map<Integer, HistoricoCompra> getHistoricoCompras() {
+		return historicoCompras;
 	}
 
 	@Override
