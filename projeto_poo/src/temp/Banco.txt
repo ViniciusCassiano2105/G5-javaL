@@ -5,37 +5,37 @@ Cliente;4;LuizVinicius;LuizVinicius@gmail.com;vinicin123;21989975462;888.888.888
 Administrador;1;Lorrayne;lorrayne@gmail.com;gatinho123;21934455667;true;
 Administrador;2;Luan;luan@gmail.com;cervejinha123;21945566778;true;
 Administrador;3;Lucas Schumacker;Schumacker@gmail.com;ferrari123;21956677889;true;
-Produto1;1;Meu Gato Não é um Chef: Por Que Pizza Não é Alimento de Pet;O Sofá Sobreviveu! Técnicas Ninja para Evitar o Apocalipse Canino;Dr. Pet Ponto;29.90;45;
-Produto2;2;Como Não Explodir a Cozinha: Cozinhando Arroz sem Acionar os Bombeiros;Técnicas infalíveis para evitar desastres culinários e manter a casa de pé.;Cozinheira Sem Medo;26.90;35;
-Produto3;3;Isso Tinha que Ser Limpo? Lugares que Você Nunca Soube que Estavam Sujos;Descubra os cantos escondidos onde a sujeira se esconde e surpreenda-se (ou não).;Detetive da Poeira;21.90;30;
-Produto4;4;Lâmpada Queimada? Como Trocar Sem Virar a Piada do Grupo de Amigos;Passo a passo para trocar lâmpadas sem drama e impressionar até quem acha que você só queima o arroz.;Eletricista Descomplicado;23.90;30;
-Avaliacao1;4.5;Adorei o curso! As dicas são práticas e o autor tem um jeito bem engraçado de explicar. Meu gato agora está mais saudável e eu me sinto mais confiante em cuidar dele!;1;
-Avaliacao2;4.8;Finalmente aprendi a cozinhar arroz sem fazer um desastre! As instruções são claras e a parte sobre como evitar o queimado foi um verdadeiro salva-vidas.;2;
-Avaliacao3;4.5;Esse curso abriu meus olhos para áreas da casa que eu nunca tinha notado. A limpeza dessas partes fez uma grande diferença no geral. Recomendo para quem quer um ambiente realmente limpo!;3;
-Avaliacao4;4.4;As instruções são simples e diretas. Agora eu posso trocar as lâmpadas sozinha sem precisar pedir ajuda a cada vez. Ótimo curso para quem quer ser mais independente!;4;
-CategoriaProdutos1;Cuidando do Seu Pet Sem Matar Ele; Como cuidar do seu melhor amigo: Dicas infalíveis para cuidar melhor do seu pet.
-CategoriaProdutos2;Culinária para Sobreviver; Seja seu próprio MasterChef: E-books que irão revolucionar a sua experiência na cozinha;
-CategoriaProdutos3;Limpando Sua Bagunça; Casa Brilhante: Transforme a limpeza da sua casa.;
-CategoriaProdutos4;Manutenção Básica para a Casa Não Cair; Assuma a Pereirão que existe dentro de você: Descomplique as manutenções domesticas e ganhe sua liberdade de verdade!;
-Suporte1;1;Curso muito bom!
-Suporte2;2;Curso mais ou menos, não gostei muito!
-Suporte3;3;Poderia ser melhor apresentado!
-Suporte4;4;Esse curso me fez aprender muito!
-Carrinho1;1
-Carrinho2;2
-Carrinho3;3
-Carrinho4;4
-CarrinhoProduto1;1;2
-CarrinhoProduto2;2;4
-CarrinhoProduto3;3;1
-CarrinhoProduto4;4;3
-HistoricoCompra1;2;2;1;1
-HistoricoCompra2;4;4;2;2
-HistoricoCompra3;1;1;3;3
-HistoricoCompra4;3;3;4;4
-Pagamento1;1;2;2;26.90;3
-Pagamento2;4;4;1;23.90;1
-Pagamento3;1;1;2;29.90;2
-Pagamento4;3;3;3;21.90;1
+Produto;1;1;Meu Gato Não é um Chef: Por Que Pizza Não é Alimento de Pet;O Sofá Sobreviveu! Técnicas Ninja para Evitar o Apocalipse Canino;Dr. Pet Ponto;29.90;45;
+Produto;2;2;Como Não Explodir a Cozinha: Cozinhando Arroz sem Acionar os Bombeiros;Técnicas infalíveis para evitar desastres culinários e manter a casa de pé.;Cozinheira Sem Medo;26.90;35;
+Produto;3;3;Isso Tinha que Ser Limpo? Lugares que Você Nunca Soube que Estavam Sujos;Descubra os cantos escondidos onde a sujeira se esconde e surpreenda-se (ou não).;Detetive da Poeira;21.90;30;
+Produto;4;4;Lâmpada Queimada? Como Trocar Sem Virar a Piada do Grupo de Amigos;Passo a passo para trocar lâmpadas sem drama e impressionar até quem acha que você só queima o arroz.;Eletricista Descomplicado;23.90;30;
+Avaliacao;1;4.5;Adorei o curso! As dicas são práticas e o autor tem um jeito bem engraçado de explicar. Meu gato agora está mais saudável e eu me sinto mais confiante em cuidar dele!;1;
+Avaliacao;2;4.8;Finalmente aprendi a cozinhar arroz sem fazer um desastre! As instruções são claras e a parte sobre como evitar o queimado foi um verdadeiro salva-vidas.;2;
+Avaliacao;3;4.5;Esse curso abriu meus olhos para áreas da casa que eu nunca tinha notado. A limpeza dessas partes fez uma grande diferença no geral. Recomendo para quem quer um ambiente realmente limpo!;3;
+Avaliacao;4;4.4;As instruções são simples e diretas. Agora eu posso trocar as lâmpadas sozinha sem precisar pedir ajuda a cada vez. Ótimo curso para quem quer ser mais independente!;4;
+CategoriaProdutos;1;Cuidando do Seu Pet Sem Matar Ele; Como cuidar do seu melhor amigo: Dicas infalíveis para cuidar melhor do seu pet.
+CategoriaProdutos;2;Culinária para Sobreviver; Seja seu próprio MasterChef: E-books que irão revolucionar a sua experiência na cozinha;
+CategoriaProdutos;3;Limpando Sua Bagunça; Casa Brilhante: Transforme a limpeza da sua casa.;
+CategoriaProdutos;4;Manutenção Básica para a Casa Não Cair; Assuma a Pereirão que existe dentro de você: Descomplique as manutenções domesticas e ganhe sua liberdade de verdade!;
+Suporte;1;1;Curso muito bom!
+Suporte;2;2;Curso mais ou menos, não gostei muito!
+Suporte;3;3;Poderia ser melhor apresentado!
+Suporte;4;4;Esse curso me fez aprender muito!
+Carrinho;1;1
+Carrinho;2;2
+Carrinho;3;3
+Carrinho;4;4
+CarrinhoProduto;1;1;2
+CarrinhoProduto;2;2;4
+CarrinhoProduto;3;3;1
+CarrinhoProduto;4;4;3
+HistoricoCompra;1;2;2;1;1
+HistoricoCompra;2;4;4;2;2
+HistoricoCompra;3;1;1;3;3
+HistoricoCompra;4;3;3;4;4
+Pagamento;1;1;2;2;26.90;3
+Pagamento;2;4;4;1;23.90;1
+Pagamento;3;1;1;2;29.90;2
+Pagamento;4;3;3;3;21.90;1
 Cliente;joao;joao@gmail.com;123918293;12312321;312312321
 Cliente;jkdasjkdsa;asdasdas;123123;31231231;11111111111
