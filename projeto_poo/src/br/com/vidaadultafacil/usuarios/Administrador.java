@@ -14,10 +14,6 @@ public class Administrador extends Usuario {
 		return isAdmin;
 	}
 
-	public void setAdmin(boolean admin) {
-		isAdmin = admin;
-	}
-
 	public int getId() {
 		return id;
 	}
