@@ -4,14 +4,9 @@ import br.com.vidaadultafacil.usuarios.Cliente;
 
 public class Suporte {
 
-	// Chave primária
-	private int id;
-	
-	// Usuário que enviou a mensagem de suporte
-	Cliente usuario;
-
-	// Mensagem enviada pelo usuário solicitando suporte
-	String mensagem;
+	private int id;		
+	private Cliente usuario;	
+	private String mensagem;
 
 	public Suporte(int id, Cliente usuario, String mensagem) {
 		this.id = id;
@@ -28,11 +23,19 @@ public class Suporte {
 	}
 
 	public void setMensagem(String mensagem) {
-		this.mensagem = mensagem;
+		if (mensagem != null && !mensagem.trim().isEmpty()) {
+			this.mensagem = mensagem;
+		} else {
+			System.out.println("Mensagem não pode ser vazia ou nula.");
+		}
 	}
 
 	public void setUsuario(Cliente usuario) {
-		this.usuario = usuario;
+		if (usuario != null) {
+			this.usuario = usuario;
+		} else {
+			System.out.println("Usuário não pode ser nulo.");
+		}
 	}
 
 	public int getIdSuporte() {
