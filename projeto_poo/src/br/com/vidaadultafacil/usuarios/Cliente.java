@@ -12,7 +12,11 @@ public class Cliente extends Usuario {
 	}
 
 	public void setCpf(String cpf) {
-		this.cpf = cpf;
+		if (cpf != null && cpf.length() == 11) {
+			this.cpf = cpf;
+		} else {
+			System.out.println("CPF deve conter 11 dígitos.");
+		}
 	}
 
 	public String getCpf() {
