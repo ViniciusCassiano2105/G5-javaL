@@ -3,6 +3,13 @@ import br.com.vidaadultafacil.tela_inicial.Produto;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import br.com.vidaadultafacil.tela_inicial.Produto;
+
 public class Carrinho {
 
     // Chave primária
@@ -13,9 +20,21 @@ public class Carrinho {
 
     // Lista de produtos no carrinho
     private List<Produto> produtos;
+    private static final Map<Integer, Carrinho> mapaCarrinho = new HashMap();
+    
+    public static Map<Integer, Carrinho> getMapCarrinho() {
+    	return mapaCarrinho;
+    }
+    
 
-    public Carrinho(int id, int fkCliente) {
+	public Carrinho(int id, int fkCliente) {
         this.id = id;
+        this.FkCliente = fkCliente;
+        this.produtos = new ArrayList<>(); // Inicializando a lista de produtos
+    }
+	
+	public Carrinho(int fkCliente) {
+        this.id = mapaCarrinho.size() + 1;
         this.FkCliente = fkCliente;
         this.produtos = new ArrayList<>(); // Inicializando a lista de produtos
     }
