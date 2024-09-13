@@ -8,11 +8,16 @@ import java.util.Scanner;
 
 public class Relatorio {
 	
-	static final String PATH_BASICO = "src/temp/";
+	static final String PATH_BASICO = "./temp/";
+    static final String EXTENSAO = ".txt";
 	public static void write(String file, Class<?> tClass) {
 
-		try (BufferedWriter writer = new BufferedWriter(new FileWriter(PATH_BASICO + file, true))) {
+        System.out.println("Working Directory = " + System.getProperty("user.dir"));
 
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(PATH_BASICO + file +EXTENSAO, true))) {
+
+
+           
             Scanner sc = new Scanner(System.in);
 
             switch (tClass.getSimpleName()) {

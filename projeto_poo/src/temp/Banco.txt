@@ -1,10 +1,10 @@
-Cliente1;Lucas Cardinot;lucascardinot@gmail.com;coxinha123;21901122334;111.111.111-11;
-Cliente2;Leticia;leticia@gmail.com;caipirinha123;21912233445;222.222.222-22;
-Cliente3;Lucas Sarasa;lucassarasa@gmail.com;churrasquinho123;21923344556;333.333.333-33;
-Cliente4;LuizVinicius;LuizVinicius@gmail.com;vinicin123;21989975462;888.888.888-88;
-Administrador1;Lorrayne;lorrayne@gmail.com;gatinho123;21934455667;true;
-Administrador2;Luan;luan@gmail.com;cervejinha123;21945566778;true;
-Administrador2;Lucas Schumacker;Schumacker@gmail.com;ferrari123;21956677889;true;
+Cliente;1;Lucas Cardinot;lucascardinot@gmail.com;coxinha123;21901122334;111.111.111-11;
+Cliente;2;Leticia;leticia@gmail.com;caipirinha123;21912233445;222.222.222-22;
+Cliente;3;Lucas Sarasa;lucassarasa@gmail.com;churrasquinho123;21923344556;333.333.333-33;
+Cliente;4;LuizVinicius;LuizVinicius@gmail.com;vinicin123;21989975462;888.888.888-88;
+Administrador;1;Lorrayne;lorrayne@gmail.com;gatinho123;21934455667;true;
+Administrador;2;Luan;luan@gmail.com;cervejinha123;21945566778;true;
+Administrador;3;Lucas Schumacker;Schumacker@gmail.com;ferrari123;21956677889;true;
 Produto1;1;Meu Gato Não é um Chef: Por Que Pizza Não é Alimento de Pet;O Sofá Sobreviveu! Técnicas Ninja para Evitar o Apocalipse Canino;Dr. Pet Ponto;29.90;45;
 Produto2;2;Como Não Explodir a Cozinha: Cozinhando Arroz sem Acionar os Bombeiros;Técnicas infalíveis para evitar desastres culinários e manter a casa de pé.;Cozinheira Sem Medo;26.90;35;
 Produto3;3;Isso Tinha que Ser Limpo? Lugares que Você Nunca Soube que Estavam Sujos;Descubra os cantos escondidos onde a sujeira se esconde e surpreenda-se (ou não).;Detetive da Poeira;21.90;30;
@@ -38,3 +38,4 @@ Pagamento2;4;4;1;23.90;1
 Pagamento3;1;1;2;29.90;2
 Pagamento4;3;3;3;21.90;1
 Cliente;joao;joao@gmail.com;123918293;12312321;312312321
+Cliente;jkdasjkdsa;asdasdas;123123;31231231;11111111111
