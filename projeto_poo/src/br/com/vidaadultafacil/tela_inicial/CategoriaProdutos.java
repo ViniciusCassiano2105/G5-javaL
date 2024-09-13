@@ -5,18 +5,17 @@ public class CategoriaProdutos {
 		
 	// Chave primária
 	private int id;
-	
+
 	private int fkProduto;
-	
-	String categoria = "";
-	String descricaoCat = "";
+	String categoria;
+	String descricaoCat;
 	public CategoriaProdutos catProd = new CategoriaProdutos();
 
 	public CategoriaProdutos() {
 	}
 
-	public CategoriaProdutos(int idCategoria, String categoria, String descricaoCat) {
-		this.id = idCategoria;
+	public CategoriaProdutos(int id, String categoria, String descricaoCat) {
+		this.id = id;
 		this.categoria = categoria;
 		this.descricaoCat = descricaoCat;
 	}
@@ -24,21 +23,29 @@ public class CategoriaProdutos {
 	public String getCategoria() {
 		return categoria;
 	}
+	
+	public void setCategoria(String categoria) {
+		if (categoria!=null && !categoria.trim().isEmpty()) {
+			this.categoria = categoria;			
+		} else {
+			System.out.println("A categoria não pode ser vazia ou nulo.");
+		}
+	}
 
 	public String getDescricaoCat() {
 		return descricaoCat;
 	}
 
+	public void setDescricaoCat(String descricaoCat) {
+		if(descricaoCat!=null && !descricaoCat.trim().isEmpty()){
+			this.descricaoCat = descricaoCat;
+		} else {
+			System.out.println("A descrição não pode ser vazia ou nulo.");
+		}
+	}
+
 	public CategoriaProdutos getCatProd(){
 		return catProd;
-	}
-
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
-
-	public void setDescricao(String descricaoCat) {
-		this.descricaoCat = descricaoCat;
 	}
 
 	public void setCatProd(CategoriaProdutos catProd) {
@@ -62,6 +69,4 @@ public class CategoriaProdutos {
 		return "CategoriaProdutos [idCategoria=" + id + ", categoria=" + categoria + ", descricaoCat="
 				+ descricaoCat + ", catProd=" + catProd + "]";
 	}
-
-	
 }
