@@ -1,7 +1,9 @@
 package br.com.vidaadultafacil.sistema;
 
-import br.com.vidaadultafacil.usuarios.Cliente;
 import java.util.Scanner;
+
+import br.com.vidaadultafacil.io.LeitorArquivo;
+import br.com.vidaadultafacil.usuarios.Cliente;
 
 
 public class Principal {
@@ -49,13 +51,6 @@ public class Principal {
 			default:
 				System.out.println("Opção inválida.");
 				break;
-		}
-
-		try {
-			LeitorArquivo.leitor("Banco");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 
 		sc.close();
