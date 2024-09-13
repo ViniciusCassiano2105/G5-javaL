@@ -4,74 +4,100 @@ import java.math.BigDecimal;
 
 public class Pagamento {
 
-		// Chave primária
-		private int id;
-		
-		// Chave Estrangeira 
-		private int fkProduto;
-		private int fkCliente;
-		
-		// Método de pagamento utilizado (ex: "cartão de crédito", "boleto")
-		TiposPagamento metodoPagamento;
-		
-		// Valor total do pagamento
-		BigDecimal valor;
-		
-		// Quantidade de parcelas do pagamento
-		int parcela;
+    // Chave primária
+    private int id;
+    
+    // Chaves estrangeiras
+    private int fkProduto;
+    private int fkCliente;
+    
+    // Método de pagamento utilizado (ex: "cartão de crédito", "boleto")
+    private TiposPagamento metodoPagamento;
+    
+    // Valor total do pagamento
+    private BigDecimal valor;
+    
+    // Quantidade de parcelas do pagamento
+    private int parcelas;
 
-		public Pagamento(int id, int fkProduto, int fkCliente, TiposPagamento metodoPagamento, BigDecimal valor, int parcela) {
-			this.id = id;
-			this.fkProduto = fkProduto;
-			this.fkCliente = fkCliente;
-			this.metodoPagamento = metodoPagamento;
-			this.valor = valor;
-			this.parcela = parcela;
-		}		
-		
-		public TiposPagamento getMetodoPagamento() {
-			return metodoPagamento;
-		}
-		
-		public BigDecimal getValor() {
-			return valor;
-		}
-		
-		public int getParcela() {
-			return parcela;
-		}
-		
-		public void setMetodoPagamento(TiposPagamento metodoPagamento) {
-			this.metodoPagamento = metodoPagamento;
-		}
-		
-		public void setValor(BigDecimal valor) {
-			this.valor = valor;
-		}
-		
-		public void setParcela(int parcela) {
-			this.parcela = parcela;
-		}
-		
-		public int getIdPagamento() {
-			return id;
-		}
-		
-		public void setIdPagamento(int id) {
-			this.id = id;
-		}
+    // Construtor
+    public Pagamento(int id, int fkProduto, int fkCliente, TiposPagamento metodoPagamento, BigDecimal valor, int parcelas) {
+        this.id = id;
+        this.fkProduto = fkProduto;
+        this.fkCliente = fkCliente;
+        this.metodoPagamento = metodoPagamento;
+       
+        if (valor.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new IllegalArgumentException("O valor do pagamento deve ser maior que zero.");
+        }
+        this.valor = valor;
 
-		public int getFkProduto() {
-			return fkProduto;
-		}
-		
-		public int getFkCliente() {
-			return fkCliente;
-		}
-		
-		@Override
-		public String toString() {
-			return "Pagamento [id=" + id + ", metodoPagamento=" + metodoPagamento + ", valor=" + valor + ", parcela="
-					+ parcela + "]";
-		}
-	}
+        if (parcelas <= 0) {
+            throw new IllegalArgumentException("A quantidade de parcelas deve ser maior que zero.");
+        }
+        this.parcelas = parcelas;
+    }
+
+    // Get e Set
+    public TiposPagamento getMetodoPagamento() {
+        return metodoPagamento;
+    }
+
+    public void setMetodoPagamento(TiposPagamento metodoPagamento) {
+        this.metodoPagamento = metodoPagamento;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public void setValor(BigDecimal valor) {
+        if (valor.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new IllegalArgumentException("O valor do pagamento deve ser maior que zero.");
+        }
+        this.valor = valor;
+    }
+
+    public int getParcelas() {
+        return parcelas;
+    }
+
+    public void setParcelas(int parcelas) {
+        if (parcelas <= 0) {
+            throw new IllegalArgumentException("A quantidade de parcelas deve ser maior que zero.");
+        }
+        this.parcelas = parcelas;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getFkProduto() {
+        return fkProduto;
+    }
+
+    public void setFkProduto(int fkProduto) {
+        this.fkProduto = fkProduto;
+    }
+
+    public int getFkCliente() {
+        return fkCliente;
+    }
+
+    public void setFkCliente(int fkCliente) {
+        this.fkCliente = fkCliente;
+    }
+
+    // Sobrescrita
+    @Override
+    public String toString() {
+        return "Pagamento [id=" + id + ", fkProduto=" + fkProduto + ", fkCliente=" + fkCliente 
+                + ", metodoPagamento=" + metodoPagamento + ", valor=" + valor 
+                + ", parcelas=" + parcelas + "]";
+    }
+}
