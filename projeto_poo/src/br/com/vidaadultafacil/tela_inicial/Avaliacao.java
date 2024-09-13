@@ -1,6 +1,6 @@
 package br.com.vidaadultafacil.tela_inicial;
-
-import br.com.vidaadultafacil.usuarios.Cliente;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Avaliacao {
     // Chave primária
@@ -10,11 +10,21 @@ public class Avaliacao {
     private double nota;
     private String comentario;
     private Cliente usuario;
+    private static final Map<Integer, Avaliacao> avaliacoes = new HashMap();
 
     public Avaliacao() { 
     }
 
+    public Avaliacao(int id ,int fkProduto, double nota, String comentario, Cliente usuario) {
+        this.id = id;
+    	this.fkProduto = fkProduto;
+        setNota(nota); 
+        setComentario(comentario); 
+        this.usuario = usuario;
+    }
+    
     public Avaliacao(int fkProduto, double nota, String comentario, Cliente usuario) {
+        this.id = avaliacoes.size() +1;
         this.fkProduto = fkProduto;
         setNota(nota); 
         setComentario(comentario); 
@@ -47,6 +57,10 @@ public class Avaliacao {
 
     public void setId(int id) {
         this.id = id;
+    }
+    
+    public static Map <Integer, Avaliacao> getMapAvaliacao() {
+    	return avaliacoes;
     }
 
     public void setNota(double nota) {
