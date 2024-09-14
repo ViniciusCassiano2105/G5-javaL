@@ -1,10 +1,12 @@
 package br.com.vidaadultafacil.io;
 
-import br.com.vidaadultafacil.usuarios.Administrador;
-import br.com.vidaadultafacil.usuarios.Cliente;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+
+import br.com.vidaadultafacil.pedidos.Carrinho;
+import br.com.vidaadultafacil.usuarios.Administrador;
+import br.com.vidaadultafacil.usuarios.Cliente;
 
 public class LeitorArquivo{
 
@@ -27,6 +29,9 @@ public class LeitorArquivo{
 						Administrador admin = new Administrador(Integer.parseInt(dados[1]), dados[2], dados[3], dados[4], dados[5], Boolean.parseBoolean(dados[6]));
 						Administrador.getMapAdmin().put(admin.getId(), admin);
 						break;
+					case "Carrinho":
+						Carrinho carrinho = new Carrinho(Integer.parseInt(dados[1]), Integer.parseInt(dados[2]));
+						Carrinho.getMapCarrinho().put(carrinho.getIdCarrinho(), carrinho);
 				}		
 			}
 		}
