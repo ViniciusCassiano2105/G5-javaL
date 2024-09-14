@@ -1,38 +1,43 @@
 package br.com.vidaadultafacil.sistema;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
-import br.com.vidaadultafacil.io.LeitorArquivo;
+import br.com.aula_poo.utils.Util;
 import br.com.vidaadultafacil.usuarios.Cliente;
 
 
 public class Principal {
-	public static void main(String[] args) {
+	
+	private static Logger logger = Logger.getLogger(Util.class.getName());
+
+	public static void main(String[] args) throws InterruptedException {
 		
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Bem vindo ao Vida Adulta Fácil!\n\n");
-
-		System.out.println("Você deseja acessar o sistema como cliente ou administrador?\n");
-		System.out.println("Digite 1 para cliente e 2 para administrador.");
+		logger.info("\n\t\t\t VIDA ADULTA FACIL\n\t\t\t-------------------\n\tTornando a vida independente descomplicada e acessível!\n");
+		logger.info("Digite como gostaria de ser chamado(a):");
+		String nome = sc.next();
+		String mensagemBemvindo = String.format("Bem vindo(a) %s você deseja acessar o sistema como CLIENTE ou ADMINISTRADOR?\n",nome);
+		logger.info(mensagemBemvindo);
+		logger.info("\n(1) CLIENTE\n(2) ADMINISTRADOR");
+		
 		int opcao = sc.nextInt();
 		
 		switch(opcao) {
 			case 1:
-
-				System.out.println("\n\nVocê escolheu acessar o sistema como cliente.\n");
-
-				System.out.println("Deseja se cadastrar ou acessar sua conta?\n\n");
-				System.out.println("Digite 1 para se cadastrar e 2 para acessar sua conta.");
+				logger.info("\n(1) Acessar sua conta\n(2) Cadastro");
 				int opcaoCliente = sc.nextInt();
 
 				switch (opcaoCliente) {
 					case 1:
-						System.out.println("\n\nVocê escolheu se cadastrar.\n");
+						logger.info("\nVocê escolheu acessar sua conta.\nAguarde");
+						Thread.sleep(6000);
 						Relatorio.write("Banco", Cliente.class);
 						break;
 					case 2:
-						System.out.println("\n\nVocê escolheu acessar sua conta.\n");
+						System.out.println("\n\nVocê escolheu se cadastrar.\nAguarde");
+						Thread.sleep(6000);
 						//continuacao de acesso a conta ...
 						//criar map para mostrar lista de produtos
 						break;
@@ -44,12 +49,12 @@ public class Principal {
 
 			case 2:
 
-				System.out.println("Você escolheu acessar o sistema como administrador.");
+				logger.info("Você escolheu acessar o sistema como administrador.");
 				//continuacao de acesso como administrador ...
 				break;
 
 			default:
-				System.out.println("Opção inválida.");
+				logger.info("Opção inválida.");
 				break;
 		}
 
