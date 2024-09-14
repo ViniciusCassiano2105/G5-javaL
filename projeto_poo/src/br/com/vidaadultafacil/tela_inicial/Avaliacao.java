@@ -2,6 +2,8 @@ package br.com.vidaadultafacil.tela_inicial;
 import java.util.HashMap;
 import java.util.Map;
 
+import br.com.vidaadultafacil.usuarios.Cliente;
+
 public class Avaliacao {
     // Chave primária
     private int fkProduto;
