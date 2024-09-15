@@ -36,8 +36,9 @@ public class LeitorArquivo{
 						break;
 					case "CarrinhoProduto":
 						CarrinhoProduto carrinhoProduto = new CarrinhoProduto(Integer.parseInt(dados[1]), Integer.parseInt(dados[2]),Integer.parseInt(dados[3]));
+						CarrinhoProduto.getMapCarrinhoProdutos().put(carrinhoProduto.getFKCarrinho(), carrinhoProduto);
 						break;
-						
+					case "HistoricoCompra":	
 				}		
 			}
 		}
