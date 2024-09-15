@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import br.com.vidaadultafacil.pedidos.Carrinho;
+import br.com.vidaadultafacil.pedidos.CarrinhoProduto;
 import br.com.vidaadultafacil.usuarios.Administrador;
 import br.com.vidaadultafacil.usuarios.Cliente;
 
@@ -32,6 +33,11 @@ public class LeitorArquivo{
 					case "Carrinho":
 						Carrinho carrinho = new Carrinho(Integer.parseInt(dados[1]), Integer.parseInt(dados[2]));
 						Carrinho.getMapCarrinho().put(carrinho.getIdCarrinho(), carrinho);
+						break;
+					case "CarrinhoProduto":
+						CarrinhoProduto carrinhoProduto = new CarrinhoProduto(Integer.parseInt(dados[1]), Integer.parseInt(dados[2]),Integer.parseInt(dados[3]));
+						break;
+						
 				}		
 			}
 		}
