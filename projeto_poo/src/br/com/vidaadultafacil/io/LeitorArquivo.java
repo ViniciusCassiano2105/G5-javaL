@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import br.com.vidaadultafacil.pedidos.Carrinho;
 import br.com.vidaadultafacil.pedidos.CarrinhoProduto;
+import br.com.vidaadultafacil.pedidos.HistoricoCompra;
 import br.com.vidaadultafacil.usuarios.Administrador;
 import br.com.vidaadultafacil.usuarios.Cliente;
 
@@ -39,6 +40,9 @@ public class LeitorArquivo{
 						CarrinhoProduto.getMapCarrinhoProdutos().put(carrinhoProduto.getFKCarrinho(), carrinhoProduto);
 						break;
 					case "HistoricoCompra":	
+						HistoricoCompra historico = new HistoricoCompra(Integer.parseInt(dados[1]), Integer.parseInt(dados[2]), Integer.parseInt(dados[3]), Integer.parseInt(dados[4]), Integer.parseInt(dados[5])); 
+						HistoricoCompra.getHistoricoCompras().put(historico.getIdHistCompra(), historico);
+                        break;
 				}		
 			}
 		}
