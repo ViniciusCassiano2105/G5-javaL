@@ -1,4 +1,5 @@
 package br.com.vidaadultafacil.pedidos;
+import br.com.aula_poo.utils.Util;
 import br.com.vidaadultafacil.tela_inicial.Produto;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,11 +8,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import br.com.vidaadultafacil.tela_inicial.Produto;
 
 public class Carrinho {
 
+	private static Logger logger = Logger.getLogger(Util.class.getName());
     // Chave primária
     private int id;
 
@@ -59,9 +62,9 @@ public class Carrinho {
     public void adicionarProduto(Produto produto) {
         if (produto != null) {
             produtos.add(produto);
-            System.out.println("Produto adicionado: " + produto.getNome());
+            logger.info("Produto adicionado: " + produto.getNome());
         } else {
-            System.out.println("Erro: Produto inválido.");
+        	logger.info("Erro: Produto inválido.");
         }
     }
 
@@ -69,19 +72,19 @@ public class Carrinho {
     public void removerProduto(Produto produto) {
         if (produtos.contains(produto)) {
             produtos.remove(produto);
-            System.out.println("Produto removido: " + produto.getNome());
+            logger.info("Produto removido: " + produto.getNome());
         } else {
-            System.out.println("Erro: Produto não está no carrinho.");
+        	logger.info("Erro: Produto não está no carrinho.");
         }
     }
 
     // Método para verificar se o carrinho está vazio
     public boolean isCarrinhoVazio() {
         if (produtos.isEmpty()) {
-            System.out.println("O carrinho está vazio.");
+        	logger.info("O carrinho está vazio.");
             return true;
         } else {
-            System.out.println("O carrinho tem produtos.");
+        	logger.info("O carrinho tem produtos.");
             return false;
         }
     }
