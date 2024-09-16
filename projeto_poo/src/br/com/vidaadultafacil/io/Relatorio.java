@@ -1,52 +1,72 @@
 package br.com.vidaadultafacil.io;
 
 import br.com.aula_poo.utils.Util;
-import br.com.vidaadultafacil.usuarios.Cliente;
+import br.com.vidaadultafacil.tela_inicial.Avaliacao;
+import br.com.vidaadultafacil.tela_inicial.Produto;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Map;
 import java.util.Scanner;
-import java.util.logging.Logger;
+import java.util.logging.Level;
 
 public class Relatorio {
-	private static Logger logger = Logger.getLogger(Util.class.getName());
-	static final String PATH_BASICO = "./temp/";
-    static final String EXTENSAO = ".txt";
-	public static void write(String file, Class<?> tClass) {
 
-        logger.info("Working Directory = " + System.getProperty("user.dir"));
+	public static void relatorioCliente(char op){
 
-		try (BufferedWriter writer = new BufferedWriter(new FileWriter(PATH_BASICO + file +EXTENSAO, true))) {
+        String nome = "relatorio_Cliente";
+		Scanner sc = new Scanner(System.in);
 
+        try {
+			BufferedWriter buffWrite = new BufferedWriter(new FileWriter(LeitorArquivo.PATH_BASICO + nome + LeitorArquivo.EXTENSAO, true));
 
-           
-            Scanner sc = new Scanner(System.in);
+				Util.setupLogger().log(Level.INFO, "\tMenu\n[P]Produtos\t[A]Avaliacoes\n");
+				char op2 = sc.next().charAt(0);
+				
+				if (op2 == 'P') {
+					Util.setupLogger().log(Level.INFO, "__________INICIO__________\n");
+					LocalDateTime data = LocalDateTime.now();
+					DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+					Util.setupLogger().log(Level.INFO, data.format(formato));
+					for (Map.Entry<Integer, Produto> prod : Produto.getMapProdutos().entrySet()) {
+						Util.setupLogger().log(Level.INFO, "\nNome do Produto: " + prod.getValue().getNome() + "\nDescricao do Produto: " + prod.getValue().getDescricaoProd() + "\nAutor: " + prod.getValue().getAutor() + "\nPreco: " + prod.getValue().getPreco() + "\nDuracao: " + prod.getValue().getDuracao() + "\n\n");
+					}
+					Util.setupLogger().log(Level.INFO, "\n__________FIM__________\n\n");
 
-            switch (tClass.getSimpleName()) {
-                case "Cliente":
-                	logger.info("Digite o nome do usuário: ");
-                    String nome = sc.next();
-                    logger.info("Digite o email do usuário");
-                    String email = sc.next();
-                    logger.info("Digite a senha do usuário");
-					String senha = sc.next();
-					logger.info("Digite o telefone do usuário");
-					String telefone = sc.next();
-					logger.info("Digite o cpf do usuário");
-					String cpf = sc.next();
-                    Cliente cliente = new Cliente(nome, email, senha, telefone, cpf);
-                    cliente.setNome(nome);
-                    cliente.setEmail(email);
-					cliente.setSenha(senha);
-					cliente.setTelefone(telefone);
-					cliente.setCpf(cpf);
-                    writer.write(cliente.toDbLine());
-                    break;
-                case "Admin":
-                    break;
+				} else if (op2 == 'A') {
+					Util.setupLogger().log(Level.INFO, "__________INICIO__________\n");
+					LocalDateTime data = LocalDateTime.now();
+					DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+					Util.setupLogger().log(Level.INFO, data.format(formato));
+					for(Map.Entry<Integer, Avaliacao> aval : Avaliacao.getMapAvaliacao().entrySet()) {
+						Util.setupLogger().log(Level.INFO, "\nNota: " + aval.getValue().getNota() + "\nComentario: " + aval.getValue().getComentario() + "\nUsuario: " + aval.getValue().getUsuario() + "\nProduto: " + aval.getValue().getFkProduto() + "\n\n");
+					}
+					Util.setupLogger().log(Level.INFO, "\n__________FIM__________\n\n");
+				}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+
+    public static void relatorioAdmin(char op){
+
+        String nome = "relatorio_admin";
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            BufferedWriter buffWrite = new BufferedWriter(new FileWriter(LeitorArquivo.PATH_BASICO + nome + LeitorArquivo.EXTENSAO, true));
+
+            if(op == 'T'){
+
+            } else if(op == 'I'){
+
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-	}
+    }	
 }
