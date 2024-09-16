@@ -15,7 +15,7 @@ public class Principal {
 		
 		Scanner sc = new Scanner(System.in);
 
-		logger.info("\n\t\t\t VIDA ADULTA FACIL\n\t\t\t-------------------\n\tTornando a vida independente descomplicada e acessível!\n");
+		logger.info("\n\t\t\t EASY ADULT LIFE\n\t\t\t-------------------\n\tTornando a vida independente descomplicada e acessível!\n");
 		logger.info("Digite como gostaria de ser chamado(a):");
 		String nome = sc.next();
 		String mensagemBemvindo = String.format("Bem vindo(a) %s você deseja acessar o sistema como CLIENTE ou ADMINISTRADOR?\n",nome);
