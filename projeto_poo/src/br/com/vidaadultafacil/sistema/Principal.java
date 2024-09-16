@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 import br.com.aula_poo.utils.Util;
+import br.com.vidaadultafacil.io.Relatorio;
 import br.com.vidaadultafacil.usuarios.Cliente;
 
 

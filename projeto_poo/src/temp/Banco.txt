@@ -39,3 +39,4 @@ Pagamento;3;1;1;2;29.90;2
 Pagamento;4;3;3;3;21.90;1
 Cliente;joao;joao@gmail.com;123918293;12312321;312312321
 Cliente;jkdasjkdsa;asdasdas;123123;31231231;11111111111
+Cliente;Lucas;Cardinot;coxinha123;21901122334;11111111111
