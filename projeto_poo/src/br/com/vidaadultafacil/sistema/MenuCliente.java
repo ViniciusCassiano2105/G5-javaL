@@ -1,7 +1,6 @@
 package br.com.vidaadultafacil.sistema;
 
 import br.com.aula_poo.utils.Util;
-import br.com.vidaadultafacil.io.Relatorio;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -28,7 +27,6 @@ public class MenuCliente {
 
 				switch (opcao2){
 					case 1:
-						Relatorio.relatorioCliente();
 						break;
 					case 2:
 						

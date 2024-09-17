@@ -15,46 +15,28 @@ import java.util.logging.Level;
 
 public class Relatorio {
 
-	public static void relatorioCliente(){
-
-        String nome = "Banco";
-        boolean verificador = true;
-		Scanner sc = new Scanner(System.in);
-
-        while (verificador == true) {
-            Util.setupLogger().log(Level.INFO, "Deseja visualizar os relatorios ou sair?\n[1]Visualizar\n[2]Sair\n");
-            char opcao = sc.next().charAt(0);
-
-            if(opcao == '2'){
-                verificador = false;
-            } else {
-        
-                    Util.setupLogger().log(Level.INFO, "\tMenu\n[P]Produtos\t[A]Avaliacoes\n");
-                    char op2 = sc.next().charAt(0);
+	public static void relatorioCliente(char op2) {
                         
-                    if (op2 == 'P') {
-                        Util.setupLogger().log(Level.INFO, "__________INICIO__________\n");
-                        LocalDateTime data = LocalDateTime.now();
-                        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-                        Util.setupLogger().log(Level.INFO, data.format(formato));
-                        for (Map.Entry<Integer, Produto> prod : Produto.getMapProdutos().entrySet()) {
-                            Util.setupLogger().log(Level.INFO, "\nNome do Produto: " + prod.getValue().getNome() + "\nDescricao do Produto: " + prod.getValue().getDescricaoProd() + "\nAutor: " + prod.getValue().getAutor() + "\nPreco: " + prod.getValue().getPreco() + "\nDuracao: " + prod.getValue().getDuracao() + "\n\n");
-                        }
-                           Util.setupLogger().log(Level.INFO, "\n__________FIM__________\n\n");
+        if (op2 == 'P') {
+            Util.setupLogger().log(Level.INFO, "__________INICIO__________\n");
+            LocalDateTime data = LocalDateTime.now();
+            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+            Util.setupLogger().log(Level.INFO, data.format(formato));
+            for (Map.Entry<Integer, Produto> prod : Produto.getMapProdutos().entrySet()) {
+                Util.setupLogger().log(Level.INFO, "\nNome do Produto: " + prod.getValue().getNome() + "\nDescricao do Produto: " + prod.getValue().getDescricaoProd() + "\nAutor: " + prod.getValue().getAutor() + "\nPreco: " + prod.getValue().getPreco() + "\nDuracao: " + prod.getValue().getDuracao() + "\n\n");
+            }
+                Util.setupLogger().log(Level.INFO, "\n__________FIM__________\n\n");
         
-                    } else if (op2 == 'A') {
-                        Util.setupLogger().log(Level.INFO, "__________INICIO__________\n");
-                        LocalDateTime data = LocalDateTime.now();
-                        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-                        Util.setupLogger().log(Level.INFO, data.format(formato));
-                        for(Map.Entry<Integer, Avaliacao> aval : Avaliacao.getMapAvaliacao().entrySet()) {
-                            Util.setupLogger().log(Level.INFO, "\nNota: " + aval.getValue().getNota() + "\nComentario: " + aval.getValue().getComentario() +  "\nProduto: " + aval.getValue().getFkProduto() + "\n\n");
-                        }
-                        Util.setupLogger().log(Level.INFO, "\n__________FIM__________\n\n");
-                    }
-                    verificador = true;
-                }
-        }       
+        } else if (op2 == 'A') {
+            Util.setupLogger().log(Level.INFO, "__________INICIO__________\n");
+            LocalDateTime data = LocalDateTime.now();
+            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+            Util.setupLogger().log(Level.INFO, data.format(formato));
+            for(Map.Entry<Integer, Avaliacao> aval : Avaliacao.getMapAvaliacao().entrySet()) {
+                Util.setupLogger().log(Level.INFO, "\nNota: " + aval.getValue().getNota() + "\nComentario: " + aval.getValue().getComentario() +  "\nProduto: " + aval.getValue().getFkProduto() + "\n\n");
+            }
+            Util.setupLogger().log(Level.INFO, "\n__________FIM__________\n\n");
+        }     
     }
 
     public static void relatorioAdmin(char op){

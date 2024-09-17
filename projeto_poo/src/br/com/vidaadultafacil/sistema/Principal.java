@@ -27,7 +27,7 @@ public class Principal {
 		logger.info("\n(1) CLIENTE\n(2) ADMINISTRADOR");
 		int opcao = sc.nextInt();
 
-		Relatorio.relatorioCliente();
+		Relatorio.relatorioCliente('P');
 
 		Relatorio.relatorioAdmin(op = 'T');
 
