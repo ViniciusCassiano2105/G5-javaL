@@ -21,37 +21,27 @@ public class HistoricoCompra {
 	Cliente usuario;
 	//Map
 	private static final Map<Integer, HistoricoCompra> historicoCompras = new HashMap<>();
+	
+	public HistoricoCompra() {
+		
+	}
 
-	public HistoricoCompra(int id, int fkProduto, int fkCliente, int fkPagamento, int idPedido) {
+	public HistoricoCompra(int id, int fkProduto, int fkCliente, int fkPagamento, int idPedido, Cliente usuario) {
+		super();
 		this.id = id;
 		this.fkProduto = fkProduto;
 		this.fkCliente = fkCliente;
 		this.fkPagamento = fkPagamento;
 		this.idPedido = idPedido;
-	}
-
-	public int getIdPedido() {
-		return idPedido;
-	}
-
-	public void setIdPedido(int idPedido) {
-		this.idPedido = idPedido;
-	}
-
-	public Cliente getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Cliente usuario) {
 		this.usuario = usuario;
 	}
 
-	public int getIdHistCompra() {
-		return id;
+	public HistoricoCompra(int int1, int int2, int int3, int int4, int int5) {
+		// TODO Auto-generated constructor stub
 	}
 
-	public void setIdHistCompra(int id) {
-		this.id = id;
+	public int getId() {
+		return id;
 	}
 
 	public int getFkProduto() {
@@ -66,13 +56,22 @@ public class HistoricoCompra {
 		return fkPagamento;
 	}
 
-	public static Map<Integer, HistoricoCompra> getHistoricoCompras() {
+	public int getIdPedido() {
+		return idPedido;
+	}
+
+	public Cliente getUsuario() {
+		return usuario;
+	}
+
+	public static Map<Integer, HistoricoCompra> getHistoricocompras() {
 		return historicoCompras;
 	}
 
 	@Override
 	public String toString() {
-		return "HistoricoCompra [id=" + id + ", fkProduto=" + fkProduto + ", fkcliente=" + fkCliente + ", fkpagamento="
-				+ fkPagamento + ", idPedido=" + idPedido + ", usuario=" + usuario + ", listadeproduto=" +"]";
+		return "HistoricoCompra [id=" + id + ", fkProduto=" + fkProduto + ", fkCliente=" + fkCliente + ", fkPagamento="
+				+ fkPagamento + ", idPedido=" + idPedido + ", usuario=" + usuario + "]";
 	}
+	
 }

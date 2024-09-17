@@ -16,7 +16,7 @@ public class Principal {
 	public static void main(String[] args) throws InterruptedException {
 		
 		Scanner sc = new Scanner(System.in);
-		LeituraEscrita.leitor("Banco");
+		LeitorArquivo.leitor("Banco");
 
 		char op;
 

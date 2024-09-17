@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 
 
-public class LeituraEscrita {
+public class LeitorAquivo {
     static final String PATH_BASICO = "./temp/";
 	static final String EXTENSAO = ".txt";
 

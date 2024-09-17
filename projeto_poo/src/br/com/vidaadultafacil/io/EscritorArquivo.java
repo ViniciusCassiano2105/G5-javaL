@@ -7,7 +7,7 @@ import java.util.Set;
 import br.com.vidaadultafacil.tela_inicial.Produto;
 import br.com.vidaadultafacil.usuarios.Cliente;
 
-public class EscritoArquivo {
+public class EscritorArquivo {
 
     private static final String CAMINHO_ARQUIVO = "temp/banco.txt";
     private static final Set<Integer> idsExistentes = new HashSet<>();

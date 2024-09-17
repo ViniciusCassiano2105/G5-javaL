@@ -3,7 +3,7 @@ package br.com.vidaadultafacil.usuarios;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-import br.com.vidaadultafacil.io.EscritoArquivo;
+import br.com.vidaadultafacil.io.EscritorArquivo;
 import br.com.vidaadultafacil.tela_inicial.Produto;
 
 public class CadastroNovo {
@@ -27,7 +27,7 @@ public class CadastroNovo {
 
         System.out.println("Bem-vindo ao cadastro de novos clientes!");
 
-        EscritoArquivo.carregarIdsDoArquivo();  // Carregar IDs existentes antes de gerar um novo
+        EscritorArquivo.carregarIdsDoArquivo();  // Carregar IDs existentes antes de gerar um novo
 
         String nome, email, senha, telefone, cpf;
 
@@ -63,7 +63,7 @@ public class CadastroNovo {
         } while (!validarCpf(cpf));
 
         // Gera um ID único 
-        int novoId = EscritoArquivo.gerarIdUnico();
+        int novoId = EscritorArquivo.gerarIdUnico();
 
         // Cria um novo cliente com ID único e adiciona ao mapa de clientes
         Cliente novoCliente = new Cliente(novoId, nome, email, senha, telefone, cpf);
@@ -72,7 +72,7 @@ public class CadastroNovo {
         System.out.println("Cadastro realizado com sucesso! Seu ID é: " + novoId);
 
         // Salva o cadastro no arquivo txt
-        EscritoArquivo.salvarCadastroClienteEmArquivo(novoCliente);
+        EscritorArquivo.salvarCadastroClienteEmArquivo(novoCliente);
 
         return novoCliente;
     }
@@ -100,13 +100,13 @@ public class CadastroNovo {
         String autor = scanner.nextLine();
 
         // Gera um ID único
-        int novoId = EscritoArquivo.gerarIdUnico();
+        int novoId = EscritorArquivo.gerarIdUnico();
 
         // Cria um novo produto
         Produto novoProduto = new Produto(novoId, nome, descricao, preco, duracao, autor);
 
         // Salva o produto no arquivo txt
-        EscritoArquivo.salvarCadastroProdutoEmArquivo(novoProduto);
+        EscritorArquivo.salvarCadastroProdutoEmArquivo(novoProduto);
 
         System.out.println("Produto cadastrado com sucesso! ID do produto: " + novoId);
 
