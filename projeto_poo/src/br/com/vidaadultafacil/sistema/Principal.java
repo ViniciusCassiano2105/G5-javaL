@@ -1,11 +1,8 @@
 package br.com.vidaadultafacil.sistema;
 
+import br.com.aula_poo.utils.Util;
 import java.util.Scanner;
 import java.util.logging.Logger;
-
-import br.com.aula_poo.utils.Util;
-import br.com.vidaadultafacil.io.Relatorio;
-import br.com.vidaadultafacil.usuarios.Cliente;
 
 
 public class Principal {
@@ -19,10 +16,10 @@ public class Principal {
 		logger.info("\n\t\t\t EASY ADULT LIFE\n\t\t\t-------------------\n\tTornando a vida independente descomplicada e acessível!\n");
 		logger.info("Digite como gostaria de ser chamado(a):");
 		String nome = sc.next();
+
 		String mensagemBemvindo = String.format("Bem vindo(a) %s você deseja acessar o sistema como CLIENTE ou ADMINISTRADOR?\n",nome);
 		logger.info(mensagemBemvindo);
 		logger.info("\n(1) CLIENTE\n(2) ADMINISTRADOR");
-		
 		int opcao = sc.nextInt();
 		
 		switch(opcao) {
@@ -33,14 +30,11 @@ public class Principal {
 				switch (opcaoCliente) {
 					case 1:
 						logger.info("\nVocê escolheu acessar sua conta.\nAguarde");
-						Thread.sleep(6000);
-						Relatorio.write("Banco", Cliente.class);
+						Thread.sleep(4000);
 						break;
 					case 2:
 						System.out.println("\n\nVocê escolheu se cadastrar.\nAguarde");
-						Thread.sleep(6000);
-						//continuacao de acesso a conta ...
-						//criar map para mostrar lista de produtos
+						Thread.sleep(4000);
 						break;
 					default:
 						System.out.println("Opção inválida.");

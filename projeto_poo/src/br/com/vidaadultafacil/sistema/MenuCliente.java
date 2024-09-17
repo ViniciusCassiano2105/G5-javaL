@@ -1,11 +1,9 @@
 package br.com.vidaadultafacil.sistema;
 
-import java.util.logging.Logger;
-
 import br.com.aula_poo.utils.Util;
 import br.com.vidaadultafacil.io.Relatorio;
-
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class MenuCliente {
 
@@ -30,19 +28,19 @@ public class MenuCliente {
 
 				switch (opcao2){
 					case 1:
-						Relatorio.relatorioCliente('T');
+						Relatorio.relatorioCliente();
 						break;
 					case 2:
-						Relatorio.relatorioCliente('I');
+						
 						break;
 				}
 				break;
 			case 2:
-				logger.info(Saindo...);
 				break;
 			default:
            	logger.info("Opção inválida! Por favor, escolha novamente.");
 			}
 		scanner.close();  
+		}
 	}
 }
