@@ -32,7 +32,7 @@ funcionalidades correspondentes.**
 - **📊 Relatórios.**
 
 # Tecnologias Utilizadas 🖥️
-**☕  Java (JDK 17).**
+- **☕  Java (JDK 17).**
 - **🛠️ Eclipse: IDE utilizada por alguns membros do grupo para desenvolvimento em Java.**
 - **🐙 Git: Sistema de controle de versão para rastrear mudanças no código.**
 - **📦 GitHub: Repositório remoto utilizado para armazenar e colaborar no código.**
