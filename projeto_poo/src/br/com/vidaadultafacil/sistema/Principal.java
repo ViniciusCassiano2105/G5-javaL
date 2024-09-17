@@ -1,6 +1,8 @@
 package br.com.vidaadultafacil.sistema;
 
 import br.com.aula_poo.utils.Util;
+import br.com.vidaadultafacil.io.LeituraEscrita;
+import br.com.vidaadultafacil.io.Relatorio;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -12,6 +14,9 @@ public class Principal {
 	public static void main(String[] args) throws InterruptedException {
 		
 		Scanner sc = new Scanner(System.in);
+		LeituraEscrita.leitor("Banco");
+
+		char op;
 
 		logger.info("\n\t\t\t EASY ADULT LIFE\n\t\t\t-------------------\n\tTornando a vida independente descomplicada e acessível!\n");
 		logger.info("Digite como gostaria de ser chamado(a):");
@@ -21,8 +26,19 @@ public class Principal {
 		logger.info(mensagemBemvindo);
 		logger.info("\n(1) CLIENTE\n(2) ADMINISTRADOR");
 		int opcao = sc.nextInt();
+
+		Relatorio.relatorioCliente();
+
+		Relatorio.relatorioAdmin(op = 'T');
+
+
+
+
+
+
+
 		
-		switch(opcao) {
+		/*switch(opcao) {
 			case 1:
 				logger.info("\n(1) Acessar sua conta\n(2) Cadastro");
 				int opcaoCliente = sc.nextInt();
@@ -51,8 +67,7 @@ public class Principal {
 			default:
 				logger.info("Opção inválida.");
 				break;
-		}
-
+		}*/
 		sc.close();
     }
 }

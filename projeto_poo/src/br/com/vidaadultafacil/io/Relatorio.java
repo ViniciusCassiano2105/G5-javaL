@@ -17,7 +17,7 @@ public class Relatorio {
 
 	public static void relatorioCliente(){
 
-        String nome = "relatorio_Cliente";
+        String nome = "Banco";
         boolean verificador = true;
 		Scanner sc = new Scanner(System.in);
 
@@ -28,37 +28,32 @@ public class Relatorio {
             if(opcao == '2'){
                 verificador = false;
             } else {
-                try {
-                    BufferedWriter buffWrite = new BufferedWriter(new FileWriter(LeitorArquivo.PATH_BASICO + nome + LeitorArquivo.EXTENSAO, true));
         
-                        Util.setupLogger().log(Level.INFO, "\tMenu\n[P]Produtos\t[A]Avaliacoes\n");
-                        char op2 = sc.next().charAt(0);
+                    Util.setupLogger().log(Level.INFO, "\tMenu\n[P]Produtos\t[A]Avaliacoes\n");
+                    char op2 = sc.next().charAt(0);
                         
-                        if (op2 == 'P') {
-                            Util.setupLogger().log(Level.INFO, "__________INICIO__________\n");
-                            LocalDateTime data = LocalDateTime.now();
-                            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-                            Util.setupLogger().log(Level.INFO, data.format(formato));
-                            for (Map.Entry<Integer, Produto> prod : Produto.getMapProdutos().entrySet()) {
-                                Util.setupLogger().log(Level.INFO, "\nNome do Produto: " + prod.getValue().getNome() + "\nDescricao do Produto: " + prod.getValue().getDescricaoProd() + "\nAutor: " + prod.getValue().getAutor() + "\nPreco: " + prod.getValue().getPreco() + "\nDuracao: " + prod.getValue().getDuracao() + "\n\n");
-                            }
-                            Util.setupLogger().log(Level.INFO, "\n__________FIM__________\n\n");
-        
-                        } else if (op2 == 'A') {
-                            Util.setupLogger().log(Level.INFO, "__________INICIO__________\n");
-                            LocalDateTime data = LocalDateTime.now();
-                            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-                            Util.setupLogger().log(Level.INFO, data.format(formato));
-                            for(Map.Entry<Integer, Avaliacao> aval : Avaliacao.getMapAvaliacao().entrySet()) {
-                                Util.setupLogger().log(Level.INFO, "\nNota: " + aval.getValue().getNota() + "\nComentario: " + aval.getValue().getComentario() + "\nUsuario: " + aval.getValue().getUsuario() + "\nProduto: " + aval.getValue().getFkProduto() + "\n\n");
-                            }
-                            Util.setupLogger().log(Level.INFO, "\n__________FIM__________\n\n");
+                    if (op2 == 'P') {
+                        Util.setupLogger().log(Level.INFO, "__________INICIO__________\n");
+                        LocalDateTime data = LocalDateTime.now();
+                        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+                        Util.setupLogger().log(Level.INFO, data.format(formato));
+                        for (Map.Entry<Integer, Produto> prod : Produto.getMapProdutos().entrySet()) {
+                            Util.setupLogger().log(Level.INFO, "\nNome do Produto: " + prod.getValue().getNome() + "\nDescricao do Produto: " + prod.getValue().getDescricaoProd() + "\nAutor: " + prod.getValue().getAutor() + "\nPreco: " + prod.getValue().getPreco() + "\nDuracao: " + prod.getValue().getDuracao() + "\n\n");
                         }
-                        verificador = true;
-                } catch (IOException e) {
-                    e.printStackTrace();
+                           Util.setupLogger().log(Level.INFO, "\n__________FIM__________\n\n");
+        
+                    } else if (op2 == 'A') {
+                        Util.setupLogger().log(Level.INFO, "__________INICIO__________\n");
+                        LocalDateTime data = LocalDateTime.now();
+                        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+                        Util.setupLogger().log(Level.INFO, data.format(formato));
+                        for(Map.Entry<Integer, Avaliacao> aval : Avaliacao.getMapAvaliacao().entrySet()) {
+                            Util.setupLogger().log(Level.INFO, "\nNota: " + aval.getValue().getNota() + "\nComentario: " + aval.getValue().getComentario() +  "\nProduto: " + aval.getValue().getFkProduto() + "\n\n");
+                        }
+                        Util.setupLogger().log(Level.INFO, "\n__________FIM__________\n\n");
+                    }
+                    verificador = true;
                 }
-            }
         }       
     }
 
@@ -76,7 +71,7 @@ public class Relatorio {
                 verificador = false;
             } else {
                 try {
-                    BufferedWriter buffWrite = new BufferedWriter(new FileWriter(LeitorArquivo.PATH_BASICO + nome + LeitorArquivo.EXTENSAO, true));
+                    BufferedWriter buffWrite = new BufferedWriter(new FileWriter(LeituraEscrita.PATH_BASICO + nome + LeituraEscrita.EXTENSAO, true));
         
                     if(op == 'T'){
                         Util.setupLogger().log(Level.INFO, "\tMenu\n[P]Produtos\t[A]Avaliacoes\n[S]Suporte\n");
@@ -98,7 +93,7 @@ public class Relatorio {
                             DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                             Util.setupLogger().log(Level.INFO, data.format(formato));
                             for(Map.Entry<Integer, Avaliacao> aval : Avaliacao.getMapAvaliacao().entrySet()) {
-                                Util.setupLogger().log(Level.INFO, "\nNota: " + aval.getValue().getNota() + "\nComentario: " + aval.getValue().getComentario() + "\nUsuario: " + aval.getValue().getUsuario() + "\nProduto: " + aval.getValue().getFkProduto() + "\n\n");
+                                Util.setupLogger().log(Level.INFO, "\nNota: " + aval.getValue().getNota() + "\nComentario: " + aval.getValue().getComentario() + "\nProduto: " + aval.getValue().getFkProduto() + "\n\n");
                             }
                             Util.setupLogger().log(Level.INFO, "\n__________FIM__________\n\n");
         
@@ -108,7 +103,7 @@ public class Relatorio {
                             DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                             Util.setupLogger().log(Level.INFO, data.format(formato));
                             for(Map.Entry<Integer, Suporte> sup : Suporte.getMapSuporte().entrySet()) {
-                                Util.setupLogger().log(Level.INFO, "\nMensagem: " + sup.getValue().getMensagem() + "\nUsuario: " + sup.getValue().getUsuario() + "\n\n");
+                                Util.setupLogger().log(Level.INFO, "\nMensagem: " + sup.getValue().getMensagem() + "\n\n");
                             }
                             Util.setupLogger().log(Level.INFO, "\n__________FIM__________\n\n");
                         }
@@ -135,7 +130,7 @@ public class Relatorio {
                             DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                             buffWrite.append(data.format(formato));
                             for(Map.Entry<Integer, Avaliacao> aval : Avaliacao.getMapAvaliacao().entrySet()) {
-                                buffWrite.append("\nNota: " + aval.getValue().getNota() + "\nComentario: " + aval.getValue().getComentario() + "\nUsuario: " + aval.getValue().getUsuario() + "\nProduto: " + aval.getValue().getFkProduto() + "\n\n");
+                                buffWrite.append("\nNota: " + aval.getValue().getNota() + "\nComentario: " + aval.getValue().getComentario() + "\nProduto: " + aval.getValue().getFkProduto() + "\n\n");
                             }
                             buffWrite.append("\n__________FIM__________\n\n");
                             buffWrite.close();
@@ -147,7 +142,7 @@ public class Relatorio {
                             DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                             buffWrite.append(data.format(formato));
                             for(Map.Entry<Integer, Suporte> sup : Suporte.getMapSuporte().entrySet()) {
-                                buffWrite.append("\nMensagem: " + sup.getValue().getMensagem() + "\nUsuario: " + sup.getValue().getUsuario() + "\n\n");
+                                buffWrite.append("\nMensagem: " + sup.getValue().getMensagem() + "\n\n");
                             }
                             buffWrite.append("\n__________FIM__________\n\n");
                             buffWrite.close();

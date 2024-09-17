@@ -1,84 +1,29 @@
 package br.com.vidaadultafacil.pagamentos;
 
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Pagamento {
 
-    // Chave primária
     private int id;
-    
-    // Chaves estrangeiras
     private int fkProduto;
     private int fkCliente;
-    
-    // Método de pagamento utilizado (ex: "cartão de crédito", "boleto")
-    private TiposPagamento metodoPagamento;
-    
-    // Valor total do pagamento
-    private BigDecimal valor;
-    
-    // Quantidade de parcelas do pagamento
+    private double valor;  
     private int parcelas;
 
     //Map
     private static final Map<Integer, Pagamento> pagamentos = new HashMap<>();
 
     // Construtor
-    public Pagamento(int id, int fkProduto, int fkCliente, TiposPagamento metodoPagamento, BigDecimal valor, int parcelas) {
+    public Pagamento(int id, int fkProduto, int fkCliente, double valor, int parcelas) {
         this.id = id;
         this.fkProduto = fkProduto;
         this.fkCliente = fkCliente;
-        this.metodoPagamento = metodoPagamento;
-       
-        if (valor.compareTo(BigDecimal.ZERO) <= 0) {
-            throw new IllegalArgumentException("O valor do pagamento deve ser maior que zero.");
-        }
-        this.valor = valor;
-
-        if (parcelas <= 0) {
-            throw new IllegalArgumentException("A quantidade de parcelas deve ser maior que zero.");
-        }
         this.parcelas = parcelas;
     }
 
-    public Pagamento(int fkProduto, int fkCliente, TiposPagamento metodoPagamento, BigDecimal valor, int parcelas) {
-        this.id = pagamentos.size() + 1;
-        this.fkProduto = fkProduto;
-        this.fkCliente = fkCliente;
-        this.metodoPagamento = metodoPagamento;
-       
-        if (valor.compareTo(BigDecimal.ZERO) <= 0) {
-            throw new IllegalArgumentException("O valor do pagamento deve ser maior que zero.");
-        }
-        this.valor = valor;
-
-        if (parcelas <= 0) {
-            throw new IllegalArgumentException("A quantidade de parcelas deve ser maior que zero.");
-        }
-        this.parcelas = parcelas;
-    }
-
-
-    // Get e Set
-    public TiposPagamento getMetodoPagamento() {
-        return metodoPagamento;
-    }
-
-    public void setMetodoPagamento(TiposPagamento metodoPagamento) {
-        this.metodoPagamento = metodoPagamento;
-    }
-
-    public BigDecimal getValor() {
+    public double getValor() {
         return valor;
-    }
-
-    public void setValor(BigDecimal valor) {
-        if (valor.compareTo(BigDecimal.ZERO) <= 0) {
-            throw new IllegalArgumentException("O valor do pagamento deve ser maior que zero.");
-        }
-        this.valor = valor;
     }
 
     public int getParcelas() {
@@ -116,7 +61,7 @@ public class Pagamento {
         this.fkCliente = fkCliente;
     }
 
-    public static Map<Integer, Pagamento> getPagamentos() {
+    public static Map<Integer, Pagamento> getMapaPagamentos() {
         return pagamentos;
     }
 
@@ -124,7 +69,7 @@ public class Pagamento {
     @Override
     public String toString() {
         return "Pagamento [id=" + id + ", fkProduto=" + fkProduto + ", fkCliente=" + fkCliente 
-                + ", metodoPagamento=" + metodoPagamento + ", valor=" + valor 
+                + ", valor=" + valor 
                 + ", parcelas=" + parcelas + "]";
     }
 }

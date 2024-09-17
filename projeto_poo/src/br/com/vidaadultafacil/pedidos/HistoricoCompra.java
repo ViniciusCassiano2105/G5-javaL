@@ -1,8 +1,8 @@
 package br.com.vidaadultafacil.pedidos;
 
+import br.com.vidaadultafacil.usuarios.Cliente;
 import java.util.HashMap;
 import java.util.Map;
-import br.com.vidaadultafacil.usuarios.Cliente;
 
 public class HistoricoCompra {
 
@@ -24,14 +24,6 @@ public class HistoricoCompra {
 
 	public HistoricoCompra(int id, int fkProduto, int fkCliente, int fkPagamento, int idPedido) {
 		this.id = id;
-		this.fkProduto = fkProduto;
-		this.fkCliente = fkCliente;
-		this.fkPagamento = fkPagamento;
-		this.idPedido = idPedido;
-	}
-
-		public HistoricoCompra(int fkProduto, int fkCliente, int fkPagamento, int idPedido) {
-		this.id = historicoCompras.size() + 1;
 		this.fkProduto = fkProduto;
 		this.fkCliente = fkCliente;
 		this.fkPagamento = fkPagamento;

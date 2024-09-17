@@ -1,5 +1,9 @@
 package br.com.vidaadultafacil.tela_inicial;
 
+import java.util.HashMap;
+import java.util.Map;
+
+
 
 public class CategoriaProdutos {
 		
@@ -9,7 +13,8 @@ public class CategoriaProdutos {
 	private int fkProduto;
 	String categoria;
 	String descricaoCat;
-	public CategoriaProdutos catProd = new CategoriaProdutos();
+
+	private static final Map<Integer, CategoriaProdutos> catProd = new HashMap();
 
 	public CategoriaProdutos() {
 	}
@@ -44,12 +49,8 @@ public class CategoriaProdutos {
 		}
 	}
 
-	public CategoriaProdutos getCatProd(){
+	public static Map<Integer, CategoriaProdutos> getMapCateProd() {
 		return catProd;
-	}
-
-	public void setCatProd(CategoriaProdutos catProd) {
-		this.catProd = catProd;
 	}
 
 	public int getIdCategoria() {

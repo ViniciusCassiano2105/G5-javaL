@@ -1,0 +1,20 @@
+__________INICIO__________
+17/09/2024 11:55:51
+Nome do Produto: Meu Gato Não é um Chef Por Que Pizza Não é Alimento de Pet
+Descricao do Produto: Entenda por que o Garfield estava errado e como não transformar seu pet em uma bomba de açúcar.
+Autor: Dr. Pet Ponto
+Preco: 29.0
+Duracao: 45
+
+
+__________FIM__________
+
+__________INICIO__________
+17/09/2024 11:56:42
+Nota: 5.0
+Comentario: Adorei o curso, As dicas são praticas e o autor tem um jeito bem engracado de explicar, Meu gato agora esta mais saudavel e eu me sinto mais confiante em cuidar dele
+Produto: 1
+
+
+__________FIM__________
+

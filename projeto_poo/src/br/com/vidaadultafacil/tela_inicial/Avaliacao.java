@@ -2,8 +2,6 @@ package br.com.vidaadultafacil.tela_inicial;
 import java.util.HashMap;
 import java.util.Map;
 
-import br.com.vidaadultafacil.usuarios.Cliente;
-
 public class Avaliacao {
     // Chave primária
     private int fkProduto;
@@ -11,26 +9,16 @@ public class Avaliacao {
 
     private double nota;
     private String comentario;
-    private Cliente usuario;
     private static final Map<Integer, Avaliacao> avaliacoes = new HashMap();
 
     public Avaliacao() { 
     }
 
-    public Avaliacao(int id ,int fkProduto, double nota, String comentario, Cliente usuario) {
+    public Avaliacao(int id ,int fkProduto, double nota, String comentario) {
         this.id = id;
     	this.fkProduto = fkProduto;
-        setNota(nota); 
-        setComentario(comentario); 
-        this.usuario = usuario;
-    }
-    
-    public Avaliacao(int fkProduto, double nota, String comentario, Cliente usuario) {
-        this.id = avaliacoes.size() +1;
-        this.fkProduto = fkProduto;
-        setNota(nota); 
-        setComentario(comentario); 
-        this.usuario = usuario;
+        this.nota = nota;
+        this.comentario = comentario;
     }
 
     public double getNota() {
@@ -39,10 +27,6 @@ public class Avaliacao {
 
     public String getComentario() {
         return comentario;
-    }
-
-    public Cliente getUsuario() {
-        return usuario;
     }
 
     public int getFkProduto() {
@@ -84,6 +68,6 @@ public class Avaliacao {
     @Override
     public String toString() {
         return "Avaliacao [fkProduto=" + fkProduto + ", id=" + id + ", nota=" + nota + ", comentario=" + comentario
-                + ", usuario=" + usuario + "]";
+                + ", usuario=" + "]";
     }
 }

@@ -17,12 +17,6 @@ public class Cliente extends Usuario {
 		this.cpf = cpf;
 	}
 
-	public Cliente(String nome, String email, String senha, String telefone, String cpf) {
-		super(nome, email, senha, telefone);
-		this.id = clientes.size() + 1;
-		this.cpf = cpf;
-	}
-
 	public void setCpf(String cpf) {
 		while (!cpfValido) {            
             if (cpf != null) {

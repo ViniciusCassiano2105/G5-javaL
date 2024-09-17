@@ -1,6 +1,5 @@
 package br.com.vidaadultafacil.tela_inicial;
 
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,24 +11,15 @@ public class Produto {
     public String nome = "";
     public String descricaoProd = "";
     public String autor = "";
-    public BigDecimal preco;
+    public double preco;
     public int duracao;
     private static final Map<Integer, Produto> produtos = new HashMap();
     
     public Produto() {
     }
 
-    public Produto(int id, int fkCategoria, String nome, String descricaoProd, String autor, BigDecimal preco, int duracao) {
+    public Produto(int id, int fkCategoria, String nome, String descricaoProd, String autor, double preco, int duracao) {
         this.id = id;
-        this.nome = nome;
-        this.descricaoProd = descricaoProd;
-        this.autor = autor;
-        this.preco = preco;
-        this.duracao = duracao;
-    }
-
-    public Produto(int fkCategoria, String nome, String descricaoProd, String autor, BigDecimal preco, int duracao) {
-        this.id = produtos.size() + 1;
         this.nome = nome;
         this.descricaoProd = descricaoProd;
         this.autor = autor;
@@ -49,7 +39,7 @@ public class Produto {
         return autor;
     }
 
-    public BigDecimal getPreco() {
+    public double getPreco() {
         return preco;
     }
 
@@ -79,15 +69,6 @@ public class Produto {
         } else {
             System.out.println("O nome do autor não deve ser vazio.");
         }
-    }
-
-    public void setPreco(BigDecimal preco) {
-        if (preco.compareTo(BigDecimal.ZERO) > 0 ) {
-            this.preco = preco;
-        } else {
-            System.out.println("O preço deve ser maior do que zero.");
-        }
-
     }
 
     public void setDuracao(int duracao) {

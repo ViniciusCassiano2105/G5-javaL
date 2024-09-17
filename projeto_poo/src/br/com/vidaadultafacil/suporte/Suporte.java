@@ -2,25 +2,17 @@ package br.com.vidaadultafacil.suporte;
 import java.util.HashMap;
 import java.util.Map;
 
-import br.com.vidaadultafacil.usuarios.Cliente;
-
 
 public class Suporte {
 
 	private int id;		
-	private Cliente usuario;	
+	private int fkCliente;	
 	private String mensagem;
 	private static final Map<Integer, Suporte> mapaSuporte = new HashMap();
 	
-	public Suporte(int id, Cliente usuario, String mensagem) {
+	public Suporte(int id, int fkCliente, String mensagem) {
 		this.id = id;
-		this.usuario = usuario;
-		this.mensagem = mensagem;
-	}
-
-	public Suporte(Cliente usuario, String mensagem) {
-		this.id = mapaSuporte.size() + 1;
-		this.usuario = usuario;
+		this.fkCliente = fkCliente;
 		this.mensagem = mensagem;
 	}
 	
@@ -28,8 +20,8 @@ public class Suporte {
 		return mensagem;
 	}
 
-	public Cliente getUsuario() {
-		return usuario;
+	public int getFkCliente() {
+		return fkCliente;
 	}
 	
 	public static Map <Integer, Suporte> getMapSuporte() {
@@ -44,14 +36,6 @@ public class Suporte {
 		}
 	}
 
-	public void setUsuario(Cliente usuario) {
-		if (usuario != null) {
-			this.usuario = usuario;
-		} else {
-			System.out.println("Usuário não pode ser nulo.");
-		}
-	}
-
 	public int getIdSuporte() {
 		return id;
 	}
@@ -62,7 +46,7 @@ public class Suporte {
 
 	@Override
 	public String toString() {
-		return "Suporte [id=" + id + ", usuario=" + usuario + ", mensagem=" + mensagem + "]";
+		return "Suporte [id=" + id + ", Cliente=" + fkCliente + ", mensagem=" + mensagem + "]";
 	}
 	
 }

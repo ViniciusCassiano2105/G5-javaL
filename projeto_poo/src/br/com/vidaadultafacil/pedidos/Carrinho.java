@@ -2,15 +2,10 @@ package br.com.vidaadultafacil.pedidos;
 import br.com.aula_poo.utils.Util;
 import br.com.vidaadultafacil.tela_inicial.Produto;
 import java.util.ArrayList;
-import java.util.List;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
-
-import br.com.vidaadultafacil.tela_inicial.Produto;
 
 public class Carrinho {
 
@@ -28,16 +23,9 @@ public class Carrinho {
     public static Map<Integer, Carrinho> getMapCarrinho() {
     	return mapaCarrinho;
     }
-    
 
 	public Carrinho(int id, int fkCliente) {
         this.id = id;
-        this.FkCliente = fkCliente;
-        this.produtos = new ArrayList<>(); // Inicializando a lista de produtos
-    }
-	
-	public Carrinho(int fkCliente) {
-        this.id = mapaCarrinho.size() + 1;
         this.FkCliente = fkCliente;
         this.produtos = new ArrayList<>(); // Inicializando a lista de produtos
     }
