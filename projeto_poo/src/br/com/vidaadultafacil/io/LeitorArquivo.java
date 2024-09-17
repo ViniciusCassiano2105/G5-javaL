@@ -23,7 +23,7 @@ import java.util.logging.Level;
 
 
 public class LeitorArquivo {
-    static final String PATH_BASICO = "./temp/";
+    static final String PATH_BASICO = "./projeto_poo/temp/";
 	static final String EXTENSAO = ".txt";
 
 	public static void leitor(String path) {
