@@ -1,57 +1,62 @@
 package br.com.vidaadultafacil.usuarios;
+
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
+
+import br.com.aula_poo.utils.Util;
 
 public class Administrador extends Usuario {
-	// Chave primária
-	private int id;
-	boolean isAdmin;
-	private static final Map<Integer, Administrador> admins = new HashMap();
-
-	public Administrador() {
-	}
+	private static Logger logger = Util.setupLogger();
 	
-	public Administrador(int id, String nome, String email, String senha, String telefone, boolean isAdmin) {
-		super(nome, email, senha, telefone);
-		this.id = id;
-		this.isAdmin = isAdmin;
-	}
-	public Administrador(String nome, String email, String senha, String telefone, boolean isAdmin) {
-		super(nome, email, senha, telefone);
-		this.id = admins.size() + 1;
-		this.isAdmin = isAdmin;
-	}
+    // Chave primária
+    private int id;
+    private boolean isAdmin;
+    private static final Map<String, Administrador> admins = new HashMap<>();
 
-	public boolean getisAdmin() {
-		return isAdmin;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	//Método autenticação
-	public boolean autenticar(String nome, String senha) {
-		for (Map.Entry<Integer, Administrador> adms : Administrador.getMapAdmin().entrySet()) {
-			if (adms.getValue().getNome().equals(nome) && adms.getValue().getSenha().equals(senha)) {
-				System.out.println("Acesso Permitido!");
-				return true; 
-			}
-		}
-	
-		System.out.println("Acesso Negado!");
-		return false;
-	}	
-
-	public static Map<Integer, Administrador> getMapAdmin() {
-        return admins;
+    public Administrador(int id, String nome, String email, String senha, String telefone, boolean isAdmin) {
+        super(nome, email, senha, telefone);
+        this.id = id;
+        this.isAdmin = isAdmin;
+        admins.put(email, this); 
     }
 
-	public String toDbLine() {
-		return String.format("Administrador;%s;%s\n", this.nome, this.email, this.senha, this.telefone, this.isAdmin);
-	}
+    public Administrador(String nome, String email, String senha, String telefone, boolean isAdmin) {
+        super(nome, email, senha, telefone);
+        this.id = admins.size() + 1;
+        this.isAdmin = isAdmin;
+        admins.put(email, this); 
+    }
 
-	public String toString() {
-		return "Admin{" + "nome='" + getNome() + '\'' + ", email='" + getEmail() + '\'' + ", isAdmin=" + isAdmin + '}';
-	}
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public static Map<String, Administrador> getMapAdmin() {
+        return admins;
+    }
+    // realizar login
+    public static Administrador login(String email, String senha) {
+        Administrador admin = admins.get(email);
+        if (admin != null && admin.getSenha().equals(senha)) {
+            logger.info("Login bem-sucedido!");
+            return admin;
+        } else {
+            logger.info("Credenciais inválidas!");
+            return null;
+        }
+    }
+
+    public String toDbLine() {
+        return String.format("Administrador;%s;%s;%s;%s;%b\n", this.nome, this.email, this.senha, this.telefone, this.isAdmin);
+    }
+
+    @Override
+    public String toString() {
+        return "Admin{" + "nome='" + getNome() + '\'' + ", email='" + getEmail() + '\'' + ", isAdmin=" + isAdmin + '}';
+    }
 }
