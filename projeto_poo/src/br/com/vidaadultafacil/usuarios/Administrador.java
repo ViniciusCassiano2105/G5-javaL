@@ -1,64 +1,57 @@
 package br.com.vidaadultafacil.usuarios;
-
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
-
-import br.com.aula_poo.utils.Util;
 
 public class Administrador extends Usuario {
-	private static Logger logger = Util.setupLogger();
+	// Chave primária
+	private int id;
+	boolean isAdmin;
+	private static final Map<Integer, Administrador> admins = new HashMap<>();
 	
-    // Chave primária
-    private int id;
-    private boolean isAdmin;
-    private static final Map<String, Administrador> admins = new HashMap<>();
+	public Administrador() {
+	}
 
-    public Administrador(int id, String nome, String email, String senha, String telefone, boolean isAdmin) {
-        super(nome, email, senha, telefone);
-        this.id = id;
-        this.isAdmin = isAdmin;
-        admins.put(email, this); 
-    }
+	public Administrador(int id, String nome, String email, String senha, String telefone, boolean isAdmin) {
+		super(nome, email, senha, telefone);
+		this.id = id;
+		this.isAdmin = isAdmin;
+	}
 
-    // Construtor sem parâmetros com valores padrão
-    public Administrador() {
-        super("Admin Padrão", "admin@exemplo.com", "123456", "00000000");
-        this.id = admins.size() + 1;
-        this.isAdmin = true; // Define como verdadeiro por padrão
-        admins.put(getEmail(), this); 
-    }
+	public Administrador(String nome, String email, String senha, String telefone, boolean isAdmin) {
+		super(nome, email, senha, telefone);
+		this.id = admins.size() + 1;
+		this.isAdmin = isAdmin;
+	}
 
-    public boolean isAdmin() {
-        return isAdmin;
-    }
+	public boolean getisAdmin() {
+		return isAdmin;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public static Map<String, Administrador> getMapAdmin() {
+	//Método autenticação
+	public boolean autenticar(String nome, String senha) {
+		for (Map.Entry<Integer, Administrador> adms : Administrador.getMapAdmin().entrySet()) {
+			if (adms.getValue().getNome().equals(nome) && adms.getValue().getSenha().equals(senha)) {
+				System.out.println("Acesso Permitido!");
+				return true; 
+			}
+		}
+		System.out.println("Acesso Negado!");
+		return false;
+	}
+
+	public static Map<Integer, Administrador> getMapAdmin() {
         return admins;
     }
-    
-    // realizar login
-    public static Administrador login(String email, String senha) {
-        Administrador admin = admins.get(email);
-        if (admin != null && admin.getSenha().equals(senha)) {
-            logger.info("Login bem-sucedido!");
-            return admin;
-        } else {
-            logger.info("Credenciais inválidas!");
-            return null;
-        }
-    }
 
-    public String toDbLine() {
-        return String.format("Administrador;%s;%s;%s;%s;%b\n", this.nome, this.email, this.senha, this.telefone, this.isAdmin);
-    }
+	public String toDbLine() {
+		return String.format("Administrador;%s;%s\n", this.nome, this.email, this.senha, this.telefone, this.isAdmin);
+	}
 
-    @Override
-    public String toString() {
-        return "Admin{" + "nome='" + getNome() + '\'' + ", email='" + getEmail() + '\'' + ", isAdmin=" + isAdmin + '}';
-    }
+	public String toString() {
+		return "Admin{" + "nome='" + getNome() + '\'' + ", email='" + getEmail() + '\'' + ", isAdmin=" + isAdmin + '}';
+	}
 }

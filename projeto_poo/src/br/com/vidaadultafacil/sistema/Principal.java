@@ -73,7 +73,7 @@ public class Principal {
 				
 				//verificador = adms.autenticar(nomeAdmin,senhaAdmin);
 				
-				if(Administrador.login(nomeAdmin, senhaAdmin)!= null){
+				if(adms.autenticar(nomeAdmin, senhaAdmin)){
 					MenuAdmin.menu();
 				} else{
 					System.err.println("Nome de usuário ou senha incorretos");

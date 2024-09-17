@@ -44,7 +44,7 @@ public class LeitorArquivo {
 					}
 					else if (dados[0].equalsIgnoreCase("Administrador")) {
 						Administrador admin = new Administrador(Integer.parseInt(dados[1]), dados[2], dados[3], dados[4], dados[5], Boolean.parseBoolean(dados[6]));
-						Administrador.getMapAdmin().put(dados[1], admin);
+						Administrador.getMapAdmin().put(Integer.parseInt(dados[1]), admin);
 					}
 					else if (dados[0].equalsIgnoreCase("Produto")) {
 						Produto prod = new Produto(Integer.parseInt(dados[1]), Integer.parseInt(dados[2]), dados[3], dados[4], dados[5], Double.parseDouble(dados[6]), Integer.parseInt(dados[7]));
