@@ -8,6 +8,9 @@ public class Administrador extends Usuario {
 	boolean isAdmin;
 	private static final Map<Integer, Administrador> admins = new HashMap();
 
+	public Administrador() {
+	}
+	
 	public Administrador(int id, String nome, String email, String senha, String telefone, boolean isAdmin) {
 		super(nome, email, senha, telefone);
 		this.id = id;
@@ -26,6 +29,19 @@ public class Administrador extends Usuario {
 	public int getId() {
 		return id;
 	}
+
+	//Método autenticação
+	public boolean autenticar(String nome, String senha) {
+		for (Map.Entry<Integer, Administrador> adms : Administrador.getMapAdmin().entrySet()) {
+			if (adms.getValue().getNome().equals(nome) && adms.getValue().getSenha().equals(senha)) {
+				System.out.println("Acesso Permitido!");
+				return true; 
+			}
+		}
+	
+		System.out.println("Acesso Negado!");
+		return false;
+	}	
 
 	public static Map<Integer, Administrador> getMapAdmin() {
         return admins;

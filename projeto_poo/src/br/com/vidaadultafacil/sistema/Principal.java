@@ -3,6 +3,8 @@ package br.com.vidaadultafacil.sistema;
 import br.com.aula_poo.utils.Util;
 import br.com.vidaadultafacil.io.LeituraEscrita;
 import br.com.vidaadultafacil.io.Relatorio;
+import br.com.vidaadultafacil.usuarios.Administrador;
+
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -27,9 +29,9 @@ public class Principal {
 		logger.info("\n(1) CLIENTE\n(2) ADMINISTRADOR");
 		int opcao = sc.nextInt();
 
-		Relatorio.relatorioCliente('P');
+		// Relatorio.relatorioCliente('P');
 
-		Relatorio.relatorioAdmin(op = 'T');
+		// Relatorio.relatorioAdmin(op = 'T');
 
 
 
@@ -38,7 +40,7 @@ public class Principal {
 
 
 		
-		/*switch(opcao) {
+		switch(opcao) {
 			case 1:
 				logger.info("\n(1) Acessar sua conta\n(2) Cadastro");
 				int opcaoCliente = sc.nextInt();
@@ -59,15 +61,31 @@ public class Principal {
 				break;
 
 			case 2:
-
-				logger.info("Você escolheu acessar o sistema como administrador.");
-				//continuacao de acesso como administrador ...
+				String nomeAdmin;
+				String senhaAdmin;
+				//boolean verificador = false;
+				Administrador adms = new Administrador();
+				// Mensagem de escolha de login como administrador
+				logger.info("Você escolheu acessar o sistema como administrador.\nInforme seu Login:");
+				nomeAdmin = sc.next();  // Usuário fornece o nome
+				
+				logger.info("Informe sua senha:");
+				senhaAdmin = sc.next();  // Usuário fornece a senha
+				
+				//verificador = adms.autenticar(nomeAdmin,senhaAdmin);
+				
+				if(adms.autenticar(nomeAdmin, senhaAdmin)){
+					MenuAdmin menuAdmin = new MenuAdmin();
+					menuAdmin.menu();
+				} else{
+					System.err.println("Nome de usuário ou senha incorretos");
+				}
 				break;
 
 			default:
 				logger.info("Opção inválida.");
 				break;
-		}*/
+		}
 		sc.close();
     }
 }
