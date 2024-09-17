@@ -54,11 +54,9 @@ public class MenuCliente {
 				break;
 				
 			case 2:			
-				logger.info("(1) Visualizar");
+				logger.info("(1) Visualizar avaliações");
 				opcao2 = scanner.nextInt();
-				Relatorio.relatorioCliente('A');
-				break;
-
+				
 				switch (opcao2) {
 					case 1:
 						logger.info("Aguenta firme, já vamos te salvar! ;) ");
@@ -67,7 +65,7 @@ public class MenuCliente {
 	                    } catch (InterruptedException e) {
 	                        logger.warning("Erro durante a pausa: " + e.getMessage());
 	                    }
-						Relatorio.relatorioCliente('P');
+						Relatorio.relatorioCliente('A'); // Exibir avaliações
 						break;
 					default:
 						logger.info("Opção inválida!");

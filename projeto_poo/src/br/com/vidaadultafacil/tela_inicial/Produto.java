@@ -27,7 +27,16 @@ public class Produto {
         this.duracao = duracao;
     }
     
-    public String getNome() {
+    public Produto(int idProduto, int idProduto2, String nomeProduto, String descricaoProduto, String nomeProduto2,
+			Object object, int idProduto3) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Produto(int novoId, String nome2, String descricao, double preco2, int duracao2, String autor2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getNome() {
         return nome;
     }
 
@@ -93,6 +102,11 @@ public class Produto {
                 + ", descricaoProd=" + descricaoProd + ", autor=" + autor + ", preco=" + preco + ", duracao=" + duracao
                 + "]";
     }
+
+	public String getDescricao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 }

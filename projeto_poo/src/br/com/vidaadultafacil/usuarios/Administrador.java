@@ -21,11 +21,12 @@ public class Administrador extends Usuario {
         admins.put(email, this); 
     }
 
-    public Administrador(String nome, String email, String senha, String telefone, boolean isAdmin) {
-        super(nome, email, senha, telefone);
+    // Construtor sem parâmetros com valores padrão
+    public Administrador() {
+        super("Admin Padrão", "admin@exemplo.com", "123456", "00000000");
         this.id = admins.size() + 1;
-        this.isAdmin = isAdmin;
-        admins.put(email, this); 
+        this.isAdmin = true; // Define como verdadeiro por padrão
+        admins.put(getEmail(), this); 
     }
 
     public boolean isAdmin() {
@@ -39,6 +40,7 @@ public class Administrador extends Usuario {
     public static Map<String, Administrador> getMapAdmin() {
         return admins;
     }
+    
     // realizar login
     public static Administrador login(String email, String senha) {
         Administrador admin = admins.get(email);
