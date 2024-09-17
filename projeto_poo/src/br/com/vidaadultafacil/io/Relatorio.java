@@ -53,7 +53,7 @@ public class Relatorio {
                 verificador = false;
             } else {
                 try {
-                    BufferedWriter buffWrite = new BufferedWriter(new FileWriter(LeituraEscrita.PATH_BASICO + nome + LeituraEscrita.EXTENSAO, true));
+                    BufferedWriter buffWrite = new BufferedWriter(new FileWriter(LeitorArquivo.PATH_BASICO + nome + LeitorArquivo.EXTENSAO, true));
         
                     if(op == 'T'){
                         Util.setupLogger().log(Level.INFO, "\tMenu\n[P]Produtos\t[A]Avaliacoes\n[S]Suporte\n");

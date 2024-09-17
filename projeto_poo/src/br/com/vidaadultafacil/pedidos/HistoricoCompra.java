@@ -64,7 +64,7 @@ public class HistoricoCompra {
 		return usuario;
 	}
 
-	public static Map<Integer, HistoricoCompra> getHistoricocompras() {
+	public static Map<Integer, HistoricoCompra> getHistoricoCompras() {
 		return historicoCompras;
 	}
 

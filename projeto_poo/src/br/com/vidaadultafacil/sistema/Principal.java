@@ -1,12 +1,11 @@
 package br.com.vidaadultafacil.sistema;
 
-import br.com.aula_poo.utils.Util;
-import br.com.vidaadultafacil.io.LeituraEscrita;
-import br.com.vidaadultafacil.io.Relatorio;
-import br.com.vidaadultafacil.usuarios.Administrador;
-
 import java.util.Scanner;
 import java.util.logging.Logger;
+
+import br.com.aula_poo.utils.Util;
+import br.com.vidaadultafacil.io.LeitorArquivo;
+import br.com.vidaadultafacil.usuarios.Administrador;
 
 
 public class Principal {
@@ -74,9 +73,8 @@ public class Principal {
 				
 				//verificador = adms.autenticar(nomeAdmin,senhaAdmin);
 				
-				if(adms.autenticar(nomeAdmin, senhaAdmin)){
-					MenuAdmin menuAdmin = new MenuAdmin();
-					menuAdmin.menu();
+				if(Administrador.login(nomeAdmin, senhaAdmin)!= null){
+					MenuAdmin.menu();
 				} else{
 					System.err.println("Nome de usuário ou senha incorretos");
 				}

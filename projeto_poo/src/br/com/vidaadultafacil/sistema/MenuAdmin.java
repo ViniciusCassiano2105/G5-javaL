@@ -38,7 +38,7 @@ public class MenuAdmin {
         logger.info("Produto removido com sucesso. ID: " + id);
     }
 
-    public static void main(String[] args) {
+    public static void menu() {
         MenuAdmin menuAdmin = new MenuAdmin();
         Scanner scanner = new Scanner(System.in);
 

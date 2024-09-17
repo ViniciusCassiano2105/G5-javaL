@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 
 
-public class LeitorAquivo {
+public class LeitorArquivo {
     static final String PATH_BASICO = "./temp/";
 	static final String EXTENSAO = ".txt";
 
@@ -40,11 +40,11 @@ public class LeitorAquivo {
 
 					if (dados[0].equalsIgnoreCase("Cliente")){
 						Cliente clientes = new Cliente(Integer.parseInt(dados[1]), dados[2], dados[3], dados[4], dados[5], dados[6]);
-						clientes.getMapClientes().put(Integer.parseInt(dados[1]), clientes);
+						clientes.getMapClientes().put(dados[1], clientes);
 					}
 					else if (dados[0].equalsIgnoreCase("Administrador")) {
 						Administrador admin = new Administrador(Integer.parseInt(dados[1]), dados[2], dados[3], dados[4], dados[5], Boolean.parseBoolean(dados[6]));
-						admin.getMapAdmin().put(Integer.parseInt(dados[1]), admin);
+						Administrador.getMapAdmin().put(dados[1], admin);
 					}
 					else if (dados[0].equalsIgnoreCase("Produto")) {
 						Produto prod = new Produto(Integer.parseInt(dados[1]), Integer.parseInt(dados[2]), dados[3], dados[4], dados[5], Double.parseDouble(dados[6]), Integer.parseInt(dados[7]));
@@ -67,8 +67,8 @@ public class LeitorAquivo {
 						carrinho.getMapCarrinho().put(Integer.parseInt(dados[1]), carrinho);
 					}
 					else if (dados[0].equalsIgnoreCase("HistoricoCompra")) {
-						HistoricoCompra HisComp = new HistoricoCompra(Integer.parseInt(dados[1]), Integer.parseInt(dados[2]), Integer.parseInt(dados[3]), Integer.parseInt(dados[4]), Integer.parseInt(dados[5]));
-						HisComp.getHistoricoCompras().put(Integer.parseInt(dados[1]), HisComp);
+						HistoricoCompra hisComp = new HistoricoCompra(Integer.parseInt(dados[1]), Integer.parseInt(dados[2]), Integer.parseInt(dados[3]), Integer.parseInt(dados[4]), Integer.parseInt(dados[5]));
+						HistoricoCompra.getHistoricoCompras().put(Integer.parseInt(dados[1]), hisComp);
 					}
 					else if (dados[0].equalsIgnoreCase("Pagamento")) {
 						Pagamento Pagam = new Pagamento(Integer.parseInt(dados[1]), Integer.parseInt(dados[2]), Integer.parseInt(dados[3]), Double.parseDouble(dados[4]), Integer.parseInt(dados[5]));
