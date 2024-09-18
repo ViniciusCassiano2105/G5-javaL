@@ -22,37 +22,42 @@ public class CadastroNovo {
     }
 
     // Cria um novo cadastro de cliente
-    public static Cliente criarCadastro() {
+    public void criarCadastro() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Bem-vindo ao cadastro de novos clientes!");
 
-        EscritorArquivo.carregarIdsDoArquivo();  // Carregar IDs existentes antes de gerar um novo
+        // Carregar IDs existentes antes de gerar um novo
+        EscritorArquivo.carregarIdsDoArquivo();
 
-        String nome, email, senha, telefone, cpf;
+        String nome, email = null, senha, telefone, cpf;
 
+        // Entrada do nome
         System.out.print("Digite seu nome: ");
         nome = scanner.nextLine();
 
+        // Validação de email
         do {
             System.out.print("Digite seu e-mail: ");
             email = scanner.nextLine();
 
             if (!validarEmail(email)) {
                 System.out.println("E-mail inválido. Por favor, insira um e-mail válido.");
-            }
-            if (Cliente.getMapClientes().containsKey(email)) {
+            } else if (Cliente.getMapClientes().containsKey(email)) {
                 System.out.println("Este e-mail já está cadastrado. Por favor, use outro e-mail.");
                 email = null;
             }
         } while (email == null || !validarEmail(email));
 
+        // Entrada da senha
         System.out.print("Digite uma senha: ");
         senha = scanner.nextLine();
 
+        // Entrada do telefone
         System.out.print("Digite seu telefone: ");
         telefone = scanner.nextLine();
 
+        // Validação do CPF
         do {
             System.out.print("Digite seu CPF (apenas números): ");
             cpf = scanner.nextLine();
@@ -62,10 +67,10 @@ public class CadastroNovo {
             }
         } while (!validarCpf(cpf));
 
-        // Gera um ID único 
+        // Gera um ID único
         int novoId = EscritorArquivo.gerarIdUnico();
 
-        // Cria um novo cliente com ID único e adiciona ao mapa de clientes
+        // Cria um novo cliente com o ID gerado e adiciona ao mapa de clientes
         Cliente novoCliente = new Cliente(novoId, nome, email, senha, telefone, cpf);
         Cliente.getMapClientes().put(email, novoCliente);
 
@@ -74,8 +79,9 @@ public class CadastroNovo {
         // Salva o cadastro no arquivo txt
         EscritorArquivo.salvarCadastroClienteEmArquivo(novoCliente);
 
-        return novoCliente;
+        scanner.close();  // Fechar o scanner após o uso
     }
+
 
     // Cadastro de novos produtos pelo administrador
     public static Produto cadastrarProduto() {

@@ -9,7 +9,7 @@ import br.com.vidaadultafacil.usuarios.Cliente;
 
 public class EscritorArquivo {
 
-    private static final String CAMINHO_ARQUIVO = "temp/banco.txt";
+    private static final String CAMINHO_ARQUIVO = "./projeto_poo/temp/Banco.txt";
     private static final Set<Integer> idsExistentes = new HashSet<>();
 
     // Carrega os IDs existentes do arquivo de banco (tanto de clientes quanto de produtos)
@@ -18,15 +18,25 @@ public class EscritorArquivo {
             String linha;
             while ((linha = br.readLine()) != null) {
                 String[] dados = linha.split(";");
-                if (dados.length > 1) {
-                    int id = Integer.parseInt(dados[1]);  // O ID está no índice 1 da linha formatada
-                    idsExistentes.add(id);
+
+                // Verifica se há ao menos dois elementos na linha e se o segundo elemento é numérico
+                if (dados.length > 1 && dados[1].matches("\\d+")) {
+                    try {
+                        int id = Integer.parseInt(dados[1]);  // O ID está no índice 1 da linha formatada
+                        idsExistentes.add(id);
+                    } catch (NumberFormatException e) {
+                        System.out.println("Erro ao converter ID para número na linha: " + linha);
+                    }
+                } else {
+                    // Se não for possível processar a linha, loga ou ignora
+                    System.out.println("Linha inválida ou não contém ID: " + linha);
                 }
             }
         } catch (IOException e) {
             System.out.println("Erro ao carregar IDs do arquivo: " + e.getMessage());
         }
     }
+
 
     // Gera um ID único
     public static int gerarIdUnico() {

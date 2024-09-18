@@ -23,7 +23,7 @@ public class Relatorio {
             DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
             Util.setupLogger().log(Level.INFO, data.format(formato));
             for (Map.Entry<Integer, Produto> prod : Produto.getMapProdutos().entrySet()) {
-                Util.setupLogger().log(Level.INFO, "\nNome do Produto: " + prod.getValue().getNome() + "\nDescricao do Produto: " + prod.getValue().getDescricaoProd() + "\nAutor: " + prod.getValue().getAutor() + "\nPreco: " + prod.getValue().getPreco() + " R$" + "\nDuracao: " + prod.getValue().getDuracao() + " min");
+                Util.setupLogger().log(Level.INFO, "\nNome do Produto:" + prod.getValue().getNome() + "\nDescricao do Produto: " + prod.getValue().getDescricaoProd() + "\nAutor: " + prod.getValue().getAutor() + "\nPreco: " + prod.getValue().getPreco() + " R$" + "\nDuracao: " + prod.getValue().getDuracao() + " min");
             }
                 Util.setupLogger().log(Level.INFO, "\n__________FIM__________\n\n");
         

@@ -4,8 +4,11 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 import br.com.aula_poo.utils.Util;
+import br.com.vidaadultafacil.io.EscritorArquivo;
 import br.com.vidaadultafacil.io.LeitorArquivo;
 import br.com.vidaadultafacil.usuarios.Administrador;
+import br.com.vidaadultafacil.usuarios.CadastroNovo;
+import br.com.vidaadultafacil.usuarios.Usuario;
 
 
 public class Principal {
@@ -47,11 +50,18 @@ public class Principal {
 				switch (opcaoCliente) {
 					case 1:
 						logger.info("\nVocê escolheu acessar sua conta.\nAguarde");
-						Thread.sleep(4000);
+						Thread.sleep(2000);
+						MenuCliente menuCliente = new MenuCliente();
+						menuCliente.menu();
 						break;
 					case 2:
 						System.out.println("\n\nVocê escolheu se cadastrar.\nAguarde");
-						Thread.sleep(4000);
+						
+						CadastroNovo cadastroNv = new CadastroNovo();
+						cadastroNv.criarCadastro();
+						EscritorArquivo escArq = new EscritorArquivo();
+						//escArq.salvarCadastroEmArquivo(nome, mensagemBemvindo);
+						//Thread.sleep(2000);
 						break;
 					default:
 						System.out.println("Opção inválida.");

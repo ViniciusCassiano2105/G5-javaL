@@ -13,7 +13,7 @@ public class MenuCliente {
 
 	private static Logger logger = Util.setupLogger();
 
-	public static void main(String[] args) {
+	public void menu() {
 		int escolha = 0;
 		int opcao2;
 		String cliente = "Fulano";  
