@@ -9,11 +9,16 @@ import br.com.vidaadultafacil.io.LeitorArquivo;
 import br.com.vidaadultafacil.usuarios.Administrador;
 import br.com.vidaadultafacil.usuarios.CadastroNovo;
 
-public class Menu {
+public class Menu implements MenuInterface  {
 	
 	private static Logger logger = Logger.getLogger(Util.class.getName());
 
-	public void menu() throws InterruptedException {
+	@Override
+	public void menu() {
+		try {
+		
+		
+		
 		
 		Scanner sc = new Scanner(System.in);
 
@@ -31,13 +36,6 @@ public class Menu {
 		// Relatorio.relatorioCliente('P');
 
 		// Relatorio.relatorioAdmin(op = 'T');
-
-
-
-
-
-
-
 		
 		switch(opcao) {
 			case 1:
@@ -91,5 +89,10 @@ public class Menu {
 				break;
 		}
 		sc.close();
+		}
+		catch(InterruptedException e){
+			logger.info("Erro contagem de tempo...");
+			
+		}
     }
 }

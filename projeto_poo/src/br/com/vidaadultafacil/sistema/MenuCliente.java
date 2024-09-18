@@ -9,10 +9,11 @@ import br.com.aula_poo.utils.Util;
 import br.com.vidaadultafacil.io.Relatorio;
 import br.com.vidaadultafacil.tela_inicial.Produto;
 
-public class MenuCliente {
+public class MenuCliente implements MenuInterface  {
 
 	private static Logger logger = Util.setupLogger();
 
+	@Override
 	public void menu() {
 		int escolha = 0;
 		int opcao2;

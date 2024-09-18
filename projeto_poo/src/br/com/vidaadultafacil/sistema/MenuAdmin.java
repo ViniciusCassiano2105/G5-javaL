@@ -12,7 +12,7 @@ import br.com.aula_poo.utils.Util;
 import br.com.vidaadultafacil.io.Relatorio;
 import br.com.vidaadultafacil.tela_inicial.Produto;
 
-public class MenuAdmin {
+public class MenuAdmin implements MenuInterface  {
 
 	private static Logger logger = Util.setupLogger();
     
@@ -37,8 +37,8 @@ public class MenuAdmin {
         produtos.removeIf(produto -> produto.getId() == id);
         logger.info("Produto removido com sucesso. ID: " + id);
     }
-
-    public static void menu() {
+    @Override
+    public void menu() {
         MenuAdmin menuAdmin = new MenuAdmin();
         Scanner scanner = new Scanner(System.in);
 
