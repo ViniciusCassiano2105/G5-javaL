@@ -49,12 +49,12 @@ public class EscritorArquivo {
     }
 
     // Salva o cadastro de cliente ou produto no arquivo .txt
-    public static void salvarCadastroEmArquivo(String tipo, String linhaCadastro) {
+    public static void salvarCadastroEmArquivo(String linhaCadastro) {
         try (FileWriter fw = new FileWriter(CAMINHO_ARQUIVO, true);
              PrintWriter pw = new PrintWriter(fw)) {
 
             // Salva no formato: "TIPO;dados do cadastro"
-            pw.println(tipo + ";" + linhaCadastro);
+            pw.println(linhaCadastro);
 
             System.out.println("Informações foram salvas no arquivo " + CAMINHO_ARQUIVO);
         } catch (IOException e) {

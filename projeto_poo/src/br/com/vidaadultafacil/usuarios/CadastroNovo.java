@@ -22,7 +22,7 @@ public class CadastroNovo {
     }
 
     // Cria um novo cadastro de cliente
-    public void criarCadastro() {
+    public String criarCadastro() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Bem-vindo ao cadastro de novos clientes!");
@@ -77,13 +77,16 @@ public class CadastroNovo {
         // Cria um novo cliente com o ID gerado e adiciona ao mapa de clientes
         Cliente novoCliente = new Cliente(novoId, nome, email, senha, telefone, cpf);
         Cliente.getMapClientes().put(email, novoCliente);
-
+        
+        
         System.out.println("Cadastro realizado com sucesso! Seu ID é: " + novoId);
-
+        
         // Salva o cadastro no arquivo txt
         EscritorArquivo.salvarCadastroClienteEmArquivo(novoCliente);
 
         scanner.close();  // Fechar o scanner após o uso
+        String cl = "Cliente;" + novoId+";"+ nome+";"+ email+";"+ senha+";"+ telefone+";"+ cpf;
+        return cl;
     }
 
 
