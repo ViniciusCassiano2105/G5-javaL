@@ -48,3 +48,5 @@ funcionalidades correspondentes.**
 - **Lucas Schumacker** - [schumacker1](https://github.com/schumacker1)
 - **Luiz Vinicius** - [ViniciusCassiano2105](https://github.com/ViniciusCassiano2105)
 
+## Diagrama 📊
+![Easy adult life drawio](https://github.com/user-attachments/assets/9b691771-d6a3-48a4-96d9-2cf72e760511)
