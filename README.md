@@ -4,7 +4,7 @@ Este repositório foi criado pelo Grupo 5 JavaL - Para organizar e documentar o 
 Aqui você encontrará todos os materiais, códigos e documentação desenvolvidos ao longo da disciplina, com foco na aplicação prática dos 
 conceitos de POO utilizando a linguagem Java.
 
-# Projeto "EASY ADULT LIFE" 📜
+# Projeto 📜
 O projeto do grupo se concentra em uma empresa fictícia chamada "EASY ADULT LIFE", criada com o intuito de auxiliar jovens e recém-casados 
 a aprenderem habilidades práticas essenciais da vida adulta. A empresa oferece cursos online que abordam culinária, cuidados com pets, 
 finanças domésticas e manutenção do lar, tornando desafios cotidianos mais simples e acessíveis.
