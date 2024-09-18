@@ -30,7 +30,11 @@ public class CadastroNovo {
         // Carregar IDs existentes antes de gerar um novo
         EscritorArquivo.carregarIdsDoArquivo();
 
-        String nome, email = null, senha, telefone, cpf;
+        String nome;
+        String email = null; 
+        String senha;
+        String telefone; 
+        String cpf;
 
         // Entrada do nome
         System.out.print("Digite seu nome: ");
