@@ -8,7 +8,7 @@ public class Administrador extends Usuario {
 	private int id;
 	boolean isAdmin;
 	private static Logger logger = Util.setupLogger();
-	private static final Map<Integer, Administrador> admins = new HashMap<>();
+	private static final Map<String, Administrador> admins = new HashMap<>();
 	
 	public Administrador() {
 	}
@@ -17,14 +17,14 @@ public class Administrador extends Usuario {
 		super(nome, email, senha, telefone);
 		this.id = id;
 		this.isAdmin = isAdmin;
-		admins.put(id, this);
+		admins.put(email, this);
 	}
 
 	public Administrador(String nome, String email, String senha, String telefone, boolean isAdmin) {
 		super(nome, email, senha, telefone);
 		this.id = admins.size() + 1;
 		this.isAdmin = isAdmin;
-		admins.put(id, this);
+		admins.put(email, this);
 	}
 
 	public boolean getisAdmin() {
@@ -39,15 +39,15 @@ public class Administrador extends Usuario {
 	public static boolean login(String email, String senha) {
         Administrador admin = admins.get(email);
         if (admin != null && admin.getSenha().equals(senha)) {
-            logger.info("\nLogin bem-sucedido!");
+            logger.info("\nLogin bem-sucedido!\n");
             return true;
         } else {
-            logger.info("\nCredenciais inválidas!");
+            logger.info("\nCredenciais invalidas!\n");
             return false;
         }
     }
 
-	public static Map<Integer, Administrador> getMapAdmin() {
+	public static Map<String, Administrador> getMapAdmin() {
         return admins;
     }
 

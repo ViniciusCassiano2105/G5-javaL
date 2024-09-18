@@ -2,6 +2,7 @@ package br.com.vidaadultafacil.sistema;
 
 import br.com.aula_poo.utils.Util;
 import br.com.vidaadultafacil.io.Relatorio;
+import br.com.vidaadultafacil.pedidos.Carrinho;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -13,8 +14,6 @@ public class MenuCliente implements MenuInterface  {
 	public void menu() {
 		int escolha = 0;
 		int opcao2;
-		int cliente; 
-		int produto;
 		Scanner scanner = new Scanner(System.in);
 
 		logger.info("\n\t\tSeja bem-vindo, \n");
@@ -44,13 +43,26 @@ public class MenuCliente implements MenuInterface  {
 				logger.info("Escolha uma opcao: ");
 				opcao2 = scanner.nextInt();
 
-				/*if (opcao2 == 1) {
-					logger.info("Escolha o produto que deseja comprar: ");
-					produto = scanner.nextInt();
-					Carrinho carrinho = new Carrinho(produto, cliente);
-					Carrinho.adicionarProduto(produto);
-				}*/
+				if (opcao2 == 1) {
+					logger.info("\n\nEscolha o produto que deseja comprar: ");
+					int idProduto = scanner.nextInt();
+					Carrinho carrinho = new Carrinho(1);
+					carrinho.adicionarProduto(idProduto);		
+					logger.info("\nProduto adicionado ao carrinho com sucesso!\n");
 
+					logger.info("\n\t\tDeseja finalizar a compra?\n");
+					logger.info("(1) Sim\n(2) Nao, adicionar mais produtos");
+					logger.info("Escolha uma opcao: ");
+					int opcao3 = scanner.nextInt();
+
+					if(opcao3 == 1) {
+						logger.info("Obrigado por comprar conosco!\n");
+						carrinho.finalizarCompra();
+					} else {
+						logger.info("Adicione mais produtos ao carrinho!\n");
+						menu();
+					}
+				}
 				break;
 				
 			case 2:			

@@ -14,7 +14,10 @@ public class Menu implements MenuInterface  {
 
 	@Override
 	public void menu() {
+
 		boolean autenticado = false;
+		Menu menu = new Menu();
+		
 
 		try {
 		
@@ -54,32 +57,33 @@ public class Menu implements MenuInterface  {
 							}							
 							break;
 						case 2:
-							System.out.println("\n\nVocê escolheu se cadastrar.\n\n");
-							
+							System.out.println("\n\nVocê escolheu se cadastrar.\n\n");						
 							CadastroNovo cadastroNv = new CadastroNovo();
 							EscritorArquivo escArq = new EscritorArquivo();
 							escArq.salvarCadastroEmArquivo(cadastroNv.criarCadastro());
-							Thread.sleep(2000);
+							Thread.sleep(2000);						
+							menu.menu();
 							break;
 						default:
 							System.out.println("Opção inválida.");
+							menu.menu();
 							break;
 					}
 					break;
 
 				case 2:
-					logger.info("\nVoce escolheu acessar o sistema como administrador");
+					logger.info("\nVoce escolheu acessar o sistema como administrador\n");
 					Thread.sleep(2000);
 					
 					while(autenticado == false){
 						logger.info("Digite seu email: ");
 						String email = sc.next();
-						logger.info("Digite sua senha: ");
+						logger.info("\nDigite sua senha: ");
 						String senha = sc.next();
 						autenticado = Administrador.login(email, senha);
 						if(autenticado == true){
-							MenuCliente menuCliente = new MenuCliente();
-							menuCliente.menu();
+							MenuAdmin menuAdmin = new MenuAdmin();
+							menuAdmin.menu();
 						}
 					}	
 					break;

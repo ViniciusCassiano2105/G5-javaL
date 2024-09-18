@@ -1,10 +1,8 @@
 package br.com.vidaadultafacil.usuarios;
 
+import br.com.vidaadultafacil.io.EscritorArquivo;
 import java.util.Scanner;
 import java.util.regex.Pattern;
-
-import br.com.vidaadultafacil.io.EscritorArquivo;
-import br.com.vidaadultafacil.tela_inicial.Produto;
 
 public class CadastroNovo {
 
@@ -87,42 +85,5 @@ public class CadastroNovo {
         scanner.close();  // Fechar o scanner após o uso
         String cl = "Cliente;" + novoId+";"+ nome+";"+ email+";"+ senha+";"+ telefone+";"+ cpf;
         return cl;
-    }
-
-
-    // Cadastro de novos produtos pelo administrador
-    public static Produto cadastrarProduto() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Cadastro de novos produtos");
-
-        System.out.print("Digite o nome do produto: ");
-        String nome = scanner.nextLine();
-
-        System.out.print("Digite a descrição do produto: ");
-        String descricao = scanner.nextLine();
-
-        System.out.print("Digite o preço do produto: ");
-        double preco = scanner.nextDouble();
-
-        System.out.print("Digite a duração do produto (em horas): ");
-        int duracao = scanner.nextInt();
-        scanner.nextLine();  // Consumir a nova linha
-
-        System.out.print("Digite o autor do produto: ");
-        String autor = scanner.nextLine();
-
-        // Gera um ID único
-        int novoId = EscritorArquivo.gerarIdUnico();
-
-        // Cria um novo produto
-        Produto novoProduto = new Produto(novoId, nome, descricao, preco, duracao, autor);
-
-        // Salva o produto no arquivo txt
-        EscritorArquivo.salvarCadastroProdutoEmArquivo(novoProduto);
-
-        System.out.println("Produto cadastrado com sucesso! ID do produto: " + novoId);
-
-        return novoProduto;
     }
 }

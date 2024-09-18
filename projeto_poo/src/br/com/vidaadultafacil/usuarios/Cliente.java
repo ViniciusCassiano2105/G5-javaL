@@ -11,20 +11,20 @@ public class Cliente extends Usuario {
     private int id;
     private String cpf = "";
     private boolean cpfValido = false;
-    private static final Map<String, Cliente> clientes = new HashMap<>(); // Map usando e-mail como chave
+    private static final Map<String, Cliente> clientes = new HashMap<>();
 
     public Cliente(int id, String nome, String email, String senha, String telefone, String cpf) {
         super(nome, email, senha, telefone);
         this.id = id;
         this.cpf = cpf;
-        clientes.put(email, this); // Adiciona o cliente ao mapa
+        clientes.put(email, this);
     }
 
     public Cliente(String nome, String email, String senha, String telefone, String cpf) {
         super(nome, email, senha, telefone);
         this.id = clientes.size() + 1;
         this.cpf = cpf;
-        clientes.put(email, this); // Adiciona o cliente ao mapa
+        clientes.put(email, this);
     }
 
     public void setCpf(String cpf) {

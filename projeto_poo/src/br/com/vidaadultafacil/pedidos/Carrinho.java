@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class Carrinho {
@@ -12,6 +13,7 @@ public class Carrinho {
 	private static Logger logger = Logger.getLogger(Util.class.getName());
     // Chave primária
     private int id;
+    private static Scanner scanner = new Scanner(System.in);
 
     // Chave Estrangeira 
     private int FkCliente;
@@ -27,6 +29,11 @@ public class Carrinho {
 	public Carrinho(int id, int fkCliente) {
         this.id = id;
         this.FkCliente = fkCliente;
+        this.produtos = new ArrayList<>();
+    }
+
+    public Carrinho(int id) {
+        this.id = id;
         this.produtos = new ArrayList<>();
     }
 
@@ -46,15 +53,30 @@ public class Carrinho {
         return FkCliente;
     }
 
-    // Método para adicionar um produto ao carrinho
-    /*public static void adicionarProduto(int produto) {
+    public void finalizarCompra() {
+
+        logger.info("Deseja visualizar o carrinho antes de finalizar a compra?");
+        logger.info("(1) Sim\n(2) Nao");
+        int opcao = scanner.nextInt();
+
+        if(opcao == 1) {
+            logger.info("\nCarrinho: " + produtos);
+        }
+        else{
+            logger.info("Compra finalizada com sucesso!");
+            logger.info("Obrigado por comprar conosco!");
+        }
+    }
+
+    public void adicionarProduto(int idProduto) {
+        Produto produto = Produto.getMapProdutos().get(idProduto);
         if (produto != null) {
             produtos.add(produto);
             logger.info("Produto adicionado: " + produto.getNome());
         } else {
-        	logger.info("Erro: Produto inválido.");
+        	logger.info("Erro: Produto não encontrado.");
         }
-    }*/
+    }
 
     // Método para remover um produto do carrinho
     public void removerProduto(Produto produto) {
