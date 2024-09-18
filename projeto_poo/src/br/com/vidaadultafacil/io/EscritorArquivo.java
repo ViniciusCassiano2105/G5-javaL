@@ -1,15 +1,14 @@
 package br.com.vidaadultafacil.io;
 
+import br.com.vidaadultafacil.tela_inicial.Produto;
+import br.com.vidaadultafacil.usuarios.Cliente;
 import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
 
-import br.com.vidaadultafacil.tela_inicial.Produto;
-import br.com.vidaadultafacil.usuarios.Cliente;
-
 public class EscritorArquivo {
 
-    private static final String CAMINHO_ARQUIVO = "./projeto_poo/temp/Banco.txt";
+    private static final String CAMINHO_ARQUIVO = "./temp/Banco.txt";
     private static final Set<Integer> idsExistentes = new HashSet<>();
 
     // Carrega os IDs existentes do arquivo de banco (tanto de clientes quanto de produtos)

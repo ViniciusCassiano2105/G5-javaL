@@ -51,3 +51,4 @@ Pix;1;1;1;29;3;984521615
 Boleto;1;1;1;29;3;651655656000029
 Cliente;13;Joaozinho;joaoo@email.com;joao12354;9999999999;12345678901
 Cliente;14;Maria;maria@email.com;maria123;8888888888;12345678907
+Cliente;15;Marcos;marcos@gmail.com;123321;21990095555;25369874102

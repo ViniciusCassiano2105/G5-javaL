@@ -1,10 +1,9 @@
 package br.com.vidaadultafacil.usuarios;
 
+import br.com.aula_poo.utils.Util;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
-
-import br.com.aula_poo.utils.Util;
 
 public class Cliente extends Usuario {
 	private static Logger logger = Util.setupLogger();
@@ -63,14 +62,14 @@ public class Cliente extends Usuario {
     }
 
     // realizar login
-    public static Cliente login(String email, String senha) {
+    public static boolean login(String email, String senha) {
         Cliente cliente = clientes.get(email);
         if (cliente != null && cliente.getSenha().equals(senha)) {
-            logger.info("Login bem-sucedido!");
-            return cliente;
+            logger.info("\nLogin bem-sucedido!");
+            return true;
         } else {
-            logger.info("Credenciais inválidas!");
-            return null;
+            logger.info("\nCredenciais inválidas!");
+            return false;
         }
     }
 

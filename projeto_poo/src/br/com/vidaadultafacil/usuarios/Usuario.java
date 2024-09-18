@@ -1,6 +1,6 @@
 package br.com.vidaadultafacil.usuarios;
 
-public class Usuario {
+public abstract class Usuario {
 	// Chave primária
 	protected int id;
 

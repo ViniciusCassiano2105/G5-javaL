@@ -1,13 +1,9 @@
 package br.com.vidaadultafacil.sistema;
 
-import java.util.logging.Logger;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.logging.Level;
-
 import br.com.aula_poo.utils.Util;
 import br.com.vidaadultafacil.io.Relatorio;
-import br.com.vidaadultafacil.tela_inicial.Produto;
+import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class MenuCliente implements MenuInterface  {
 
@@ -17,74 +13,68 @@ public class MenuCliente implements MenuInterface  {
 	public void menu() {
 		int escolha = 0;
 		int opcao2;
-		String cliente = "Fulano";  
+		int cliente; 
+		int produto;
 		Scanner scanner = new Scanner(System.in);
 
-		logger.info("\n\t\tSeja bem-vindo, " + cliente + "!\n");
+		logger.info("\n\t\tSeja bem-vindo, \n");
 		logger.info("\n\t\t\tMENU DO CLIENTE\n");
-        logger.info("\n\t\tEscolha seu curso e comece viver melhor!\n\t\tPorque viver de miojo é só uma fase... certo?");
+        logger.info("\n\t\tEscolha seu curso e comece viver melhor!\n\t\tPorque viver de miojo e so uma fase... certo?");
         
         try {
-            Thread.sleep(4000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             logger.warning("Erro durante a pausa: " + e.getMessage());
         }
 
-        logger.info("(1) Lista de Produtos");
-		logger.info("(2) Avaliação");
-		logger.info("(3) Sair");
-
 		while (escolha != 3) {  
-			logger.info("Escolha uma opção: ");
+			logger.info("\n(1) Lista de Produtos");
+			logger.info("(2) Avaliacao");
+			logger.info("(3) Sair");
+			logger.info("Escolha uma opcao: ");
 			escolha = scanner.nextInt();
 
 			switch (escolha) {
 				
 			case 1:
-				logger.info("Aguenta firme, já vamos te salvar! ;) ");
-				logger.info("\n\tProdutos Disponíveis:\n");
-				for (Map.Entry<Integer, Produto> prod : Produto.getMapProdutos().entrySet()) {
-					Util.setupLogger().log(Level.INFO, 
-						"\nNome do Produto: " + prod.getValue().getNome() + 
-						"\nDescricao do Produto: " + prod.getValue().getDescricao() + 
-						"\nAutor: " + prod.getValue().getAutor() + 
-						"\nPreco: " + prod.getValue().getPreco() + 
-						"\nDuracao: " + prod.getValue().getDuracao() + "\n\n"
-					);
-				}
+				logger.info("\n\tProdutos Disponiveis:\n");
+				Relatorio.relatorioCliente('P');
+				logger.info("\n\n\t\tDeseja comprar algum produto?\n");
+				logger.info("(1) Sim\n(2) Nao");
+				logger.info("Escolha uma opcao: ");
+				opcao2 = scanner.nextInt();
+
+				/*if (opcao2 == 1) {
+					logger.info("Escolha o produto que deseja comprar: ");
+					produto = scanner.nextInt();
+					Carrinho carrinho = new Carrinho(produto, cliente);
+					Carrinho.adicionarProduto(produto);
+				}*/
+
 				break;
 				
 			case 2:			
-				logger.info("(1) Visualizar avaliações");
-				opcao2 = scanner.nextInt();
-				
-				switch (opcao2) {
-					case 1:
-						logger.info("Aguenta firme, já vamos te salvar! ;) ");
-	                    try {
-	                        Thread.sleep(6000);
-	                    } catch (InterruptedException e) {
-	                        logger.warning("Erro durante a pausa: " + e.getMessage());
-	                    }
-						Relatorio.relatorioCliente('A'); // Exibir avaliações
-						break;
-					default:
-						logger.info("Opção inválida!");
-				}
+					logger.info("Aguenta firme, ja vamos te salvar!) ");
+	                try {
+	                    Thread.sleep(3000);
+						Relatorio.relatorioCliente('A');
+	                } catch (InterruptedException e) {
+	                    logger.warning("Erro durante a pausa: " + e.getMessage());
+	                }
 				break;
 				
 			case 3:
 				logger.info("Saindo... Volte antes que o caos comece!");
                 try {
-                    Thread.sleep(6000);
+                    Thread.sleep(3000);
                 } catch (InterruptedException e) {
                     logger.warning("Erro durante a pausa: " + e.getMessage());
                 }
-                logger.info("Obrigado por visitar a Easy Adult Life");
+                logger.info("\n\t\tObrigado por visitar a Easy Adult Life\n\n");
 				break;
 				
 			default:
-				logger.info("Opção inválida! Por favor, escolha novamente.");
+				logger.info("Opcao invalida! Por favor, escolha novamente.\n\n");
 			}
 		}
 		scanner.close();

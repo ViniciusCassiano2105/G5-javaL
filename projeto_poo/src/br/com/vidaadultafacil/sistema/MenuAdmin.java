@@ -1,16 +1,14 @@
 package br.com.vidaadultafacil.sistema;
 
+import br.com.aula_poo.utils.Util;
+import br.com.vidaadultafacil.io.Relatorio;
+import br.com.vidaadultafacil.tela_inicial.Produto;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import br.com.aula_poo.utils.Util;
-import br.com.vidaadultafacil.io.Relatorio;
-import br.com.vidaadultafacil.tela_inicial.Produto;
 
 public class MenuAdmin implements MenuInterface  {
 
@@ -37,7 +35,7 @@ public class MenuAdmin implements MenuInterface  {
         produtos.removeIf(produto -> produto.getId() == id);
         logger.info("Produto removido com sucesso. ID: " + id);
     }
-    @Override
+
     public void menu() {
         MenuAdmin menuAdmin = new MenuAdmin();
         Scanner scanner = new Scanner(System.in);

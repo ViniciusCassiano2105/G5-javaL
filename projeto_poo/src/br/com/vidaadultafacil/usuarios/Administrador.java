@@ -1,11 +1,13 @@
 package br.com.vidaadultafacil.usuarios;
+import br.com.aula_poo.utils.Util;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class Administrador extends Usuario {
-	// Chave primária
 	private int id;
 	boolean isAdmin;
+	private static Logger logger = Util.setupLogger();
 	private static final Map<Integer, Administrador> admins = new HashMap<>();
 	
 	public Administrador() {
@@ -15,12 +17,14 @@ public class Administrador extends Usuario {
 		super(nome, email, senha, telefone);
 		this.id = id;
 		this.isAdmin = isAdmin;
+		admins.put(id, this);
 	}
 
 	public Administrador(String nome, String email, String senha, String telefone, boolean isAdmin) {
 		super(nome, email, senha, telefone);
 		this.id = admins.size() + 1;
 		this.isAdmin = isAdmin;
+		admins.put(id, this);
 	}
 
 	public boolean getisAdmin() {
@@ -32,16 +36,16 @@ public class Administrador extends Usuario {
 	}
 
 	//Método autenticação
-	public boolean autenticar(String nome, String senha) {
-		for (Map.Entry<Integer, Administrador> adms : Administrador.getMapAdmin().entrySet()) {
-			if (adms.getValue().getNome().equals(nome) && adms.getValue().getSenha().equals(senha)) {
-				System.out.println("Acesso Permitido!");
-				return true; 
-			}
-		}
-		System.out.println("Acesso Negado!");
-		return false;
-	}
+	public static boolean login(String email, String senha) {
+        Administrador admin = admins.get(email);
+        if (admin != null && admin.getSenha().equals(senha)) {
+            logger.info("\nLogin bem-sucedido!");
+            return true;
+        } else {
+            logger.info("\nCredenciais inválidas!");
+            return false;
+        }
+    }
 
 	public static Map<Integer, Administrador> getMapAdmin() {
         return admins;

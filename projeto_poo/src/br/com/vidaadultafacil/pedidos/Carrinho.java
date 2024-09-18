@@ -27,7 +27,7 @@ public class Carrinho {
 	public Carrinho(int id, int fkCliente) {
         this.id = id;
         this.FkCliente = fkCliente;
-        this.produtos = new ArrayList<>(); // Inicializando a lista de produtos
+        this.produtos = new ArrayList<>();
     }
 
     public List<Produto> getProdutos() {
@@ -47,14 +47,14 @@ public class Carrinho {
     }
 
     // Método para adicionar um produto ao carrinho
-    public void adicionarProduto(Produto produto) {
+    /*public static void adicionarProduto(int produto) {
         if (produto != null) {
             produtos.add(produto);
             logger.info("Produto adicionado: " + produto.getNome());
         } else {
         	logger.info("Erro: Produto inválido.");
         }
-    }
+    }*/
 
     // Método para remover um produto do carrinho
     public void removerProduto(Produto produto) {

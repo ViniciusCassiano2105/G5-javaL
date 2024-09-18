@@ -1,13 +1,12 @@
 package br.com.vidaadultafacil.sistema;
 
-import java.util.Scanner;
-import java.util.logging.Logger;
-
 import br.com.aula_poo.utils.Util;
 import br.com.vidaadultafacil.io.EscritorArquivo;
-import br.com.vidaadultafacil.io.LeitorArquivo;
 import br.com.vidaadultafacil.usuarios.Administrador;
 import br.com.vidaadultafacil.usuarios.CadastroNovo;
+import br.com.vidaadultafacil.usuarios.Cliente;
+import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Menu implements MenuInterface  {
 	
@@ -15,84 +14,83 @@ public class Menu implements MenuInterface  {
 
 	@Override
 	public void menu() {
+		boolean autenticado = false;
+
 		try {
 		
-		
-		
-		
-		Scanner sc = new Scanner(System.in);
+			Scanner sc = new Scanner(System.in);
 
-		char op;
+			char op;
 
-		logger.info("\n\t\t\t EASY ADULT LIFE\n\t\t\t-------------------\n\tTornando a vida independente descomplicada e acessível!\n");
-		logger.info("Digite como gostaria de ser chamado(a):");
-		String nome = sc.next();
+			logger.info("\n\t\t\t EASY ADULT LIFE\n\t\t\t-------------------\n\tTornando a vida independente descomplicada e acessivel!\n");
+			logger.info("Digite como gostaria de ser chamado(a):");
+			String nome = sc.next();
 
-		String mensagemBemvindo = String.format("Bem vindo(a) %s você deseja acessar o sistema como CLIENTE ou ADMINISTRADOR?\n",nome);
-		logger.info(mensagemBemvindo);
-		logger.info("\n(1) CLIENTE\n(2) ADMINISTRADOR");
-		int opcao = sc.nextInt();
-
-		// Relatorio.relatorioCliente('P');
-
-		// Relatorio.relatorioAdmin(op = 'T');
-		
-		switch(opcao) {
-			case 1:
-				logger.info("\n(1) Acessar sua conta\n(2) Cadastro");
-				int opcaoCliente = sc.nextInt();
-
-				switch (opcaoCliente) {
-					case 1:
-						logger.info("\nVocê escolheu acessar sua conta.\nAguarde");
-						Thread.sleep(2000);
-						MenuCliente menuCliente = new MenuCliente();
-						menuCliente.menu();
-						break;
-					case 2:
-						System.out.println("\n\nVocê escolheu se cadastrar.\nAguarde");
-						
-						CadastroNovo cadastroNv = new CadastroNovo();
-						EscritorArquivo escArq = new EscritorArquivo();
-						escArq.salvarCadastroEmArquivo(cadastroNv.criarCadastro());
-						Thread.sleep(2000);
-						break;
-					default:
-						System.out.println("Opção inválida.");
-						break;
-				}
-				break;
-
-			case 2:
-				String nomeAdmin;
-				String senhaAdmin;
-				//boolean verificador = false;
-				Administrador adms = new Administrador();
-				// Mensagem de escolha de login como administrador
-				logger.info("Você escolheu acessar o sistema como administrador.\nInforme seu Login:");
-				nomeAdmin = sc.next();  // Usuário fornece o nome
-				
-				logger.info("Informe sua senha:");
-				senhaAdmin = sc.next();  // Usuário fornece a senha
-				
-				//verificador = adms.autenticar(nomeAdmin,senhaAdmin);
-				
-				if(adms.autenticar(nomeAdmin, senhaAdmin)){
-					MenuAdmin.menu();
-				} else{
-					System.err.println("Nome de usuário ou senha incorretos");
-				}
-				break;
-
-			default:
-				logger.info("Opção inválida.");
-				break;
-		}
-		sc.close();
-		}
-		catch(InterruptedException e){
-			logger.info("Erro contagem de tempo...");
+			String mensagemBemvindo = String.format("Bem vindo(a) %s voce deseja acessar o sistema como CLIENTE ou ADMINISTRADOR?\n", nome);
+			logger.info(mensagemBemvindo);
+			logger.info("\n(1) CLIENTE\n(2) ADMINISTRADOR");
+			int opcao = sc.nextInt();
 			
+			switch(opcao) {
+				case 1:
+					logger.info("\n(1) Acessar sua conta\n(2) Cadastro");
+					int opcaoCliente = sc.nextInt();
+
+					switch (opcaoCliente) {
+						case 1:
+							logger.info("\nVoce escolheu acessar sua conta.\nAguarde");
+							Thread.sleep(2000);
+
+							while(autenticado == false){
+								logger.info("Digite seu email: ");
+								String email = sc.next();
+								logger.info("Digite sua senha: ");
+								String senha = sc.next();
+								autenticado = Cliente.login(email, senha);
+								if(autenticado == true){
+									MenuCliente menuCliente = new MenuCliente();
+									menuCliente.menu();
+								}
+							}							
+							break;
+						case 2:
+							System.out.println("\n\nVocê escolheu se cadastrar.\n\n");
+							
+							CadastroNovo cadastroNv = new CadastroNovo();
+							EscritorArquivo escArq = new EscritorArquivo();
+							escArq.salvarCadastroEmArquivo(cadastroNv.criarCadastro());
+							Thread.sleep(2000);
+							break;
+						default:
+							System.out.println("Opção inválida.");
+							break;
+					}
+					break;
+
+				case 2:
+					logger.info("\nVoce escolheu acessar o sistema como administrador");
+					Thread.sleep(2000);
+					
+					while(autenticado == false){
+						logger.info("Digite seu email: ");
+						String email = sc.next();
+						logger.info("Digite sua senha: ");
+						String senha = sc.next();
+						autenticado = Administrador.login(email, senha);
+						if(autenticado == true){
+							MenuCliente menuCliente = new MenuCliente();
+							menuCliente.menu();
+						}
+					}	
+					break;
+
+				default:
+					logger.info("Opção inválida.");
+					break;
+			}
+			sc.close();
+		} catch(InterruptedException e){
+			logger.info("Erro contagem de tempo...");	
 		}
     }
 }
