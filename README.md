@@ -49,4 +49,4 @@ funcionalidades correspondentes.**
 - **Luiz Vinicius** - [ViniciusCassiano2105](https://github.com/ViniciusCassiano2105)
 
 ## Diagrama 📊
-![Easy adult life drawio](https://github.com/user-attachments/assets/9b691771-d6a3-48a4-96d9-2cf72e760511)
+![Easy adult life draw](https://github.com/user-attachments/assets/32470b98-7204-4132-9585-6857938cb0e8)
