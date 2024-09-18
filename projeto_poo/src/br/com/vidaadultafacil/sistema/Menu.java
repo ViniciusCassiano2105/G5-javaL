@@ -11,20 +11,20 @@ import java.util.logging.Logger;
 public class Menu implements MenuInterface  {
 	
 	private static Logger logger = Logger.getLogger(Util.class.getName());
+	Scanner sc = new Scanner(System.in);
 
 	@Override
 	public void menu() {
 
 		boolean autenticado = false;
-		Menu menu = new Menu();
+		Menu menu = new Menu();	
+		MenuLogo menuLogo = new MenuLogo();
 		
 
 		try {
 		
-			Scanner sc = new Scanner(System.in);
-
 			char op;
-
+			menuLogo.menuLogo();
 			logger.info("\n\t\t\t EASY ADULT LIFE\n\t\t\t-------------------\n\tTornando a vida independente descomplicada e acessivel!\n");
 			logger.info("Digite como gostaria de ser chamado(a):");
 			String nome = sc.next();
@@ -33,7 +33,7 @@ public class Menu implements MenuInterface  {
 			logger.info(mensagemBemvindo);
 			logger.info("\n(1) CLIENTE\n(2) ADMINISTRADOR");
 			int opcao = sc.nextInt();
-			
+			sc.nextLine();
 			switch(opcao) {
 				case 1:
 					logger.info("\n(1) Acessar sua conta\n(2) Cadastro");
@@ -61,8 +61,9 @@ public class Menu implements MenuInterface  {
 							CadastroNovo cadastroNv = new CadastroNovo();
 							EscritorArquivo escArq = new EscritorArquivo();
 							escArq.salvarCadastroEmArquivo(cadastroNv.criarCadastro());
-							Thread.sleep(2000);						
-							menu.menu();
+							Thread.sleep(2000);		
+							MenuCliente menuCliente = new MenuCliente();
+							menuCliente.menu();
 							break;
 						default:
 							System.out.println("Opção inválida.");

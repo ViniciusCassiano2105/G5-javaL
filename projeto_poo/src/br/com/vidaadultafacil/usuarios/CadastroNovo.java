@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 public class CadastroNovo {
 
     private static final String EMAIL_REGEX = "^[A-Za-z0-9+_.-]+@(.+)$";
+    Scanner scanner = new Scanner(System.in);
 
     // Valida o formato do e-mail
     public static boolean validarEmail(String email) {
@@ -21,7 +22,6 @@ public class CadastroNovo {
 
     // Cria um novo cadastro de cliente
     public String criarCadastro() {
-        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Bem-vindo ao cadastro de novos clientes!");
 
@@ -82,7 +82,7 @@ public class CadastroNovo {
         // Salva o cadastro no arquivo txt
         EscritorArquivo.salvarCadastroClienteEmArquivo(novoCliente);
 
-        scanner.close();  // Fechar o scanner após o uso
+//        scanner.close();  // Fechar o scanner após o uso
         String cl = "Cliente;" + novoId+";"+ nome+";"+ email+";"+ senha+";"+ telefone+";"+ cpf;
         return cl;
     }

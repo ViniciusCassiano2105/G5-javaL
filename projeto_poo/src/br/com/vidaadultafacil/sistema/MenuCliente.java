@@ -12,9 +12,9 @@ public class MenuCliente implements MenuInterface  {
 
 	@Override
 	public void menu() {
+		Scanner scanner = new Scanner(System.in);
 		int escolha = 0;
 		int opcao2;
-		Scanner scanner = new Scanner(System.in);
 
 		logger.info("\n\t\tSeja bem-vindo, \n");
 		logger.info("\n\t\t\tMENU DO CLIENTE\n");
@@ -32,7 +32,7 @@ public class MenuCliente implements MenuInterface  {
 			logger.info("(3) Sair");
 			logger.info("Escolha uma opcao: ");
 			escolha = scanner.nextInt();
-
+			scanner.nextLine();
 			switch (escolha) {
 				
 			case 1:
