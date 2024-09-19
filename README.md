@@ -39,7 +39,7 @@ funcionalidades correspondentes.**
 - **🗂️ Trello: Ferramenta de gerenciamento de tarefas para organizar o progresso do projeto e designar responsabilidades.**
 - **📊 Draw.io: Ferramenta online utilizada para criar diagramas.**
 
-# Fluxo do Diagrama UML Classe
+# Fluxo do Diagrama UML Classe 💡
 
 ## 1. Classe Usuario (abstrata)
 
