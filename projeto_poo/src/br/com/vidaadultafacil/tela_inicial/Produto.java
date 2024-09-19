@@ -2,7 +2,7 @@ package br.com.vidaadultafacil.tela_inicial;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import java.util.logging.Logger;
 public class Produto {
 
     // Chave primária
@@ -14,6 +14,7 @@ public class Produto {
     public double preco;
     public int duracao;
     private static final Map<Integer, Produto> produtos = new HashMap();
+    private static Logger logger = Logger.getLogger(Produto.class.getName());
     
     public Produto() {
     }
@@ -61,7 +62,7 @@ public class Produto {
         if (nome != null && !nome.trim().isEmpty()) {
             this.nome = nome;
         } else {
-            System.out.println("O nome do produto não pode ser vazio.");
+            logger.info("O nome do produto não pode ser vazio.");
         }
     }
 
@@ -69,7 +70,7 @@ public class Produto {
         if (descricaoProd != null && !descricaoProd.trim().isEmpty()) {
             this.descricaoProd = descricaoProd;
         } else {
-            System.out.println("A descrição do produto não deve ser vazio");
+            logger.info("A descrição do produto não deve ser vazio");
         }
     }
 
@@ -77,7 +78,7 @@ public class Produto {
         if ( autor != null && !autor.trim().isEmpty()) {
             this.autor = autor;
         } else {
-            System.out.println("O nome do autor não deve ser vazio.");
+            logger.info("O nome do autor não deve ser vazio.");
         }
     }
 

@@ -1,7 +1,7 @@
 package br.com.vidaadultafacil.suporte;
 import java.util.HashMap;
 import java.util.Map;
-
+import java.util.logging.Logger;
 
 public class Suporte {
 
@@ -9,7 +9,7 @@ public class Suporte {
 	private int fkCliente;	
 	private String mensagem;
 	private static final Map<Integer, Suporte> mapaSuporte = new HashMap();
-	
+	private static Logger logger = Logger.getLogger(Suporte.class.getName());
 	public Suporte(int id, int fkCliente, String mensagem) {
 		this.id = id;
 		this.fkCliente = fkCliente;
@@ -32,7 +32,7 @@ public class Suporte {
 		if (mensagem != null && !mensagem.trim().isEmpty()) {
 			this.mensagem = mensagem;
 		} else {
-			System.out.println("Mensagem não pode ser vazia ou nula.");
+			logger.info("Mensagem não pode ser vazia ou nula.");
 		}
 	}
 

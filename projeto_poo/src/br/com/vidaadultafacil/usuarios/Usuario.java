@@ -1,5 +1,5 @@
 package br.com.vidaadultafacil.usuarios;
-
+import java.util.logging.Logger;
 public abstract class Usuario {
 	// Chave primária
 	protected int id;
@@ -8,7 +8,7 @@ public abstract class Usuario {
 	protected String email;
 	protected String senha;
 	protected String telefone;
-
+	private static Logger logger = Logger.getLogger(Usuario.class.getName());
 	public Usuario() {
 	}
 
@@ -28,7 +28,7 @@ public abstract class Usuario {
 		if (nome != null && !nome.trim().isEmpty()) {
 		this.nome = nome;
 		} else {
-			System.out.println("Nome não pode ser vazio ou nulo.");
+			logger.info("Nome não pode ser vazio ou nulo.");
 		}
 	}
 
@@ -40,7 +40,7 @@ public abstract class Usuario {
 		if (email != null && !email.trim().isEmpty()) {
 		this.email = email;
 	} else { 
-		System.out.println("Email não pode ser vazio ou nulo.");
+		logger.info("Email não pode ser vazio ou nulo.");
 		}
 	}
 
@@ -52,7 +52,7 @@ public abstract class Usuario {
 		if (senha != null && !senha.trim().isEmpty()) {
 		this.senha = senha;
 	} else {
-		System.out.println("Senha não pode ser vazia ou nula.");
+		logger.info("Senha não pode ser vazia ou nula.");
 		}
 	}
 
@@ -64,7 +64,7 @@ public abstract class Usuario {
 		if (telefone != null && !telefone.trim().isEmpty()) {
 		this.telefone = telefone;
 	} else {
-		System.out.println("Telefone não pode ser vazio ou nulo.");
+		logger.info("Telefone não pode ser vazio ou nulo.");
 		}
 	}
 

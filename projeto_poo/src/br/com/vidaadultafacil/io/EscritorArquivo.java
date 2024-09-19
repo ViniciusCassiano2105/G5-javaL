@@ -5,12 +5,12 @@ import br.com.vidaadultafacil.usuarios.Cliente;
 import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
-
+import java.util.logging.Logger;
 public class EscritorArquivo {
 
     private static final String CAMINHO_ARQUIVO = "./temp/Banco.txt";
     private static final Set<Integer> idsExistentes = new HashSet<>();
-
+    private static Logger logger = Logger.getLogger(EscritorArquivo.class.getName());
     // Carrega os IDs existentes do arquivo de banco (tanto de clientes quanto de produtos)
     public static void carregarIdsDoArquivo() {
         try (BufferedReader br = new BufferedReader(new FileReader(CAMINHO_ARQUIVO))) {
@@ -24,15 +24,15 @@ public class EscritorArquivo {
                         int id = Integer.parseInt(dados[1]);  // O ID está no índice 1 da linha formatada
                         idsExistentes.add(id);
                     } catch (NumberFormatException e) {
-                        System.out.println("Erro ao converter ID para número na linha: " + linha);
+                        logger.info("Erro ao converter ID para número na linha: " + linha);
                     }
                 } else {
                     // Se não for possível processar a linha, loga ou ignora
-                    System.out.println("Linha inválida ou não contém ID: " + linha);
+                    logger.info("Linha inválida ou não contém ID: " + linha);
                 }
             }
         } catch (IOException e) {
-            System.out.println("Erro ao carregar IDs do arquivo: " + e.getMessage());
+            logger.info("Erro ao carregar IDs do arquivo: " + e.getMessage());
         }
     }
 
@@ -55,9 +55,9 @@ public class EscritorArquivo {
             // Salva no formato: "TIPO;dados do cadastro"
             pw.println(linhaCadastro);
 
-            System.out.println("Informações foram salvas no arquivo " + CAMINHO_ARQUIVO);
+            logger.info("Informações foram salvas no arquivo " + CAMINHO_ARQUIVO);
         } catch (IOException e) {
-            System.out.println("Erro ao salvar as informações no arquivo: " + e.getMessage());
+            logger.info("Erro ao salvar as informações no arquivo: " + e.getMessage());
         }
     }
 

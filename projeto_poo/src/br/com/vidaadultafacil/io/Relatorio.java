@@ -12,9 +12,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.logging.Level;
-
+import java.util.logging.Logger;
 public class Relatorio {
 
+	private static Logger logger = Logger.getLogger(Relatorio.class.getName());
 	public static void relatorioCliente(char op2) {
                         
         if (op2 == 'P') {
@@ -104,7 +105,7 @@ public class Relatorio {
                             }
                             buffWrite.append("\n__________FIM__________\n\n");
                             buffWrite.close();
-                            System.out.println("Relatorio gerado com sucesso!");
+                            logger.info("Relatorio gerado com sucesso!");
         
                         } else if (op2 == 'A') {
                             buffWrite.append("__________INICIO__________\n");
@@ -116,7 +117,7 @@ public class Relatorio {
                             }
                             buffWrite.append("\n__________FIM__________\n\n");
                             buffWrite.close();
-                            System.out.println("Relatorio gerado com sucesso!");
+                            logger.info("Relatorio gerado com sucesso!");
         
                         } else if (op2 == 'S') {
                             buffWrite.append("__________INICIO__________\n");
@@ -128,7 +129,7 @@ public class Relatorio {
                             }
                             buffWrite.append("\n__________FIM__________\n\n");
                             buffWrite.close();
-                            System.out.println("Relatorio gerado com sucesso!");
+                            logger.info("Relatorio gerado com sucesso!");
                         }
                     }
                     verificador = true;

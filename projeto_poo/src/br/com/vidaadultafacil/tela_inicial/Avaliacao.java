@@ -1,6 +1,7 @@
 package br.com.vidaadultafacil.tela_inicial;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class Avaliacao {
     // Chave primária
@@ -10,7 +11,7 @@ public class Avaliacao {
     private double nota;
     private String comentario;
     private static final Map<Integer, Avaliacao> avaliacoes = new HashMap();
-
+    private static Logger logger = Logger.getLogger(Avaliacao.class.getName());
     public Avaliacao() { 
     }
 
@@ -53,7 +54,7 @@ public class Avaliacao {
         if (nota >= 0 && nota <= 10) {
             this.nota = nota;
         } else {
-            System.out.println("Nota deve estar entre 0 e 10.");
+            logger.info("Nota deve estar entre 0 e 10.");
         }
     }
 
@@ -61,7 +62,7 @@ public class Avaliacao {
         if (comentario != null && !comentario.trim().isEmpty()) {
             this.comentario = comentario;
         } else {
-            System.out.println("Comentário não pode ser vazio ou nulo.");
+            logger.info("Comentário não pode ser vazio ou nulo.");
         }
     }
 

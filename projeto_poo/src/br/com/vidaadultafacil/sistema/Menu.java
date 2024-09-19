@@ -57,7 +57,7 @@ public class Menu implements MenuInterface  {
 							}							
 							break;
 						case 2:
-							System.out.println("\n\nVocê escolheu se cadastrar.\n\n");						
+							logger.info("\n\nVocê escolheu se cadastrar.\n\n");						
 							CadastroNovo cadastroNv = new CadastroNovo();
 							EscritorArquivo escArq = new EscritorArquivo();
 							escArq.salvarCadastroEmArquivo(cadastroNv.criarCadastro());
@@ -66,7 +66,7 @@ public class Menu implements MenuInterface  {
 							menuCliente.menu();
 							break;
 						default:
-							System.out.println("Opção inválida.");
+							logger.info("Opção inválida.");
 							menu.menu();
 							break;
 					}

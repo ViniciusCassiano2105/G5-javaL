@@ -3,12 +3,13 @@ package br.com.vidaadultafacil.usuarios;
 import br.com.vidaadultafacil.io.EscritorArquivo;
 import java.util.Scanner;
 import java.util.regex.Pattern;
-
+import java.util.logging.Logger;
 public class CadastroNovo {
-
+	
+	private static Logger logger = Logger.getLogger(CadastroNovo.class.getName());
     private static final String EMAIL_REGEX = "^[A-Za-z0-9+_.-]+@(.+)$";
     Scanner scanner = new Scanner(System.in);
-
+    
     // Valida o formato do e-mail
     public static boolean validarEmail(String email) {
         return Pattern.matches(EMAIL_REGEX, email);
@@ -23,7 +24,7 @@ public class CadastroNovo {
     // Cria um novo cadastro de cliente
     public String criarCadastro() {
 
-        System.out.println("Bem-vindo ao cadastro de novos clientes!");
+        logger.info("Bem-vindo ao cadastro de novos clientes!");
 
         // Carregar IDs existentes antes de gerar um novo
         EscritorArquivo.carregarIdsDoArquivo();
@@ -35,37 +36,37 @@ public class CadastroNovo {
         String cpf;
 
         // Entrada do nome
-        System.out.print("Digite seu nome: ");
+        logger.info("Digite seu nome: ");
         nome = scanner.nextLine();
 
         // Validação de email
         do {
-            System.out.print("Digite seu e-mail: ");
+            logger.info("Digite seu e-mail: ");
             email = scanner.nextLine();
 
             if (!validarEmail(email)) {
-                System.out.println("E-mail inválido. Por favor, insira um e-mail válido.");
+                logger.info("E-mail inválido. Por favor, insira um e-mail válido.");
             } else if (Cliente.getMapClientes().containsKey(email)) {
-                System.out.println("Este e-mail já está cadastrado. Por favor, use outro e-mail.");
+                logger.info("Este e-mail já está cadastrado. Por favor, use outro e-mail.");
                 email = null;
             }
         } while (email == null || !validarEmail(email));
 
         // Entrada da senha
-        System.out.print("Digite uma senha: ");
+        logger.info("Digite uma senha: ");
         senha = scanner.nextLine();
 
         // Entrada do telefone
-        System.out.print("Digite seu telefone: ");
+        logger.info("Digite seu telefone: ");
         telefone = scanner.nextLine();
 
         // Validação do CPF
         do {
-            System.out.print("Digite seu CPF (apenas números): ");
+            logger.info("Digite seu CPF (apenas números): ");
             cpf = scanner.nextLine();
 
             if (!validarCpf(cpf)) {
-                System.out.println("CPF inválido. Deve conter exatamente 11 dígitos.");
+                logger.info("CPF inválido. Deve conter exatamente 11 dígitos.");
             }
         } while (!validarCpf(cpf));
 
@@ -77,7 +78,7 @@ public class CadastroNovo {
         Cliente.getMapClientes().put(email, novoCliente);
         
         
-        System.out.println("Cadastro realizado com sucesso! Seu ID é: " + novoId);
+        logger.info("Cadastro realizado com sucesso! Seu ID é: " + novoId);
         
         // Salva o cadastro no arquivo txt
         EscritorArquivo.salvarCadastroClienteEmArquivo(novoCliente);

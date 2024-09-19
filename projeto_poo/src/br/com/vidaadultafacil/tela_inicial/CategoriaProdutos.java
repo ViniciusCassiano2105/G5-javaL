@@ -2,7 +2,7 @@ package br.com.vidaadultafacil.tela_inicial;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import java.util.logging.Logger;
 
 
 public class CategoriaProdutos {
@@ -15,7 +15,7 @@ public class CategoriaProdutos {
 	String descricaoCat;
 
 	private static final Map<Integer, CategoriaProdutos> catProd = new HashMap();
-
+	private static Logger logger = Logger.getLogger(CategoriaProdutos.class.getName());
 	public CategoriaProdutos() {
 	}
 
@@ -33,7 +33,7 @@ public class CategoriaProdutos {
 		if (categoria!=null && !categoria.trim().isEmpty()) {
 			this.categoria = categoria;			
 		} else {
-			System.out.println("A categoria não pode ser vazia ou nulo.");
+			logger.info("A categoria não pode ser vazia ou nulo.");
 		}
 	}
 
@@ -45,7 +45,7 @@ public class CategoriaProdutos {
 		if(descricaoCat!=null && !descricaoCat.trim().isEmpty()){
 			this.descricaoCat = descricaoCat;
 		} else {
-			System.out.println("A descrição não pode ser vazia ou nulo.");
+			logger.info("A descrição não pode ser vazia ou nulo.");
 		}
 	}
 
